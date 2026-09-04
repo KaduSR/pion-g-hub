@@ -1,0 +1,724 @@
+- generic [ref=e1] clickable [onclick]
+  - navigation
+    - heading "Pion G Plus" [level=1, ref=e2]
+    - button "Matriz" [ref=e3]
+      - image
+      - StaticText "Matriz"
+    - button "9+" [ref=e4]
+      - image
+      - StaticText "9+"
+    - StaticText "NICOLAS SANTOS"
+    - StaticText "Assistente de Front-End Júnior"
+    - button "Trocar Senha" [ref=e5]
+      - image
+    - button "Sair" [ref=e6]
+      - image
+      - StaticText "Sair"
+  - complementary
+    - button "Recolher menu" [ref=e7]
+      - image
+    - navigation
+      - button "Dashboard" [ref=e10]
+        - image
+        - StaticText "Dashboard"
+      - button "Colaboradores" [ref=e11]
+        - image
+        - StaticText "Colaboradores"
+      - button "Escala do Mês" [ref=e12]
+        - image
+        - StaticText "Escala do Mês"
+      - button "Controle de Ponto" [ref=e13]
+        - image
+        - StaticText "Controle de Ponto"
+      - button "Produtividade Setor" [ref=e14]
+        - image
+        - StaticText "Produtividade Setor"
+      - button "Absenteísmo" [ref=e15]
+        - image
+        - StaticText "Absenteísmo"
+      - button "Controle Portaria" [ref=e16]
+        - image
+        - StaticText "Controle Portaria"
+      - button "Validação" [ref=e17]
+        - image
+        - StaticText "Validação"
+      - button "Quadro de Avisos" [ref=e18]
+        - image
+        - StaticText "Quadro de Avisos"
+      - button "OS Manutencao" [ref=e19]
+        - image
+        - StaticText "OS Manutencao"
+        - image
+      - button "Logistica" [ref=e20]
+        - image
+        - StaticText "Logistica"
+        - image
+      - button "Cadastros" [ref=e21]
+        - image
+        - StaticText "Cadastros"
+        - image
+      - button "Filiais" [ref=e22]
+        - image
+        - StaticText "Filiais"
+      - button "Locais" [ref=e23]
+        - image
+        - StaticText "Locais"
+      - button "Divisões" [ref=e24]
+        - image
+        - StaticText "Divisões"
+      - button "Funções" [ref=e25]
+        - image
+        - StaticText "Funções"
+      - button "Equipes" [ref=e26]
+        - image
+        - StaticText "Equipes"
+      - button "Status" [ref=e27]
+        - image
+        - StaticText "Status"
+      - button "Horarios de Turno" [ref=e28]
+        - image
+        - StaticText "Horarios de Turno"
+      - button "Opcoes de Dia" [ref=e29]
+        - image
+        - StaticText "Opcoes de Dia"
+      - button "Categorias Produtividade" [ref=e30]
+        - image
+        - StaticText "Categorias Produtividade"
+      - button "Metas Produtividade" [ref=e31]
+        - image
+        - StaticText "Metas Produtividade"
+      - button "Logo da Empresa" [ref=e32]
+        - image
+        - StaticText "Logo da Empresa"
+      - button "Manutencao Fabrica" [ref=e33]
+        - image
+        - StaticText "Manutencao Fabrica"
+      - button "Performance Aderencia" [ref=e34]
+        - image
+        - StaticText "Performance Aderencia"
+      - button "Fornecedores" [ref=e35]
+        - image
+        - StaticText "Fornecedores"
+      - button "Dados de Refugo" [ref=e36]
+        - image
+        - StaticText "Dados de Refugo"
+      - button "Motivos de Refugo" [ref=e37]
+        - image
+        - StaticText "Motivos de Refugo"
+      - button "Codigos Ausencia" [ref=e38]
+        - image
+        - StaticText "Codigos Ausencia"
+      - button "Kits" [ref=e39]
+        - image
+        - StaticText "Kits"
+      - button "Defeito Refugo" [ref=e40]
+        - image
+        - StaticText "Defeito Refugo"
+      - button "Feriados" [ref=e41]
+        - image
+        - StaticText "Feriados"
+      - button "Permissoes" [ref=e42]
+        - image
+        - StaticText "Permissoes"
+      - button "Usuarios Online" [ref=e43]
+        - image
+        - StaticText "Usuarios Online"
+  - main
+    - navigation
+      - button "Áreas" [ref=e44]
+      - button "Departamentos" [ref=e45]
+      - button "Setores" [ref=e46]
+      - button "Cargos" [ref=e47]
+    - heading "Setores" [level=3, ref=e8]
+    - button "Adicionar Setor" [ref=e9]
+      - image
+      - StaticText "Adicionar Setor"
+    - table
+      - rowgroup
+        - row
+          - columnheader "DESCRICAO" [ref=e208]
+          - columnheader "DESCRICAO CURTA" [ref=e209]
+          - columnheader "STATUS" [ref=e210]
+          - columnheader "ACOES" [ref=e211]
+      - row
+        - cell "Administrativo" [ref=e48]
+        - cell "Responsável pelas atividades administrativas e pelo suporte aos processos organizacionais da empresa." [ref=e49]
+        - cell "Ativo" [ref=e50]
+          - button "Ativo" [ref=e212]
+        - cell "Editar Excluir" [ref=e51]
+          - button "Editar" [ref=e213]
+            - image
+          - button "Excluir" [ref=e214]
+            - image
+      - row
+        - cell "Códigos do Produto (0)" [ref=e52]
+          - button "Códigos do Produto (0)" [ref=e215]
+            - image
+            - image
+            - StaticText "Códigos do Produto ("
+            - StaticText "0"
+            - StaticText ")"
+      - row
+        - cell "Almoxarifado" [ref=e53]
+        - cell "Responsável pelo armazenamento, controle e distribuição de materiais e insumos." [ref=e54]
+        - cell "Ativo" [ref=e55]
+          - button "Ativo" [ref=e216]
+        - cell "Editar Excluir" [ref=e56]
+          - button "Editar" [ref=e217]
+            - image
+          - button "Excluir" [ref=e218]
+            - image
+      - row
+        - cell "Códigos do Produto (0)" [ref=e57]
+          - button "Códigos do Produto (0)" [ref=e219]
+            - image
+            - image
+            - StaticText "Códigos do Produto ("
+            - StaticText "0"
+            - StaticText ")"
+      - row
+        - cell "Cola por Colaborador" [ref=e58]
+        - cell "-" [ref=e59]
+        - cell "Ativo" [ref=e60]
+          - button "Ativo" [ref=e220]
+        - cell "Editar Excluir" [ref=e61]
+          - button "Editar" [ref=e221]
+            - image
+          - button "Excluir" [ref=e222]
+            - image
+      - row
+        - cell "Códigos do Produto (0)" [ref=e62]
+          - button "Códigos do Produto (0)" [ref=e223]
+            - image
+            - image
+            - StaticText "Códigos do Produto ("
+            - StaticText "0"
+            - StaticText ")"
+      - row
+        - cell "Compras" [ref=e63]
+        - cell "Responsável pela aquisição de materiais, produtos e serviços necessários para a operação da empresa." [ref=e64]
+        - cell "Ativo" [ref=e65]
+          - button "Ativo" [ref=e224]
+        - cell "Editar Excluir" [ref=e66]
+          - button "Editar" [ref=e225]
+            - image
+          - button "Excluir" [ref=e226]
+            - image
+      - row
+        - cell "Códigos do Produto (0)" [ref=e67]
+          - button "Códigos do Produto (0)" [ref=e227]
+            - image
+            - image
+            - StaticText "Códigos do Produto ("
+            - StaticText "0"
+            - StaticText ")"
+      - row
+        - cell "Corte" [ref=e68]
+        - cell "Responsável pelo corte de matérias-primas conforme especificações de produção." [ref=e69]
+        - cell "Ativo" [ref=e70]
+          - button "Ativo" [ref=e228]
+        - cell "Editar Excluir" [ref=e71]
+          - button "Editar" [ref=e229]
+            - image
+          - button "Excluir" [ref=e230]
+            - image
+      - row
+        - cell "Códigos do Produto (0)" [ref=e72]
+          - button "Códigos do Produto (0)" [ref=e231]
+            - image
+            - image
+            - StaticText "Códigos do Produto ("
+            - StaticText "0"
+            - StaticText ")"
+      - row
+        - cell "Costura" [ref=e73]
+        - cell "Responsável pela confecção e montagem dos produtos por meio dos processos de costura." [ref=e74]
+        - cell "Ativo" [ref=e75]
+          - button "Ativo" [ref=e232]
+        - cell "Editar Excluir" [ref=e76]
+          - button "Editar" [ref=e233]
+            - image
+          - button "Excluir" [ref=e234]
+            - image
+      - row
+        - cell "Códigos do Produto (0)" [ref=e77]
+          - button "Códigos do Produto (0)" [ref=e235]
+            - image
+            - image
+            - StaticText "Códigos do Produto ("
+            - StaticText "0"
+            - StaticText ")"
+      - row
+        - cell "Dobra" [ref=e78]
+        - cell "Responsável pela dobra, preparação e organização de materiais e produtos durante o processo produtivo." [ref=e79]
+        - cell "Ativo" [ref=e80]
+          - button "Ativo" [ref=e236]
+        - cell "Editar Excluir" [ref=e81]
+          - button "Editar" [ref=e237]
+            - image
+          - button "Excluir" [ref=e238]
+            - image
+      - row
+        - cell "Códigos do Produto (0)" [ref=e82]
+          - button "Códigos do Produto (0)" [ref=e239]
+            - image
+            - image
+            - StaticText "Códigos do Produto ("
+            - StaticText "0"
+            - StaticText ")"
+      - row
+        - cell "Dobra(Embalagem)" [ref=e83]
+        - cell "-" [ref=e84]
+        - cell "Ativo" [ref=e85]
+          - button "Ativo" [ref=e240]
+        - cell "Editar Excluir" [ref=e86]
+          - button "Editar" [ref=e241]
+            - image
+          - button "Excluir" [ref=e242]
+            - image
+      - row
+        - cell "Códigos do Produto (0)" [ref=e87]
+          - button "Códigos do Produto (0)" [ref=e243]
+            - image
+            - image
+            - StaticText "Códigos do Produto ("
+            - StaticText "0"
+            - StaticText ")"
+      - row
+        - cell "Dobra(Revisão)" [ref=e88]
+        - cell "-" [ref=e89]
+        - cell "Ativo" [ref=e90]
+          - button "Ativo" [ref=e244]
+        - cell "Editar Excluir" [ref=e91]
+          - button "Editar" [ref=e245]
+            - image
+          - button "Excluir" [ref=e246]
+            - image
+      - row
+        - cell "Códigos do Produto (0)" [ref=e92]
+          - button "Códigos do Produto (0)" [ref=e247]
+            - image
+            - image
+            - StaticText "Códigos do Produto ("
+            - StaticText "0"
+            - StaticText ")"
+      - row
+        - cell "Embalagem Estéril" [ref=e93]
+        - cell "Responsável pela embalagem de produtos em ambiente controlado, garantindo os requisitos de esterilidade." [ref=e94]
+        - cell "Ativo" [ref=e95]
+          - button "Ativo" [ref=e248]
+        - cell "Editar Excluir" [ref=e96]
+          - button "Editar" [ref=e249]
+            - image
+          - button "Excluir" [ref=e250]
+            - image
+      - row
+        - cell "Códigos do Produto (0)" [ref=e97]
+          - button "Códigos do Produto (0)" [ref=e251]
+            - image
+            - image
+            - StaticText "Códigos do Produto ("
+            - StaticText "0"
+            - StaticText ")"
+      - row
+        - cell "Embalagem Não Estéril" [ref=e98]
+        - cell "Responsável pela embalagem de produtos que não exigem processo de esterilização." [ref=e99]
+        - cell "Ativo" [ref=e100]
+          - button "Ativo" [ref=e252]
+        - cell "Editar Excluir" [ref=e101]
+          - button "Editar" [ref=e253]
+            - image
+          - button "Excluir" [ref=e254]
+            - image
+      - row
+        - cell "Códigos do Produto (0)" [ref=e102]
+          - button "Códigos do Produto (0)" [ref=e255]
+            - image
+            - image
+            - StaticText "Códigos do Produto ("
+            - StaticText "0"
+            - StaticText ")"
+      - row
+        - cell "Engenharia" [ref=e103]
+        - cell "Responsável pelo desenvolvimento, melhoria e suporte técnico dos processos e produtos." [ref=e104]
+        - cell "Ativo" [ref=e105]
+          - button "Ativo" [ref=e256]
+        - cell "Editar Excluir" [ref=e106]
+          - button "Editar" [ref=e257]
+            - image
+          - button "Excluir" [ref=e258]
+            - image
+      - row
+        - cell "Códigos do Produto (0)" [ref=e107]
+          - button "Códigos do Produto (0)" [ref=e259]
+            - image
+            - image
+            - StaticText "Códigos do Produto ("
+            - StaticText "0"
+            - StaticText ")"
+      - row
+        - cell "Etiquetagem" [ref=e108]
+        - cell "-" [ref=e109]
+        - cell "Ativo" [ref=e110]
+          - button "Ativo" [ref=e260]
+        - cell "Editar Excluir" [ref=e111]
+          - button "Editar" [ref=e261]
+            - image
+          - button "Excluir" [ref=e262]
+            - image
+      - row
+        - cell "Códigos do Produto (0)" [ref=e112]
+          - button "Códigos do Produto (0)" [ref=e263]
+            - image
+            - image
+            - StaticText "Códigos do Produto ("
+            - StaticText "0"
+            - StaticText ")"
+      - row
+        - cell "Etiquetagem Estéril" [ref=e113]
+        - cell "-" [ref=e114]
+        - cell "Ativo" [ref=e115]
+          - button "Ativo" [ref=e264]
+        - cell "Editar Excluir" [ref=e116]
+          - button "Editar" [ref=e265]
+            - image
+          - button "Excluir" [ref=e266]
+            - image
+      - row
+        - cell "Códigos do Produto (0)" [ref=e117]
+          - button "Códigos do Produto (0)" [ref=e267]
+            - image
+            - image
+            - StaticText "Códigos do Produto ("
+            - StaticText "0"
+            - StaticText ")"
+      - row
+        - cell "Expedição" [ref=e118]
+        - cell "Responsável pela separação, conferência e envio de produtos aos clientes." [ref=e119]
+        - cell "Ativo" [ref=e120]
+          - button "Ativo" [ref=e268]
+        - cell "Editar Excluir" [ref=e121]
+          - button "Editar" [ref=e269]
+            - image
+          - button "Excluir" [ref=e270]
+            - image
+      - row
+        - cell "Códigos do Produto (0)" [ref=e122]
+          - button "Códigos do Produto (0)" [ref=e271]
+            - image
+            - image
+            - StaticText "Códigos do Produto ("
+            - StaticText "0"
+            - StaticText ")"
+      - row
+        - cell "Financeiro" [ref=e123]
+        - cell "Responsável pelo controle financeiro, contas a pagar, contas a receber e fluxo de caixa." [ref=e124]
+        - cell "Ativo" [ref=e125]
+          - button "Ativo" [ref=e272]
+        - cell "Editar Excluir" [ref=e126]
+          - button "Editar" [ref=e273]
+            - image
+          - button "Excluir" [ref=e274]
+            - image
+      - row
+        - cell "Códigos do Produto (0)" [ref=e127]
+          - button "Códigos do Produto (0)" [ref=e275]
+            - image
+            - image
+            - StaticText "Códigos do Produto ("
+            - StaticText "0"
+            - StaticText ")"
+      - row
+        - cell "Jovem Aprendiz" [ref=e128]
+        - cell "Área destinada ao desenvolvimento profissional e capacitação de aprendizes." [ref=e129]
+        - cell "Ativo" [ref=e130]
+          - button "Ativo" [ref=e276]
+        - cell "Editar Excluir" [ref=e131]
+          - button "Editar" [ref=e277]
+            - image
+          - button "Excluir" [ref=e278]
+            - image
+      - row
+        - cell "Códigos do Produto (0)" [ref=e132]
+          - button "Códigos do Produto (0)" [ref=e279]
+            - image
+            - image
+            - StaticText "Códigos do Produto ("
+            - StaticText "0"
+            - StaticText ")"
+      - row
+        - cell "Logística" [ref=e133]
+        - cell "Responsável pela movimentação, armazenamento e transporte de materiais e produtos." [ref=e134]
+        - cell "Ativo" [ref=e135]
+          - button "Ativo" [ref=e280]
+        - cell "Editar Excluir" [ref=e136]
+          - button "Editar" [ref=e281]
+            - image
+          - button "Excluir" [ref=e282]
+            - image
+      - row
+        - cell "Códigos do Produto (0)" [ref=e137]
+          - button "Códigos do Produto (0)" [ref=e283]
+            - image
+            - image
+            - StaticText "Códigos do Produto ("
+            - StaticText "0"
+            - StaticText ")"
+      - row
+        - cell "Manutenção" [ref=e138]
+        - cell "Responsável pela conservação, reparo e funcionamento de equipamentos e instalações." [ref=e139]
+        - cell "Ativo" [ref=e140]
+          - button "Ativo" [ref=e284]
+        - cell "Editar Excluir" [ref=e141]
+          - button "Editar" [ref=e285]
+            - image
+          - button "Excluir" [ref=e286]
+            - image
+      - row
+        - cell "Códigos do Produto (0)" [ref=e142]
+          - button "Códigos do Produto (0)" [ref=e287]
+            - image
+            - image
+            - StaticText "Códigos do Produto ("
+            - StaticText "0"
+            - StaticText ")"
+      - row
+        - cell "Marketing" [ref=e143]
+        - cell "Responsável pela comunicação, divulgação da marca e ações de marketing." [ref=e144]
+        - cell "Ativo" [ref=e145]
+          - button "Ativo" [ref=e288]
+        - cell "Editar Excluir" [ref=e146]
+          - button "Editar" [ref=e289]
+            - image
+          - button "Excluir" [ref=e290]
+            - image
+      - row
+        - cell "Códigos do Produto (0)" [ref=e147]
+          - button "Códigos do Produto (0)" [ref=e291]
+            - image
+            - image
+            - StaticText "Códigos do Produto ("
+            - StaticText "0"
+            - StaticText ")"
+      - row
+        - cell "Obra" [ref=e148]
+        - cell "Responsável pela execução de atividades relacionadas a obras e infraestrutura." [ref=e149]
+        - cell "Ativo" [ref=e150]
+          - button "Ativo" [ref=e292]
+        - cell "Editar Excluir" [ref=e151]
+          - button "Editar" [ref=e293]
+            - image
+          - button "Excluir" [ref=e294]
+            - image
+      - row
+        - cell "Códigos do Produto (0)" [ref=e152]
+          - button "Códigos do Produto (0)" [ref=e295]
+            - image
+            - image
+            - StaticText "Códigos do Produto ("
+            - StaticText "0"
+            - StaticText ")"
+      - row
+        - cell "Pacote" [ref=e153]
+        - cell "Responsável pela preparação, agrupamento e organização de produtos para as etapas seguintes do processo produtivo." [ref=e154]
+        - cell "Ativo" [ref=e155]
+          - button "Ativo" [ref=e296]
+        - cell "Editar Excluir" [ref=e156]
+          - button "Editar" [ref=e297]
+            - image
+          - button "Excluir" [ref=e298]
+            - image
+      - row
+        - cell "Códigos do Produto (0)" [ref=e157]
+          - button "Códigos do Produto (0)" [ref=e299]
+            - image
+            - image
+            - StaticText "Códigos do Produto ("
+            - StaticText "0"
+            - StaticText ")"
+      - row
+        - cell "Pacote Auxiliar" [ref=e158]
+        - cell "-" [ref=e159]
+        - cell "Ativo" [ref=e160]
+          - button "Ativo" [ref=e300]
+        - cell "Editar Excluir" [ref=e161]
+          - button "Editar" [ref=e301]
+            - image
+          - button "Excluir" [ref=e302]
+            - image
+      - row
+        - cell "Códigos do Produto (0)" [ref=e162]
+          - button "Códigos do Produto (0)" [ref=e303]
+            - image
+            - image
+            - StaticText "Códigos do Produto ("
+            - StaticText "0"
+            - StaticText ")"
+      - row
+        - cell "Pacote Flutuantes" [ref=e163]
+        - cell "-" [ref=e164]
+        - cell "Ativo" [ref=e165]
+          - button "Ativo" [ref=e304]
+        - cell "Editar Excluir" [ref=e166]
+          - button "Editar" [ref=e305]
+            - image
+          - button "Excluir" [ref=e306]
+            - image
+      - row
+        - cell "Códigos do Produto (0)" [ref=e167]
+          - button "Códigos do Produto (0)" [ref=e307]
+            - image
+            - image
+            - StaticText "Códigos do Produto ("
+            - StaticText "0"
+            - StaticText ")"
+      - row
+        - cell "Pacote Kit" [ref=e168]
+        - cell "-" [ref=e169]
+        - cell "Ativo" [ref=e170]
+          - button "Ativo" [ref=e308]
+        - cell "Editar Excluir" [ref=e171]
+          - button "Editar" [ref=e309]
+            - image
+          - button "Excluir" [ref=e310]
+            - image
+      - row
+        - cell "Códigos do Produto (0)" [ref=e172]
+          - button "Códigos do Produto (0)" [ref=e311]
+            - image
+            - image
+            - StaticText "Códigos do Produto ("
+            - StaticText "0"
+            - StaticText ")"
+      - row
+        - cell "Pacote Oftalmo" [ref=e173]
+        - cell "-" [ref=e174]
+        - cell "Ativo" [ref=e175]
+          - button "Ativo" [ref=e312]
+        - cell "Editar Excluir" [ref=e176]
+          - button "Editar" [ref=e313]
+            - image
+          - button "Excluir" [ref=e314]
+            - image
+      - row
+        - cell "Códigos do Produto (0)" [ref=e177]
+          - button "Códigos do Produto (0)" [ref=e315]
+            - image
+            - image
+            - StaticText "Códigos do Produto ("
+            - StaticText "0"
+            - StaticText ")"
+      - row
+        - cell "PCP" [ref=e178]
+        - cell "Responsável pelo Planejamento e Controle da Produção, garantindo o alinhamento entre demanda e capacidade produtiva." [ref=e179]
+        - cell "Ativo" [ref=e180]
+          - button "Ativo" [ref=e316]
+        - cell "Editar Excluir" [ref=e181]
+          - button "Editar" [ref=e317]
+            - image
+          - button "Excluir" [ref=e318]
+            - image
+      - row
+        - cell "Códigos do Produto (0)" [ref=e182]
+          - button "Códigos do Produto (0)" [ref=e319]
+            - image
+            - image
+            - StaticText "Códigos do Produto ("
+            - StaticText "0"
+            - StaticText ")"
+      - row
+        - cell "Qualidade" [ref=e183]
+        - cell "Responsável pelo controle, monitoramento e garantia da qualidade dos produtos e processos." [ref=e184]
+        - cell "Ativo" [ref=e185]
+          - button "Ativo" [ref=e320]
+        - cell "Editar Excluir" [ref=e186]
+          - button "Editar" [ref=e321]
+            - image
+          - button "Excluir" [ref=e322]
+            - image
+      - row
+        - cell "Códigos do Produto (0)" [ref=e187]
+          - button "Códigos do Produto (0)" [ref=e323]
+            - image
+            - image
+            - StaticText "Códigos do Produto ("
+            - StaticText "0"
+            - StaticText ")"
+      - row
+        - cell "RH" [ref=e188]
+        - cell "Responsável pela gestão de pessoas, recrutamento, seleção, treinamento e desenvolvimento." [ref=e189]
+        - cell "Ativo" [ref=e190]
+          - button "Ativo" [ref=e324]
+        - cell "Editar Excluir" [ref=e191]
+          - button "Editar" [ref=e325]
+            - image
+          - button "Excluir" [ref=e326]
+            - image
+      - row
+        - cell "Códigos do Produto (0)" [ref=e192]
+          - button "Códigos do Produto (0)" [ref=e327]
+            - image
+            - image
+            - StaticText "Códigos do Produto ("
+            - StaticText "0"
+            - StaticText ")"
+      - row
+        - cell "Serviços Gerais" [ref=e193]
+        - cell "Responsável pela limpeza, conservação e apoio às atividades operacionais da empresa." [ref=e194]
+        - cell "Ativo" [ref=e195]
+          - button "Ativo" [ref=e328]
+        - cell "Editar Excluir" [ref=e196]
+          - button "Editar" [ref=e329]
+            - image
+          - button "Excluir" [ref=e330]
+            - image
+      - row
+        - cell "Códigos do Produto (0)" [ref=e197]
+          - button "Códigos do Produto (0)" [ref=e331]
+            - image
+            - image
+            - StaticText "Códigos do Produto ("
+            - StaticText "0"
+            - StaticText ")"
+      - row
+        - cell "TI" [ref=e198]
+        - cell "Responsável pela gestão da infraestrutura tecnológica, sistemas e suporte aos usuários." [ref=e199]
+        - cell "Ativo" [ref=e200]
+          - button "Ativo" [ref=e332]
+        - cell "Editar Excluir" [ref=e201]
+          - button "Editar" [ref=e333]
+            - image
+          - button "Excluir" [ref=e334]
+            - image
+      - row
+        - cell "Códigos do Produto (0)" [ref=e202]
+          - button "Códigos do Produto (0)" [ref=e335]
+            - image
+            - image
+            - StaticText "Códigos do Produto ("
+            - StaticText "0"
+            - StaticText ")"
+      - row
+        - cell "Vendas" [ref=e203]
+        - cell "Responsável pela comercialização de produtos, atendimento aos clientes e geração de negócios." [ref=e204]
+        - cell "Ativo" [ref=e205]
+          - button "Ativo" [ref=e336]
+        - cell "Editar Excluir" [ref=e206]
+          - button "Editar" [ref=e337]
+            - image
+          - button "Excluir" [ref=e338]
+            - image
+      - row
+        - cell "Códigos do Produto (0)" [ref=e207]
+          - button "Códigos do Produto (0)" [ref=e339]
+            - image
+            - image
+            - StaticText "Códigos do Produto ("
+            - StaticText "0"
+            - StaticText ")"
+    - StaticText "Total: "
+    - StaticText "32"
+    - StaticText " "
+    - StaticText "itens"
+    - StaticText " cadastrado"
+    - StaticText "s"

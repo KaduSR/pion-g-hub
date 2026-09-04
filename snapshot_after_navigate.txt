@@ -1,0 +1,24 @@
+- generic [ref=e1] clickable [onclick]
+  - generic
+    - generic
+    - generic
+      - image
+      - heading "Pion G Plus" [level=1, ref=e2]
+      - paragraph
+        - StaticText "Sistema de Gestao Empresarial"
+      - form
+        - LabelText
+          - StaticText "E-MAIL"
+        - generic
+          - image
+          - textbox "seu@email.com" [required, ref=e6]
+        - LabelText
+          - StaticText "SENHA"
+        - generic
+          - image
+          - textbox "••••••••" [required, ref=e7]
+        - checkbox "Lembrar-me" [checked=false, ref=e3]
+        - link "Esqueceu a senha?" [ref=e4]
+        - button "Entrar" [ref=e5]
+      - paragraph
+        - StaticText "Pion G Plus v1.0"

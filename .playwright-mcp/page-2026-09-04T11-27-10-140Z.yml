@@ -1,0 +1,20 @@
+- generic [ref=f1e9]:
+  - generic [ref=f1e10]:
+    - heading "Pion G Plus" [level=1] [ref=f1e16]
+    - paragraph [ref=f1e17]: Sistema de Gestao Empresarial
+  - generic [ref=f1e18]:
+    - generic [ref=f1e20]:
+      - generic [ref=f1e21]:
+        - generic [ref=f1e22]: E-mail
+        - textbox "seu@email.com" [ref=f1e24]
+      - generic [ref=f1e25]:
+        - generic [ref=f1e26]: Senha
+        - textbox "••••••••" [ref=f1e28]
+      - generic [ref=f1e29]:
+        - generic [ref=f1e30]:
+          - checkbox "Lembrar-me" [ref=f1e31]
+          - generic [ref=f1e32]: Lembrar-me
+        - link "Esqueceu a senha?" [ref=f1e33] [cursor=pointer]:
+          - /url: "#"
+      - button "Entrar" [ref=f1e34] [cursor=pointer]
+    - paragraph [ref=f1e36]: Pion G Plus v1.0

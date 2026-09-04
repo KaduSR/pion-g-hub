@@ -1,0 +1,9 @@
+{
+  "projectName": "PionG Browser Mapper",
+  "projectLanguage": "pt-BR",
+  "outputFolder": "_reversa_sdd",
+  "engines": ["claude-code"],
+  "analysisType": "browser-navigation",
+  "targetSystem": "https://piong.org",
+  "sourceRepo": "https://github.com/sandeco/reversa"
+}

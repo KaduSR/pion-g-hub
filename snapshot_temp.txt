@@ -1,0 +1,439 @@
+- generic [ref=e1] clickable [onclick]
+  - navigation
+    - heading "Pion G Plus" [level=1, ref=e2]
+    - button "Matriz" [ref=e3]
+      - image
+      - StaticText "Matriz"
+    - button "9+" [ref=e4]
+      - image
+      - StaticText "9+"
+    - StaticText "NICOLAS SANTOS"
+    - StaticText "Assistente de Front-End Júnior"
+    - button "Trocar Senha" [ref=e5]
+      - image
+    - button "Sair" [ref=e6]
+      - image
+      - StaticText "Sair"
+  - complementary
+    - button "Recolher menu" [ref=e7]
+      - image
+    - navigation
+      - button "Dashboard" [ref=e9]
+        - image
+        - StaticText "Dashboard"
+      - button "Colaboradores" [ref=e10]
+        - image
+        - StaticText "Colaboradores"
+      - button "Escala do Mês" [ref=e11]
+        - image
+        - StaticText "Escala do Mês"
+      - button "Controle de Ponto" [ref=e12]
+        - image
+        - StaticText "Controle de Ponto"
+      - button "Produtividade Setor" [ref=e13]
+        - image
+        - StaticText "Produtividade Setor"
+      - button "Absenteísmo" [ref=e14]
+        - image
+        - StaticText "Absenteísmo"
+      - button "Controle Portaria" [ref=e15]
+        - image
+        - StaticText "Controle Portaria"
+      - button "Validação" [ref=e16]
+        - image
+        - StaticText "Validação"
+      - button "Quadro de Avisos" [ref=e17]
+        - image
+        - StaticText "Quadro de Avisos"
+      - button "OS Manutencao" [ref=e18]
+        - image
+        - StaticText "OS Manutencao"
+        - image
+      - button "Logistica" [ref=e19]
+        - image
+        - StaticText "Logistica"
+        - image
+      - button "Cadastros" [ref=e20]
+        - image
+        - StaticText "Cadastros"
+        - image
+      - button "Feriados" [ref=e21]
+        - image
+        - StaticText "Feriados"
+      - button "Permissoes" [ref=e22]
+        - image
+        - StaticText "Permissoes"
+      - button "Usuarios Online" [ref=e23]
+        - image
+        - StaticText "Usuarios Online"
+  - main
+    - heading "Dashboard Gerencial" [level=2, ref=e8]
+    - paragraph
+      - StaticText "Visao geral do sistema"
+    - group
+      - button "Mover para cima" [disabled, ref=e30]
+        - image
+      - image
+      - button "Mover para baixo" [ref=e31]
+        - image
+      - image
+      - paragraph
+        - StaticText "0"
+      - paragraph
+        - StaticText "Total Planejado"
+      - image
+      - paragraph
+        - StaticText "0"
+      - paragraph
+        - StaticText "Total Realizado"
+      - image
+      - StaticText "RED"
+      - paragraph
+        - StaticText "0%"
+      - paragraph
+        - StaticText "Produtividade Geral"
+      - image
+      - paragraph
+        - StaticText "0"
+      - paragraph
+        - StaticText "Gap Geral"
+      - image
+      - paragraph
+        - StaticText "0"
+      - paragraph
+        - StaticText "Dias Criticos"
+      - image
+      - paragraph
+        - StaticText "-"
+      - paragraph
+        - StaticText "Top Colaborador"
+    - group
+      - button "Mover para cima" [ref=e32]
+        - image
+      - image
+      - button "Mover para baixo" [ref=e33]
+        - image
+      - image
+      - heading "Status dos Colaboradores" [level=3, ref=e24]
+      - image
+      - StaticText "Ativos"
+      - paragraph
+        - StaticText "475"
+      - image
+      - StaticText "Em Ferias"
+      - paragraph
+        - StaticText "1"
+      - image
+      - StaticText "Afastados"
+      - paragraph
+        - StaticText "0"
+      - image
+      - StaticText "Suspensos"
+      - paragraph
+        - StaticText "0"
+      - image
+      - StaticText "Desligados"
+      - paragraph
+        - StaticText "17"
+    - group
+      - button "Mover para cima" [ref=e34]
+        - image
+      - image
+      - button "Mover para baixo" [ref=e35]
+        - image
+      - image
+      - heading "Manutencao Fabrica" [level=3, ref=e25]
+      - paragraph
+        - StaticText "Chamados de manutencao"
+      - button "Ver todos" [ref=e26]
+      - generic
+        - generic
+          - image
+          - StaticText "Em Aberto"
+          - paragraph
+            - StaticText "30"
+          - paragraph
+            - StaticText "Aguardando resolucao"
+      - generic
+        - generic
+          - image
+          - StaticText "Total"
+          - paragraph
+            - StaticText "201"
+          - paragraph
+            - StaticText "Chamados registrados"
+      - generic
+        - generic
+          - image
+          - StaticText "Concluidos"
+          - paragraph
+            - StaticText "165"
+          - paragraph
+            - StaticText "82% resolvidos"
+    - group
+      - button "Mover para cima" [ref=e36]
+        - image
+      - image
+      - button "Mover para baixo" [ref=e37]
+        - image
+      - image
+      - heading "Aniversariantes" [level=3, ref=e27]
+      - button [ref=e28]
+        - image
+      - StaticText "Setembro"
+      - button [ref=e29]
+        - image
+      - image "MADALENA DE SOUZA LOURENCO ALVES"
+      - paragraph
+        - StaticText "MADALENA DE SOUZA LOURENCO ALVES"
+      - paragraph
+        - StaticText "01 de setembro"
+      - image
+      - image "ALISSON FERREIRA RAYMUNDO"
+      - paragraph
+        - StaticText "ALISSON FERREIRA RAYMUNDO"
+      - paragraph
+        - StaticText "01 de setembro"
+      - image
+      - StaticText "A"
+      - paragraph
+        - StaticText "ANA PAULA DE SOUZA SANTOS"
+      - paragraph
+        - StaticText "03 de setembro"
+      - image
+      - StaticText "J"
+      - paragraph
+        - StaticText "JOSE RICARDO GARCIA DA SILVA"
+      - paragraph
+        - StaticText "03 de setembro"
+      - image
+      - StaticText "L"
+      - paragraph
+        - StaticText "LUAN MIGUEL DE PAULA VICENTE"
+      - paragraph
+        - StaticText "03 de setembro"
+      - image
+      - StaticText "I"
+      - paragraph
+        - StaticText "ISAAC DA SILVA NICODEMO"
+      - paragraph
+        - StaticText "04 de setembro"
+      - image
+      - StaticText "P"
+      - paragraph
+        - StaticText "PEDRO HENRIQUE BARBOSA VARGAS"
+      - paragraph
+        - StaticText "04 de setembro"
+      - image
+      - StaticText "P"
+      - paragraph
+        - StaticText "PEDRO HENRIQUE REZENDE DE SOUZA"
+      - paragraph
+        - StaticText "06 de setembro"
+      - image
+      - StaticText "W"
+      - paragraph
+        - StaticText "WENDER RELYSON DE SOUZA MARCIANO"
+      - paragraph
+        - StaticText "06 de setembro"
+      - image
+      - StaticText "D"
+      - paragraph
+        - StaticText "DOUGLAS RABELLO DA SILVA"
+      - paragraph
+        - StaticText "07 de setembro"
+      - image
+      - StaticText "R"
+      - paragraph
+        - StaticText "REGINALDO DOS SANTOS SILVA"
+      - paragraph
+        - StaticText "07 de setembro"
+      - image
+      - StaticText "R"
+      - paragraph
+        - StaticText "RODRIGO AMANCIO DOS SANTOS"
+      - paragraph
+        - StaticText "09 de setembro"
+      - image
+      - StaticText "G"
+      - paragraph
+        - StaticText "GUILHERME SILVA SANTOS"
+      - paragraph
+        - StaticText "10 de setembro"
+      - image
+      - StaticText "A"
+      - paragraph
+        - StaticText "ANA CLARA SOUZA DE CARVALHO"
+      - paragraph
+        - StaticText "12 de setembro"
+      - image
+      - image "JOSIANE RODRIGUES DE ALMEIDA"
+      - paragraph
+        - StaticText "JOSIANE RODRIGUES DE ALMEIDA"
+      - paragraph
+        - StaticText "13 de setembro"
+      - image
+      - image "ROBSON CARDOZO DA SILVA"
+      - paragraph
+        - StaticText "ROBSON CARDOZO DA SILVA"
+      - paragraph
+        - StaticText "14 de setembro"
+      - image
+      - image "JOSEANE TORRES DA SILVA"
+      - paragraph
+        - StaticText "JOSEANE TORRES DA SILVA"
+      - paragraph
+        - StaticText "14 de setembro"
+      - image
+      - StaticText "M"
+      - paragraph
+        - StaticText "MATHEUS DA SILVA GORITO TEIXEIRA"
+      - paragraph
+        - StaticText "14 de setembro"
+      - image
+      - image "ROBERTA ESTEVES RODRIGHERI"
+      - paragraph
+        - StaticText "ROBERTA ESTEVES RODRIGHERI"
+      - paragraph
+        - StaticText "14 de setembro"
+      - image
+      - StaticText "P"
+      - paragraph
+        - StaticText "PEDRO HENRIQUE VIEIRA FERNANDES DA CRUZ"
+      - paragraph
+        - StaticText "15 de setembro"
+      - image
+      - StaticText "W"
+      - paragraph
+        - StaticText "WESLEY BRUNO MARIANO MURAT"
+      - paragraph
+        - StaticText "16 de setembro"
+      - image
+      - StaticText "R"
+      - paragraph
+        - StaticText "RICARDO JOSE FAGUNDES DE SOUZA CARVALHO"
+      - paragraph
+        - StaticText "18 de setembro"
+      - image
+      - StaticText "A"
+      - paragraph
+        - StaticText "ADRIANO VENTURA DE SOUZA"
+      - paragraph
+        - StaticText "19 de setembro"
+      - image
+      - StaticText "L"
+      - paragraph
+        - StaticText "LUIZ FELIPE FRAGA DOS SANTOS"
+      - paragraph
+        - StaticText "19 de setembro"
+      - image
+      - StaticText "L"
+      - paragraph
+        - StaticText "LUIZ CARLOS DA SILVA SANTOS"
+      - paragraph
+        - StaticText "19 de setembro"
+      - image
+      - StaticText "M"
+      - paragraph
+        - StaticText "MARCO AURELIO BAKER"
+      - paragraph
+        - StaticText "20 de setembro"
+      - image
+      - image "CARLA DA SILVA MARTINS"
+      - paragraph
+        - StaticText "CARLA DA SILVA MARTINS"
+      - paragraph
+        - StaticText "21 de setembro"
+      - image
+      - image "DENISE APARECIDA DA COSTA"
+      - paragraph
+        - StaticText "DENISE APARECIDA DA COSTA"
+      - paragraph
+        - StaticText "21 de setembro"
+      - image
+      - StaticText "M"
+      - paragraph
+        - StaticText "MARIA TERESA SANTOS DA SILVA"
+      - paragraph
+        - StaticText "22 de setembro"
+      - image
+      - StaticText "R"
+      - paragraph
+        - StaticText "RICARDO DE OLIVEIRA NOGUEIRA JUNIOR"
+      - paragraph
+        - StaticText "22 de setembro"
+      - image
+      - StaticText "N"
+      - paragraph
+        - StaticText "NICOLAS DE CARVALHO SILVA PEREIRA"
+      - paragraph
+        - StaticText "23 de setembro"
+      - image
+      - StaticText "L"
+      - paragraph
+        - StaticText "LEILIANE MACHADO RABELLO CADIZ"
+      - paragraph
+        - StaticText "25 de setembro"
+      - image
+      - image "RENILDA MILITAO DE OLIVEIRA"
+      - paragraph
+        - StaticText "RENILDA MILITAO DE OLIVEIRA"
+      - paragraph
+        - StaticText "25 de setembro"
+      - image
+      - StaticText "S"
+      - paragraph
+        - StaticText "SAMARA DA SILVA LOPES"
+      - paragraph
+        - StaticText "26 de setembro"
+      - image
+      - StaticText "C"
+      - paragraph
+        - StaticText "CAMILLA DAMIANA DE PAULA MARCOLINO"
+      - paragraph
+        - StaticText "27 de setembro"
+      - image
+      - StaticText "O"
+      - paragraph
+        - StaticText "OTAVIO COUTINHO DE ALMEIDA SOARES"
+      - paragraph
+        - StaticText "27 de setembro"
+      - image
+      - StaticText "A"
+      - paragraph
+        - StaticText "ANA LUIZA MACHADO VASCONCELLOS"
+      - paragraph
+        - StaticText "28 de setembro"
+      - image
+      - image "JENYFER PAIVA DA SILVA"
+      - paragraph
+        - StaticText "JENYFER PAIVA DA SILVA"
+      - paragraph
+        - StaticText "28 de setembro"
+      - image
+      - StaticText "C"
+      - paragraph
+        - StaticText "CINTIA MATOS DOS SANTOS"
+      - paragraph
+        - StaticText "30 de setembro"
+      - image
+    - group
+      - button "Mover para cima" [ref=e38]
+        - image
+      - image
+      - button "Mover para baixo" [disabled, ref=e39]
+        - image
+      - generic
+        - generic
+          - image
+          - heading "Ferias" [level=3, ref=e40]
+          - paragraph
+            - StaticText "0 colaboradores em ferias"
+          - button [ref=e41]
+            - image
+          - StaticText "Setembro"
+          - button [ref=e42]
+            - image
+          - image
+          - paragraph
+            - StaticText "Nenhum colaborador em ferias em Setembro"

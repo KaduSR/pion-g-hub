@@ -1,0 +1,182 @@
+- generic [ref=e1] clickable [onclick]
+  - navigation
+    - heading "Pion G Plus" [level=1, ref=e2]
+    - button "Matriz" [ref=e3]
+      - image
+      - StaticText "Matriz"
+    - button "9+" [ref=e4]
+      - image
+      - StaticText "9+"
+    - StaticText "NICOLAS SANTOS"
+    - StaticText "Assistente de Front-End Júnior"
+    - button "Trocar Senha" [ref=e5]
+      - image
+    - button "Sair" [ref=e6]
+      - image
+      - StaticText "Sair"
+  - complementary
+    - button "Recolher menu" [ref=e7]
+      - image
+    - navigation
+      - button "Dashboard" [ref=e12]
+        - image
+        - StaticText "Dashboard"
+      - button "Colaboradores" [ref=e13]
+        - image
+        - StaticText "Colaboradores"
+      - button "Escala do Mês" [ref=e14]
+        - image
+        - StaticText "Escala do Mês"
+      - button "Controle de Ponto" [ref=e15]
+        - image
+        - StaticText "Controle de Ponto"
+      - button "Produtividade Setor" [ref=e16]
+        - image
+        - StaticText "Produtividade Setor"
+      - button "Absenteísmo" [ref=e17]
+        - image
+        - StaticText "Absenteísmo"
+      - button "Controle Portaria" [ref=e18]
+        - image
+        - StaticText "Controle Portaria"
+      - button "Validação" [ref=e19]
+        - image
+        - StaticText "Validação"
+      - button "Quadro de Avisos" [ref=e20]
+        - image
+        - StaticText "Quadro de Avisos"
+      - button "OS Manutencao" [ref=e21]
+        - image
+        - StaticText "OS Manutencao"
+        - image
+      - button "Logistica" [ref=e22]
+        - image
+        - StaticText "Logistica"
+        - image
+      - button "Expedicao" [ref=e23]
+        - image
+        - StaticText "Expedicao"
+      - button "Gestao de Frete" [ref=e24]
+        - image
+        - StaticText "Gestao de Frete"
+      - button "Cadastros" [ref=e25]
+        - image
+        - StaticText "Cadastros"
+        - image
+      - button "Filiais" [ref=e26]
+        - image
+        - StaticText "Filiais"
+      - button "Locais" [ref=e27]
+        - image
+        - StaticText "Locais"
+      - button "Divisões" [ref=e28]
+        - image
+        - StaticText "Divisões"
+      - button "Funções" [ref=e29]
+        - image
+        - StaticText "Funções"
+      - button "Equipes" [ref=e30]
+        - image
+        - StaticText "Equipes"
+      - button "Status" [ref=e31]
+        - image
+        - StaticText "Status"
+      - button "Horarios de Turno" [ref=e32]
+        - image
+        - StaticText "Horarios de Turno"
+      - button "Opcoes de Dia" [ref=e33]
+        - image
+        - StaticText "Opcoes de Dia"
+      - button "Categorias Produtividade" [ref=e34]
+        - image
+        - StaticText "Categorias Produtividade"
+      - button "Metas Produtividade" [ref=e35]
+        - image
+        - StaticText "Metas Produtividade"
+      - button "Logo da Empresa" [ref=e36]
+        - image
+        - StaticText "Logo da Empresa"
+      - button "Manutencao Fabrica" [ref=e37]
+        - image
+        - StaticText "Manutencao Fabrica"
+      - button "Performance Aderencia" [ref=e38]
+        - image
+        - StaticText "Performance Aderencia"
+      - button "Fornecedores" [ref=e39]
+        - image
+        - StaticText "Fornecedores"
+      - button "Dados de Refugo" [ref=e40]
+        - image
+        - StaticText "Dados de Refugo"
+      - button "Motivos de Refugo" [ref=e41]
+        - image
+        - StaticText "Motivos de Refugo"
+      - button "Codigos Ausencia" [ref=e42]
+        - image
+        - StaticText "Codigos Ausencia"
+      - button "Kits" [ref=e43]
+        - image
+        - StaticText "Kits"
+      - button "Defeito Refugo" [ref=e44]
+        - image
+        - StaticText "Defeito Refugo"
+      - button "Feriados" [ref=e45]
+        - image
+        - StaticText "Feriados"
+      - button "Permissoes" [ref=e46]
+        - image
+        - StaticText "Permissoes"
+      - button "Usuarios Online" [ref=e47]
+        - image
+        - StaticText "Usuarios Online"
+  - main
+    - image
+    - heading "Historico de Acessos" [level=2, ref=e8]
+    - paragraph
+      - StaticText "Ultimos 30 dias"
+    - image
+    - StaticText "5"
+    - StaticText " online"
+    - button "Atualizar" [ref=e9]
+      - image
+    - generic
+      - image
+      - textbox "Buscar por nome ou email..." [ref=e48]
+    - button "Online" [ref=e10]
+      - image
+      - StaticText "Online"
+    - button "Todos" [ref=e11]
+      - image
+      - StaticText "Todos"
+    - generic
+      - StaticText "P"
+    - paragraph
+      - StaticText "PABLO ELIAS FARANI"
+    - image
+    - StaticText "Safari"
+    - StaticText "-"
+    - StaticText "Agora"
+    - generic
+      - StaticText "P"
+    - paragraph
+      - StaticText "PABLO ELIAS FARANI"
+    - image
+    - StaticText "Safari"
+    - StaticText "-"
+    - StaticText "Agora"
+    - generic
+      - StaticText "P"
+    - paragraph
+      - StaticText "PABLO ELIAS FARANI"
+    - image
+    - StaticText "Chrome"
+    - StaticText "-"
+    - StaticText "Agora"
+    - generic
+      - StaticText "P"
+    - paragraph
+      - StaticText "PABLO ELIAS FARANI"
+    - image
+    - StaticText "Chrome"
+    - StaticText "-"
+    - StaticText "Agora"

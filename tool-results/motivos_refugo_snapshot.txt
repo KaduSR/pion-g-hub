@@ -1,0 +1,175 @@
+- generic [ref=e1] clickable [onclick]
+  - navigation
+    - heading "Pion G Plus" [level=1, ref=e2]
+    - button "Matriz" [ref=e3]
+      - image
+      - StaticText "Matriz"
+    - button "9+" [ref=e4]
+      - image
+      - StaticText "9+"
+    - StaticText "NICOLAS SANTOS"
+    - StaticText "Assistente de Front-End Júnior"
+    - button "Trocar Senha" [ref=e5]
+      - image
+    - button "Sair" [ref=e6]
+      - image
+      - StaticText "Sair"
+  - complementary
+    - button "Recolher menu" [ref=e7]
+      - image
+    - navigation
+      - button "Dashboard" [ref=e13]
+        - image
+        - StaticText "Dashboard"
+      - button "Colaboradores" [ref=e14]
+        - image
+        - StaticText "Colaboradores"
+      - button "Escala do Mês" [ref=e15]
+        - image
+        - StaticText "Escala do Mês"
+      - button "Controle de Ponto" [ref=e16]
+        - image
+        - StaticText "Controle de Ponto"
+      - button "Produtividade Setor" [ref=e17]
+        - image
+        - StaticText "Produtividade Setor"
+      - button "Absenteísmo" [ref=e18]
+        - image
+        - StaticText "Absenteísmo"
+      - button "Controle Portaria" [ref=e19]
+        - image
+        - StaticText "Controle Portaria"
+      - button "Validação" [ref=e20]
+        - image
+        - StaticText "Validação"
+      - button "Quadro de Avisos" [ref=e21]
+        - image
+        - StaticText "Quadro de Avisos"
+      - button "OS Manutencao" [ref=e22]
+        - image
+        - StaticText "OS Manutencao"
+        - image
+      - button "Logistica" [ref=e23]
+        - image
+        - StaticText "Logistica"
+        - image
+      - button "Cadastros" [ref=e24]
+        - image
+        - StaticText "Cadastros"
+        - image
+      - button "Filiais" [ref=e25]
+        - image
+        - StaticText "Filiais"
+      - button "Locais" [ref=e26]
+        - image
+        - StaticText "Locais"
+      - button "Divisões" [ref=e27]
+        - image
+        - StaticText "Divisões"
+      - button "Funções" [ref=e28]
+        - image
+        - StaticText "Funções"
+      - button "Equipes" [ref=e29]
+        - image
+        - StaticText "Equipes"
+      - button "Status" [ref=e30]
+        - image
+        - StaticText "Status"
+      - button "Horarios de Turno" [ref=e31]
+        - image
+        - StaticText "Horarios de Turno"
+      - button "Opcoes de Dia" [ref=e32]
+        - image
+        - StaticText "Opcoes de Dia"
+      - button "Categorias Produtividade" [ref=e33]
+        - image
+        - StaticText "Categorias Produtividade"
+      - button "Metas Produtividade" [ref=e34]
+        - image
+        - StaticText "Metas Produtividade"
+      - button "Logo da Empresa" [ref=e35]
+        - image
+        - StaticText "Logo da Empresa"
+      - button "Manutencao Fabrica" [ref=e36]
+        - image
+        - StaticText "Manutencao Fabrica"
+      - button "Performance Aderencia" [ref=e37]
+        - image
+        - StaticText "Performance Aderencia"
+      - button "Fornecedores" [ref=e38]
+        - image
+        - StaticText "Fornecedores"
+      - button "Dados de Refugo" [ref=e39]
+        - image
+        - StaticText "Dados de Refugo"
+      - button "Motivos de Refugo" [ref=e40]
+        - image
+        - StaticText "Motivos de Refugo"
+      - button "Codigos Ausencia" [ref=e41]
+        - image
+        - StaticText "Codigos Ausencia"
+      - button "Kits" [ref=e42]
+        - image
+        - StaticText "Kits"
+      - button "Defeito Refugo" [ref=e43]
+        - image
+        - StaticText "Defeito Refugo"
+      - button "Feriados" [ref=e44]
+        - image
+        - StaticText "Feriados"
+      - button "Permissoes" [ref=e45]
+        - image
+        - StaticText "Permissoes"
+      - button "Usuarios Online" [ref=e46]
+        - image
+        - StaticText "Usuarios Online"
+  - main
+    - heading "Motivos de Refugo" [level=3, ref=e8]
+    - paragraph
+      - StaticText "Cadastro de motivos para controle de refugo"
+    - button "Novo Motivo" [ref=e9]
+      - image
+      - StaticText "Novo Motivo"
+    - generic
+      - image
+      - textbox "Buscar por nome ou codigo..." [ref=e44]
+    - table
+      - rowgroup
+        - row
+          - columnheader "CODIGO" [ref=e59]
+          - columnheader "DESCRICAO" [ref=e60]
+          - columnheader "TIPO" [ref=e61]
+          - columnheader "STATUS" [ref=e62]
+          - columnheader "ACOES" [ref=e63]
+      - row
+        - cell "001" [ref=e45]
+        - cell "Costura irregular" [ref=e46]
+        - cell "Produção" [ref=e47]
+        - cell "Ativo" [ref=e48]
+        - cell "Editar Excluir" [ref=e49]
+          - button "Editar" [ref=e50]
+            - image
+          - button "Excluir" [ref=e51]
+            - image
+      - row
+        - cell "002" [ref=e52]
+        - cell "Mancha de óleo" [ref=e53]
+        - cell "Qualidade" [ref=e54]
+        - cell "Ativo" [ref=e55]
+        - cell "Editar Excluir" [ref=e56]
+          - button "Editar" [ref=e57]
+            - image
+          - button "Excluir" [ref=e58]
+            - image
+      - row
+        - cell "003" [ref=e59]
+        - cell "Desvio de medida" [ref=e60]
+        - cell "Produção" [ref=e61]
+        - cell "Ativo" [ref=e62]
+        - cell "Editar Excluir" [ref=e63]
+          - button "Editar" [ref=e64]
+            - image
+          - button "Excluir" [ref=e65]
+            - image
+    - generic
+      - StaticText "3 motivos cadastrados"

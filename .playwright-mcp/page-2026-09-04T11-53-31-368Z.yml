@@ -1,0 +1,555 @@
+- generic [ref=e7]:
+  - navigation [ref=e8]:
+    - generic [ref=e10]:
+      - generic [ref=e11]:
+        - heading "Pion G Plus" [level=1] [ref=e12]
+        - button "Matriz" [ref=e13] [cursor=pointer]
+      - generic [ref=e18]:
+        - button "9+" [ref=e19] [cursor=pointer]
+        - generic [ref=e25]:
+          - generic [ref=e26]: NICOLAS SANTOS
+          - generic [ref=e27]: Assistente de Front-End Júnior
+        - button "Trocar Senha" [ref=e28] [cursor=pointer]
+        - button "Sair" [ref=e32] [cursor=pointer]
+  - complementary [ref=e36]:
+    - button "Recolher menu" [ref=e38] [cursor=pointer]
+    - navigation [ref=e41]:
+      - button "Dashboard" [ref=e43] [cursor=pointer]
+      - button "Colaboradores" [ref=e50] [cursor=pointer]
+      - button "Escala do Mês" [ref=e58] [cursor=pointer]
+      - button "Controle de Ponto" [ref=e63] [cursor=pointer]
+      - button "Produtividade Setor" [ref=e69] [cursor=pointer]
+      - button "Absenteísmo" [ref=e77] [cursor=pointer]
+      - button "Controle Portaria" [ref=e85] [cursor=pointer]
+      - button "Validação" [ref=e90] [cursor=pointer]
+      - button "Quadro de Avisos" [ref=e96] [cursor=pointer]
+      - button "OS Manutencao" [ref=e102] [cursor=pointer]
+      - button "Logistica" [ref=e109] [cursor=pointer]
+      - button "Cadastros" [ref=e119] [cursor=pointer]
+      - button "Feriados" [ref=e128] [cursor=pointer]
+      - button "Permissoes" [active] [ref=e134] [cursor=pointer]
+      - button "Usuarios Online" [ref=e140] [cursor=pointer]
+  - main [ref=e144]:
+    - generic [ref=e682]:
+      - generic [ref=e683]:
+        - generic [ref=e684]:
+          - heading [level=1] [ref=e685]
+          - paragraph [ref=e689]: Defina o acesso de cada tipo de usuario aos modulos do sistema
+        - button "Salvar Alteracoes" [disabled] [ref=e690]
+      - generic [ref=e695]:
+        - generic [ref=e697]:
+          - generic [ref=e698]: Tipo de Acesso *
+          - generic [ref=e705]:
+            - button "Administrador" [ref=e707] [cursor=pointer]
+            - button "Gestor" [ref=e709] [cursor=pointer]
+            - button "Colaborador" [ref=e711] [cursor=pointer]
+            - button "Lider Produção" [ref=e713] [cursor=pointer]
+            - button "Equipe Manutenção" [ref=e715] [cursor=pointer]
+            - button "Supervisor de Manutenção" [ref=e717] [cursor=pointer]
+            - button "Lider RH" [ref=e719] [cursor=pointer]
+            - button "Visualizador de Produção" [ref=e721] [cursor=pointer]
+            - button "Colaborador + Abertura de OS" [ref=e723] [cursor=pointer]
+            - button "Qualidade - Refugo" [ref=e725] [cursor=pointer]
+            - button "Criar novo tipo de acesso" [ref=e726] [cursor=pointer]
+          - generic [ref=e728]:
+            - button "Somente Leitura" [ref=e729] [cursor=pointer]
+            - button "Acesso Total" [ref=e730] [cursor=pointer]
+            - button "Ocultar Tudo" [ref=e731] [cursor=pointer]
+        - table [ref=e733]:
+          - rowgroup [ref=e734]:
+            - row [ref=e735]:
+              - columnheader "Modulo" [ref=e736]
+              - columnheader "Leitura" [ref=e737]
+              - columnheader "Editar" [ref=e742]
+              - columnheader "Deletar" [ref=e747]
+              - columnheader "Ocultar" [ref=e752]
+          - rowgroup [ref=e759]:
+            - row [ref=e760]:
+              - cell "Menus do Colaborador" [ref=e761]
+            - row [ref=e762]:
+              - cell "Meu Painel" [ref=e763]
+              - cell [ref=e764]:
+                - button [disabled] [ref=e765]
+              - cell [ref=e769]:
+                - button [disabled] [ref=e770]
+              - cell [ref=e774]:
+                - button [disabled] [ref=e775]
+              - cell [ref=e779]:
+                - button [ref=e780] [cursor=pointer]
+            - row [ref=e783]:
+              - cell "Minha Escala" [ref=e784]
+              - cell [ref=e785]:
+                - button [disabled] [ref=e786]
+              - cell [ref=e790]:
+                - button [disabled] [ref=e791]
+              - cell [ref=e795]:
+                - button [disabled] [ref=e796]
+              - cell [ref=e800]:
+                - button [ref=e801] [cursor=pointer]
+            - row [ref=e804]:
+              - cell "Holerites e Ponto" [ref=e805]
+              - cell [ref=e806]:
+                - button [disabled] [ref=e807]
+              - cell [ref=e811]:
+                - button [disabled] [ref=e812]
+              - cell [ref=e816]:
+                - button [disabled] [ref=e817]
+              - cell [ref=e821]:
+                - button [ref=e822] [cursor=pointer]
+            - row [ref=e825]:
+              - cell "Produtividade" [ref=e826]
+              - cell [ref=e827]:
+                - button [disabled] [ref=e828]
+              - cell [ref=e832]:
+                - button [disabled] [ref=e833]
+              - cell [ref=e837]:
+                - button [disabled] [ref=e838]
+              - cell [ref=e842]:
+                - button [ref=e843] [cursor=pointer]
+            - row [ref=e846]:
+              - cell "Sugestoes" [ref=e847]
+              - cell [ref=e848]:
+                - button [disabled] [ref=e849]
+              - cell [ref=e853]:
+                - button [disabled] [ref=e854]
+              - cell [ref=e858]:
+                - button [disabled] [ref=e859]
+              - cell [ref=e863]:
+                - button [ref=e864] [cursor=pointer]
+            - row [ref=e867]:
+              - cell "Documentos" [ref=e868]
+              - cell [ref=e869]:
+                - button [disabled] [ref=e870]
+              - cell [ref=e874]:
+                - button [disabled] [ref=e875]
+              - cell [ref=e879]:
+                - button [disabled] [ref=e880]
+              - cell [ref=e884]:
+                - button [ref=e885] [cursor=pointer]
+            - row [ref=e888]:
+              - cell "Menus Administrativos" [ref=e889]
+            - row [ref=e890]:
+              - cell "Dashboard" [ref=e891]
+              - cell [ref=e892]:
+                - button [ref=e893] [cursor=pointer]
+              - cell [ref=e896]:
+                - button [ref=e897] [cursor=pointer]
+              - cell [ref=e900]:
+                - button [ref=e901] [cursor=pointer]
+              - cell [ref=e904]:
+                - button [ref=e905] [cursor=pointer]
+            - row [ref=e909]:
+              - cell "Colaboradores" [ref=e910]
+              - cell [ref=e911]:
+                - button [ref=e912] [cursor=pointer]
+              - cell [ref=e915]:
+                - button [ref=e916] [cursor=pointer]
+              - cell [ref=e919]:
+                - button [ref=e920] [cursor=pointer]
+              - cell [ref=e923]:
+                - button [ref=e924] [cursor=pointer]
+            - row [ref=e928]:
+              - cell "Escala do Mes" [ref=e929]
+              - cell [ref=e930]:
+                - button [ref=e931] [cursor=pointer]
+              - cell [ref=e934]:
+                - button [ref=e935] [cursor=pointer]
+              - cell [ref=e938]:
+                - button [ref=e939] [cursor=pointer]
+              - cell [ref=e942]:
+                - button [ref=e943] [cursor=pointer]
+            - row [ref=e947]:
+              - cell "Controle de Ponto" [ref=e948]
+              - cell [ref=e949]:
+                - button [ref=e950] [cursor=pointer]
+              - cell [ref=e953]:
+                - button [ref=e954] [cursor=pointer]
+              - cell [ref=e957]:
+                - button [ref=e958] [cursor=pointer]
+              - cell [ref=e961]:
+                - button [ref=e962] [cursor=pointer]
+            - row [ref=e966]:
+              - cell "Produtividade Equipe" [ref=e967]
+              - cell [ref=e968]:
+                - button [ref=e969] [cursor=pointer]
+              - cell [ref=e972]:
+                - button [ref=e973] [cursor=pointer]
+              - cell [ref=e976]:
+                - button [ref=e977] [cursor=pointer]
+              - cell [ref=e980]:
+                - button [ref=e981] [cursor=pointer]
+            - row [ref=e985]:
+              - cell "Absenteismo" [ref=e986]
+              - cell [ref=e987]:
+                - button [ref=e988] [cursor=pointer]
+              - cell [ref=e991]:
+                - button [ref=e992] [cursor=pointer]
+              - cell [ref=e995]:
+                - button [ref=e996] [cursor=pointer]
+              - cell [ref=e999]:
+                - button [ref=e1000] [cursor=pointer]
+            - row [ref=e1004]:
+              - cell "Portaria" [ref=e1005]
+              - cell [ref=e1006]:
+                - button [ref=e1007] [cursor=pointer]
+              - cell [ref=e1010]:
+                - button [ref=e1011] [cursor=pointer]
+              - cell [ref=e1014]:
+                - button [ref=e1015] [cursor=pointer]
+              - cell [ref=e1018]:
+                - button [ref=e1019] [cursor=pointer]
+            - row [ref=e1023]:
+              - cell "Controle Portaria" [ref=e1024]
+              - cell [ref=e1025]:
+                - button [ref=e1026] [cursor=pointer]
+              - cell [ref=e1029]:
+                - button [ref=e1030] [cursor=pointer]
+              - cell [ref=e1033]:
+                - button [ref=e1034] [cursor=pointer]
+              - cell [ref=e1037]:
+                - button [ref=e1038] [cursor=pointer]
+            - row [ref=e1042]:
+              - cell "Validacao" [ref=e1043]
+              - cell [ref=e1044]:
+                - button [ref=e1045] [cursor=pointer]
+              - cell [ref=e1048]:
+                - button [ref=e1049] [cursor=pointer]
+              - cell [ref=e1052]:
+                - button [ref=e1053] [cursor=pointer]
+              - cell [ref=e1056]:
+                - button [ref=e1057] [cursor=pointer]
+            - row [ref=e1061]:
+              - cell "Quadro de Avisos" [ref=e1062]
+              - cell [ref=e1063]:
+                - button [ref=e1064] [cursor=pointer]
+              - cell [ref=e1067]:
+                - button [ref=e1068] [cursor=pointer]
+              - cell [ref=e1071]:
+                - button [ref=e1072] [cursor=pointer]
+              - cell [ref=e1075]:
+                - button [ref=e1076] [cursor=pointer]
+            - row [ref=e1080]:
+              - cell "Manutencao OS" [ref=e1081]
+              - cell [ref=e1082]:
+                - button [ref=e1083] [cursor=pointer]
+              - cell [ref=e1086]:
+                - button [ref=e1087] [cursor=pointer]
+              - cell [ref=e1090]:
+                - button [ref=e1091] [cursor=pointer]
+              - cell [ref=e1094]:
+                - button [ref=e1095] [cursor=pointer]
+            - row [ref=e1099]:
+              - cell "- OS Manutencao - Abrir OS" [ref=e1100]
+              - cell [ref=e1102]:
+                - button [ref=e1103] [cursor=pointer]
+              - cell [ref=e1106]:
+                - button [ref=e1107] [cursor=pointer]
+              - cell [ref=e1110]:
+                - button [ref=e1111] [cursor=pointer]
+              - cell [ref=e1114]:
+                - button [ref=e1115] [cursor=pointer]
+            - row [ref=e1119]:
+              - cell "- OS Manutencao - Agenda de Preventivas" [ref=e1120]
+              - cell [ref=e1122]:
+                - button [ref=e1123] [cursor=pointer]
+              - cell [ref=e1126]:
+                - button [ref=e1127] [cursor=pointer]
+              - cell [ref=e1130]:
+                - button [ref=e1131] [cursor=pointer]
+              - cell [ref=e1134]:
+                - button [ref=e1135] [cursor=pointer]
+            - row [ref=e1139]:
+              - cell "- OS Manutencao - Relatorios" [ref=e1140]
+              - cell [ref=e1142]:
+                - button [ref=e1143] [cursor=pointer]
+              - cell [ref=e1146]:
+                - button [ref=e1147] [cursor=pointer]
+              - cell [ref=e1150]:
+                - button [ref=e1151] [cursor=pointer]
+              - cell [ref=e1154]:
+                - button [ref=e1155] [cursor=pointer]
+            - row [ref=e1159]:
+              - cell "- OS Manutencao - Dashboard" [ref=e1160]
+              - cell [ref=e1162]:
+                - button [ref=e1163] [cursor=pointer]
+              - cell [ref=e1166]:
+                - button [ref=e1167] [cursor=pointer]
+              - cell [ref=e1170]:
+                - button [ref=e1171] [cursor=pointer]
+              - cell [ref=e1174]:
+                - button [ref=e1175] [cursor=pointer]
+            - row [ref=e1179]:
+              - cell "Logistica" [ref=e1180]
+              - cell [ref=e1181]:
+                - button [ref=e1182] [cursor=pointer]
+              - cell [ref=e1185]:
+                - button [ref=e1186] [cursor=pointer]
+              - cell [ref=e1189]:
+                - button [ref=e1190] [cursor=pointer]
+              - cell [ref=e1193]:
+                - button [ref=e1194] [cursor=pointer]
+            - row [ref=e1198]:
+              - cell "- Expedicao" [ref=e1199]
+              - cell [ref=e1201]:
+                - button [ref=e1202] [cursor=pointer]
+              - cell [ref=e1205]:
+                - button [ref=e1206] [cursor=pointer]
+              - cell [ref=e1209]:
+                - button [ref=e1210] [cursor=pointer]
+              - cell [ref=e1213]:
+                - button [ref=e1214] [cursor=pointer]
+            - row [ref=e1218]:
+              - cell "- Gestao de Frete" [ref=e1219]
+              - cell [ref=e1221]:
+                - button [ref=e1222] [cursor=pointer]
+              - cell [ref=e1225]:
+                - button [ref=e1226] [cursor=pointer]
+              - cell [ref=e1229]:
+                - button [ref=e1230] [cursor=pointer]
+              - cell [ref=e1233]:
+                - button [ref=e1234] [cursor=pointer]
+            - row [ref=e1238]:
+              - cell "Cadastros" [ref=e1239]
+              - cell [ref=e1240]:
+                - button [ref=e1241] [cursor=pointer]
+              - cell [ref=e1244]:
+                - button [ref=e1245] [cursor=pointer]
+              - cell [ref=e1248]:
+                - button [ref=e1249] [cursor=pointer]
+              - cell [ref=e1252]:
+                - button [ref=e1253] [cursor=pointer]
+            - row [ref=e1257]:
+              - cell "- Filiais" [ref=e1258]
+              - cell [ref=e1260]:
+                - button [ref=e1261] [cursor=pointer]
+              - cell [ref=e1264]:
+                - button [ref=e1265] [cursor=pointer]
+              - cell [ref=e1268]:
+                - button [ref=e1269] [cursor=pointer]
+              - cell [ref=e1272]:
+                - button [ref=e1273] [cursor=pointer]
+            - row [ref=e1277]:
+              - cell "- Locais" [ref=e1278]
+              - cell [ref=e1280]:
+                - button [ref=e1281] [cursor=pointer]
+              - cell [ref=e1284]:
+                - button [ref=e1285] [cursor=pointer]
+              - cell [ref=e1288]:
+                - button [ref=e1289] [cursor=pointer]
+              - cell [ref=e1292]:
+                - button [ref=e1293] [cursor=pointer]
+            - row [ref=e1297]:
+              - cell "- Divisoes" [ref=e1298]
+              - cell [ref=e1300]:
+                - button [ref=e1301] [cursor=pointer]
+              - cell [ref=e1304]:
+                - button [ref=e1305] [cursor=pointer]
+              - cell [ref=e1308]:
+                - button [ref=e1309] [cursor=pointer]
+              - cell [ref=e1312]:
+                - button [ref=e1313] [cursor=pointer]
+            - row [ref=e1317]:
+              - cell "- Funcoes" [ref=e1318]
+              - cell [ref=e1320]:
+                - button [ref=e1321] [cursor=pointer]
+              - cell [ref=e1324]:
+                - button [ref=e1325] [cursor=pointer]
+              - cell [ref=e1328]:
+                - button [ref=e1329] [cursor=pointer]
+              - cell [ref=e1332]:
+                - button [ref=e1333] [cursor=pointer]
+            - row [ref=e1337]:
+              - cell "- Equipes" [ref=e1338]
+              - cell [ref=e1340]:
+                - button [ref=e1341] [cursor=pointer]
+              - cell [ref=e1344]:
+                - button [ref=e1345] [cursor=pointer]
+              - cell [ref=e1348]:
+                - button [ref=e1349] [cursor=pointer]
+              - cell [ref=e1352]:
+                - button [ref=e1353] [cursor=pointer]
+            - row [ref=e1357]:
+              - cell "- Status" [ref=e1358]
+              - cell [ref=e1360]:
+                - button [ref=e1361] [cursor=pointer]
+              - cell [ref=e1364]:
+                - button [ref=e1365] [cursor=pointer]
+              - cell [ref=e1368]:
+                - button [ref=e1369] [cursor=pointer]
+              - cell [ref=e1372]:
+                - button [ref=e1373] [cursor=pointer]
+            - row [ref=e1377]:
+              - cell "- Horarios de Turno" [ref=e1378]
+              - cell [ref=e1380]:
+                - button [ref=e1381] [cursor=pointer]
+              - cell [ref=e1384]:
+                - button [ref=e1385] [cursor=pointer]
+              - cell [ref=e1388]:
+                - button [ref=e1389] [cursor=pointer]
+              - cell [ref=e1392]:
+                - button [ref=e1393] [cursor=pointer]
+            - row [ref=e1397]:
+              - cell "- Opcoes de Dia" [ref=e1398]
+              - cell [ref=e1400]:
+                - button [ref=e1401] [cursor=pointer]
+              - cell [ref=e1404]:
+                - button [ref=e1405] [cursor=pointer]
+              - cell [ref=e1408]:
+                - button [ref=e1409] [cursor=pointer]
+              - cell [ref=e1412]:
+                - button [ref=e1413] [cursor=pointer]
+            - row [ref=e1417]:
+              - cell "- Categorias Produtividade" [ref=e1418]
+              - cell [ref=e1420]:
+                - button [ref=e1421] [cursor=pointer]
+              - cell [ref=e1424]:
+                - button [ref=e1425] [cursor=pointer]
+              - cell [ref=e1428]:
+                - button [ref=e1429] [cursor=pointer]
+              - cell [ref=e1432]:
+                - button [ref=e1433] [cursor=pointer]
+            - row [ref=e1437]:
+              - cell "- Metas Produtividade" [ref=e1438]
+              - cell [ref=e1440]:
+                - button [ref=e1441] [cursor=pointer]
+              - cell [ref=e1444]:
+                - button [ref=e1445] [cursor=pointer]
+              - cell [ref=e1448]:
+                - button [ref=e1449] [cursor=pointer]
+              - cell [ref=e1452]:
+                - button [ref=e1453] [cursor=pointer]
+            - row [ref=e1457]:
+              - cell "- Logo da Empresa" [ref=e1458]
+              - cell [ref=e1460]:
+                - button [ref=e1461] [cursor=pointer]
+              - cell [ref=e1464]:
+                - button [ref=e1465] [cursor=pointer]
+              - cell [ref=e1468]:
+                - button [ref=e1469] [cursor=pointer]
+              - cell [ref=e1472]:
+                - button [ref=e1473] [cursor=pointer]
+            - row [ref=e1477]:
+              - cell "- Manutencao Fabrica" [ref=e1478]
+              - cell [ref=e1480]:
+                - button [ref=e1481] [cursor=pointer]
+              - cell [ref=e1484]:
+                - button [ref=e1485] [cursor=pointer]
+              - cell [ref=e1488]:
+                - button [ref=e1489] [cursor=pointer]
+              - cell [ref=e1492]:
+                - button [ref=e1493] [cursor=pointer]
+            - row [ref=e1497]:
+              - cell "- Performance Aderencia" [ref=e1498]
+              - cell [ref=e1500]:
+                - button [ref=e1501] [cursor=pointer]
+              - cell [ref=e1504]:
+                - button [ref=e1505] [cursor=pointer]
+              - cell [ref=e1508]:
+                - button [ref=e1509] [cursor=pointer]
+              - cell [ref=e1512]:
+                - button [ref=e1513] [cursor=pointer]
+            - row [ref=e1517]:
+              - cell "- Fornecedores" [ref=e1518]
+              - cell [ref=e1520]:
+                - button [ref=e1521] [cursor=pointer]
+              - cell [ref=e1524]:
+                - button [ref=e1525] [cursor=pointer]
+              - cell [ref=e1528]:
+                - button [ref=e1529] [cursor=pointer]
+              - cell [ref=e1532]:
+                - button [ref=e1533] [cursor=pointer]
+            - row [ref=e1537]:
+              - cell "- Dados de Refugo" [ref=e1538]
+              - cell [ref=e1540]:
+                - button [ref=e1541] [cursor=pointer]
+              - cell [ref=e1544]:
+                - button [ref=e1545] [cursor=pointer]
+              - cell [ref=e1548]:
+                - button [ref=e1549] [cursor=pointer]
+              - cell [ref=e1552]:
+                - button [ref=e1553] [cursor=pointer]
+            - row [ref=e1557]:
+              - cell "- Motivos de Refugo" [ref=e1558]
+              - cell [ref=e1560]:
+                - button [ref=e1561] [cursor=pointer]
+              - cell [ref=e1564]:
+                - button [ref=e1565] [cursor=pointer]
+              - cell [ref=e1568]:
+                - button [ref=e1569] [cursor=pointer]
+              - cell [ref=e1572]:
+                - button [ref=e1573] [cursor=pointer]
+            - row [ref=e1577]:
+              - cell "- Codigos Ausencia" [ref=e1578]
+              - cell [ref=e1580]:
+                - button [ref=e1581] [cursor=pointer]
+              - cell [ref=e1584]:
+                - button [ref=e1585] [cursor=pointer]
+              - cell [ref=e1588]:
+                - button [ref=e1589] [cursor=pointer]
+              - cell [ref=e1592]:
+                - button [ref=e1593] [cursor=pointer]
+            - row [ref=e1597]:
+              - cell "- Kits" [ref=e1598]
+              - cell [ref=e1600]:
+                - button [ref=e1601] [cursor=pointer]
+              - cell [ref=e1604]:
+                - button [ref=e1605] [cursor=pointer]
+              - cell [ref=e1608]:
+                - button [ref=e1609] [cursor=pointer]
+              - cell [ref=e1612]:
+                - button [ref=e1613] [cursor=pointer]
+            - row [ref=e1617]:
+              - cell "- dm:refugo_defeitos" [ref=e1618]
+              - cell [ref=e1620]:
+                - button [ref=e1621] [cursor=pointer]
+              - cell [ref=e1624]:
+                - button [ref=e1625] [cursor=pointer]
+              - cell [ref=e1628]:
+                - button [ref=e1629] [cursor=pointer]
+              - cell [ref=e1632]:
+                - button [ref=e1633] [cursor=pointer]
+            - row [ref=e1637]:
+              - cell "Feriados" [ref=e1638]
+              - cell [ref=e1639]:
+                - button [ref=e1640] [cursor=pointer]
+              - cell [ref=e1643]:
+                - button [ref=e1644] [cursor=pointer]
+              - cell [ref=e1647]:
+                - button [ref=e1648] [cursor=pointer]
+              - cell [ref=e1651]:
+                - button [ref=e1652] [cursor=pointer]
+            - row [ref=e1656]:
+              - cell "Usuarios Online" [ref=e1657]
+              - cell [ref=e1658]:
+                - button [ref=e1659] [cursor=pointer]
+              - cell [ref=e1662]:
+                - button [ref=e1663] [cursor=pointer]
+              - cell [ref=e1666]:
+                - button [ref=e1667] [cursor=pointer]
+              - cell [ref=e1670]:
+                - button [ref=e1671] [cursor=pointer]
+            - row [ref=e1675]:
+              - cell "Permissoes" [ref=e1676]
+              - cell [ref=e1677]:
+                - button [ref=e1678] [cursor=pointer]
+              - cell [ref=e1681]:
+                - button [ref=e1682] [cursor=pointer]
+              - cell [ref=e1685]:
+                - button [ref=e1686] [cursor=pointer]
+              - cell [ref=e1689]:
+                - button [ref=e1690] [cursor=pointer]
+      - generic [ref=e1698]:
+        - paragraph [ref=e1699]: Como funciona
+        - list [ref=e1700]:
+          - listitem [ref=e1701]:
+            - strong [ref=e1702]: Leitura
+            - text: "- O usuario pode visualizar o modulo"
+          - listitem [ref=e1703]:
+            - strong [ref=e1704]: Editar
+            - text: "- O usuario pode criar e modificar registros (inclui Leitura)"
+          - listitem [ref=e1705]:
+            - strong [ref=e1706]: Deletar
+            - text: "- O usuario pode excluir registros (inclui Leitura e Editar)"
+          - listitem [ref=e1707]:
+            - strong [ref=e1708]: Ocultar
+            - text: "- O modulo nao aparece no menu para este tipo de usuario"

@@ -1,0 +1,881 @@
+- generic [ref=e1] clickable [onclick]
+  - navigation
+    - heading "Pion G Plus" [level=1, ref=e2]
+    - button "Matriz" [ref=e3]
+      - image
+      - StaticText "Matriz"
+    - button "9+" [ref=e4]
+      - image
+      - StaticText "9+"
+    - StaticText "NICOLAS SANTOS"
+    - StaticText "Assistente de Front-End Júnior"
+    - button "Trocar Senha" [ref=e5]
+      - image
+    - button "Sair" [ref=e6]
+      - image
+      - StaticText "Sair"
+  - complementary
+    - button "Recolher menu" [ref=e7]
+      - image
+    - navigation
+      - button "Dashboard" [ref=e14]
+        - image
+        - StaticText "Dashboard"
+      - button "Colaboradores" [ref=e15]
+        - image
+        - StaticText "Colaboradores"
+      - button "Escala do Mês" [ref=e16]
+        - image
+        - StaticText "Escala do Mês"
+      - button "Controle de Ponto" [ref=e17]
+        - image
+        - StaticText "Controle de Ponto"
+      - button "Produtividade Setor" [ref=e18]
+        - image
+        - StaticText "Produtividade Setor"
+      - button "Absenteísmo" [ref=e19]
+        - image
+        - StaticText "Absenteísmo"
+      - button "Controle Portaria" [ref=e20]
+        - image
+        - StaticText "Controle Portaria"
+      - button "Validação" [ref=e21]
+        - image
+        - StaticText "Validação"
+      - button "Quadro de Avisos" [ref=e22]
+        - image
+        - StaticText "Quadro de Avisos"
+      - button "OS Manutencao" [ref=e23]
+        - image
+        - StaticText "OS Manutencao"
+        - image
+      - button "Logistica" [ref=e24]
+        - image
+        - StaticText "Logistica"
+        - image
+      - button "Expedicao" [ref=e25]
+        - image
+        - StaticText "Expedicao"
+      - button "Gestao de Frete" [ref=e26]
+        - image
+        - StaticText "Gestao de Frete"
+      - button "Cadastros" [ref=e27]
+        - image
+        - StaticText "Cadastros"
+        - image
+      - button "Filiais" [ref=e28]
+        - image
+        - StaticText "Filiais"
+      - button "Locais" [ref=e29]
+        - image
+        - StaticText "Locais"
+      - button "Divisões" [ref=e30]
+        - image
+        - StaticText "Divisões"
+      - button "Funções" [ref=e31]
+        - image
+        - StaticText "Funções"
+      - button "Equipes" [ref=e32]
+        - image
+        - StaticText "Equipes"
+      - button "Status" [ref=e33]
+        - image
+        - StaticText "Status"
+      - button "Horarios de Turno" [ref=e34]
+        - image
+        - StaticText "Horarios de Turno"
+      - button "Opcoes de Dia" [ref=e35]
+        - image
+        - StaticText "Opcoes de Dia"
+      - button "Categorias Produtividade" [ref=e36]
+        - image
+        - StaticText "Categorias Produtividade"
+      - button "Metas Produtividade" [ref=e37]
+        - image
+        - StaticText "Metas Produtividade"
+      - button "Logo da Empresa" [ref=e38]
+        - image
+        - StaticText "Logo da Empresa"
+      - button "Manutencao Fabrica" [ref=e39]
+        - image
+        - StaticText "Manutencao Fabrica"
+      - button "Performance Aderencia" [ref=e40]
+        - image
+        - StaticText "Performance Aderencia"
+      - button "Fornecedores" [ref=e41]
+        - image
+        - StaticText "Fornecedores"
+      - button "Dados de Refugo" [ref=e42]
+        - image
+        - StaticText "Dados de Refugo"
+      - button "Motivos de Refugo" [ref=e43]
+        - image
+        - StaticText "Motivos de Refugo"
+      - button "Codigos Ausencia" [ref=e44]
+        - image
+        - StaticText "Codigos Ausencia"
+      - button "Kits" [ref=e45]
+        - image
+        - StaticText "Kits"
+      - button "Defeito Refugo" [ref=e46]
+        - image
+        - StaticText "Defeito Refugo"
+      - button "Feriados" [ref=e47]
+        - image
+        - StaticText "Feriados"
+      - button "Permissoes" [ref=e48]
+        - image
+        - StaticText "Permissoes"
+      - button "Usuarios Online" [ref=e49]
+        - image
+        - StaticText "Usuarios Online"
+  - main
+    - heading "Gerenciamento de Permissoes" [level=1, ref=e8]
+      - image
+      - StaticText "Gerenciamento de Permissoes"
+    - paragraph
+      - StaticText "Defina o acesso de cada tipo de usuario aos modulos do sistema"
+    - button "Salvar Alteracoes" [disabled, ref=e9]
+      - image
+      - StaticText "Salvar Alteracoes"
+    - image
+    - LabelText
+      - StaticText "Tipo de Acesso *"
+    - button "Administrador" [ref=e50]
+    - button "Gestor" [ref=e51]
+    - button "Colaborador" [ref=e52]
+    - button "Lider Produção" [ref=e53]
+    - button "Equipe Manutenção" [ref=e54]
+    - button "Supervisor de Manutenção" [ref=e55]
+    - button "Lider RH" [ref=e56]
+    - button "Visualizador de Produção" [ref=e57]
+    - button "Colaborador + Abertura de OS" [ref=e58]
+    - button "Qualidade - Refugo" [ref=e59]
+    - button "Criar novo tipo de acesso" [ref=e10]
+      - image
+    - button "Somente Leitura" [ref=e11]
+    - button "Acesso Total" [ref=e12]
+    - button "Ocultar Tudo" [ref=e13]
+    - table
+      - rowgroup
+        - row
+          - columnheader "MODULO" [ref=e109]
+          - columnheader "LEITURA" [ref=e110]
+            - image
+            - StaticText "LEITURA"
+          - columnheader "EDITAR" [ref=e111]
+            - image
+            - StaticText "EDITAR"
+          - columnheader "DELETAR" [ref=e112]
+            - image
+            - StaticText "DELETAR"
+          - columnheader "OCULTAR" [ref=e113]
+            - image
+            - StaticText "OCULTAR"
+      - row
+        - cell "MENUS DO COLABORADOR" [ref=e60]
+      - row
+        - cell "Meu Painel" [ref=e61]
+        - cell
+          - button [disabled, ref=e114]
+            - image
+        - cell
+          - button [disabled, ref=e115]
+            - image
+        - cell
+          - button [disabled, ref=e116]
+            - image
+        - cell
+          - button [ref=e117]
+            - image
+      - row
+        - cell "Minha Escala" [ref=e62]
+        - cell
+          - button [disabled, ref=e118]
+            - image
+        - cell
+          - button [disabled, ref=e119]
+            - image
+        - cell
+          - button [disabled, ref=e120]
+            - image
+        - cell
+          - button [ref=e121]
+            - image
+      - row
+        - cell "Holerites e Ponto" [ref=e63]
+        - cell
+          - button [disabled, ref=e122]
+            - image
+        - cell
+          - button [disabled, ref=e123]
+            - image
+        - cell
+          - button [disabled, ref=e124]
+            - image
+        - cell
+          - button [ref=e125]
+            - image
+      - row
+        - cell "Produtividade" [ref=e64]
+        - cell
+          - button [disabled, ref=e126]
+            - image
+        - cell
+          - button [disabled, ref=e127]
+            - image
+        - cell
+          - button [disabled, ref=e128]
+            - image
+        - cell
+          - button [ref=e129]
+            - image
+      - row
+        - cell "Sugestoes" [ref=e65]
+        - cell
+          - button [disabled, ref=e130]
+            - image
+        - cell
+          - button [disabled, ref=e131]
+            - image
+        - cell
+          - button [disabled, ref=e132]
+            - image
+        - cell
+          - button [ref=e133]
+            - image
+      - row
+        - cell "Documentos" [ref=e66]
+        - cell
+          - button [disabled, ref=e134]
+            - image
+        - cell
+          - button [disabled, ref=e135]
+            - image
+        - cell
+          - button [disabled, ref=e136]
+            - image
+        - cell
+          - button [ref=e137]
+            - image
+      - row
+        - cell "MENUS ADMINISTRATIVOS" [ref=e67]
+      - row
+        - cell "Dashboard" [ref=e68]
+        - cell
+          - button [ref=e138]
+            - image
+        - cell
+          - button [ref=e139]
+            - image
+        - cell
+          - button [ref=e140]
+            - image
+        - cell
+          - button [ref=e141]
+            - image
+      - row
+        - cell "Colaboradores" [ref=e69]
+        - cell
+          - button [ref=e142]
+            - image
+        - cell
+          - button [ref=e143]
+            - image
+        - cell
+          - button [ref=e144]
+            - image
+        - cell
+          - button [ref=e145]
+            - image
+      - row
+        - cell "Escala do Mes" [ref=e70]
+        - cell
+          - button [ref=e146]
+            - image
+        - cell
+          - button [ref=e147]
+            - image
+        - cell
+          - button [ref=e148]
+            - image
+        - cell
+          - button [ref=e149]
+            - image
+      - row
+        - cell "Controle de Ponto" [ref=e71]
+        - cell
+          - button [ref=e150]
+            - image
+        - cell
+          - button [ref=e151]
+            - image
+        - cell
+          - button [ref=e152]
+            - image
+        - cell
+          - button [ref=e153]
+            - image
+      - row
+        - cell "Produtividade Equipe" [ref=e72]
+        - cell
+          - button [ref=e154]
+            - image
+        - cell
+          - button [ref=e155]
+            - image
+        - cell
+          - button [ref=e156]
+            - image
+        - cell
+          - button [ref=e157]
+            - image
+      - row
+        - cell "Absenteismo" [ref=e73]
+        - cell
+          - button [ref=e158]
+            - image
+        - cell
+          - button [ref=e159]
+            - image
+        - cell
+          - button [ref=e160]
+            - image
+        - cell
+          - button [ref=e161]
+            - image
+      - row
+        - cell "Portaria" [ref=e74]
+        - cell
+          - button [ref=e162]
+            - image
+        - cell
+          - button [ref=e163]
+            - image
+        - cell
+          - button [ref=e164]
+            - image
+        - cell
+          - button [ref=e165]
+            - image
+      - row
+        - cell "Controle Portaria" [ref=e75]
+        - cell
+          - button [ref=e166]
+            - image
+        - cell
+          - button [ref=e167]
+            - image
+        - cell
+          - button [ref=e168]
+            - image
+        - cell
+          - button [ref=e169]
+            - image
+      - row
+        - cell "Validacao" [ref=e76]
+        - cell
+          - button [ref=e170]
+            - image
+        - cell
+          - button [ref=e171]
+            - image
+        - cell
+          - button [ref=e172]
+            - image
+        - cell
+          - button [ref=e173]
+            - image
+      - row
+        - cell "Quadro de Avisos" [ref=e77]
+        - cell
+          - button [ref=e174]
+            - image
+        - cell
+          - button [ref=e175]
+            - image
+        - cell
+          - button [ref=e176]
+            - image
+        - cell
+          - button [ref=e177]
+            - image
+      - row
+        - cell "Manutencao OS" [ref=e78]
+        - cell
+          - button [ref=e178]
+            - image
+        - cell
+          - button [ref=e179]
+            - image
+        - cell
+          - button [ref=e180]
+            - image
+        - cell
+          - button [ref=e181]
+            - image
+      - row
+        - cell "- OS Manutencao - Abrir OS" [ref=e79]
+          - StaticText "- OS Manutencao - Abrir OS"
+        - cell
+          - button [ref=e182]
+            - image
+        - cell
+          - button [ref=e183]
+            - image
+        - cell
+          - button [ref=e184]
+            - image
+        - cell
+          - button [ref=e185]
+            - image
+      - row
+        - cell "- OS Manutencao - Agenda de Preventivas" [ref=e80]
+          - StaticText "- OS Manutencao - Agenda de Preventivas"
+        - cell
+          - button [ref=e186]
+            - image
+        - cell
+          - button [ref=e187]
+            - image
+        - cell
+          - button [ref=e188]
+            - image
+        - cell
+          - button [ref=e189]
+            - image
+      - row
+        - cell "- OS Manutencao - Relatorios" [ref=e81]
+          - StaticText "- OS Manutencao - Relatorios"
+        - cell
+          - button [ref=e190]
+            - image
+        - cell
+          - button [ref=e191]
+            - image
+        - cell
+          - button [ref=e192]
+            - image
+        - cell
+          - button [ref=e193]
+            - image
+      - row
+        - cell "- OS Manutencao - Dashboard" [ref=e82]
+          - StaticText "- OS Manutencao - Dashboard"
+        - cell
+          - button [ref=e194]
+            - image
+        - cell
+          - button [ref=e195]
+            - image
+        - cell
+          - button [ref=e196]
+            - image
+        - cell
+          - button [ref=e197]
+            - image
+      - row
+        - cell "Logistica" [ref=e83]
+        - cell
+          - button [ref=e198]
+            - image
+        - cell
+          - button [ref=e199]
+            - image
+        - cell
+          - button [ref=e200]
+            - image
+        - cell
+          - button [ref=e201]
+            - image
+      - row
+        - cell "- Expedicao" [ref=e84]
+          - StaticText "- Expedicao"
+        - cell
+          - button [ref=e202]
+            - image
+        - cell
+          - button [ref=e203]
+            - image
+        - cell
+          - button [ref=e204]
+            - image
+        - cell
+          - button [ref=e205]
+            - image
+      - row
+        - cell "- Gestao de Frete" [ref=e85]
+          - StaticText "- Gestao de Frete"
+        - cell
+          - button [ref=e206]
+            - image
+        - cell
+          - button [ref=e207]
+            - image
+        - cell
+          - button [ref=e208]
+            - image
+        - cell
+          - button [ref=e209]
+            - image
+      - row
+        - cell "Cadastros" [ref=e86]
+        - cell
+          - button [ref=e210]
+            - image
+        - cell
+          - button [ref=e211]
+            - image
+        - cell
+          - button [ref=e212]
+            - image
+        - cell
+          - button [ref=e213]
+            - image
+      - row
+        - cell "- Filiais" [ref=e87]
+          - StaticText "- Filiais"
+        - cell
+          - button [ref=e214]
+            - image
+        - cell
+          - button [ref=e215]
+            - image
+        - cell
+          - button [ref=e216]
+            - image
+        - cell
+          - button [ref=e217]
+            - image
+      - row
+        - cell "- Locais" [ref=e88]
+          - StaticText "- Locais"
+        - cell
+          - button [ref=e218]
+            - image
+        - cell
+          - button [ref=e219]
+            - image
+        - cell
+          - button [ref=e220]
+            - image
+        - cell
+          - button [ref=e221]
+            - image
+      - row
+        - cell "- Divisoes" [ref=e89]
+          - StaticText "- Divisoes"
+        - cell
+          - button [ref=e222]
+            - image
+        - cell
+          - button [ref=e223]
+            - image
+        - cell
+          - button [ref=e224]
+            - image
+        - cell
+          - button [ref=e225]
+            - image
+      - row
+        - cell "- Funcoes" [ref=e90]
+          - StaticText "- Funcoes"
+        - cell
+          - button [ref=e226]
+            - image
+        - cell
+          - button [ref=e227]
+            - image
+        - cell
+          - button [ref=e228]
+            - image
+        - cell
+          - button [ref=e229]
+            - image
+      - row
+        - cell "- Equipes" [ref=e91]
+          - StaticText "- Equipes"
+        - cell
+          - button [ref=e230]
+            - image
+        - cell
+          - button [ref=e231]
+            - image
+        - cell
+          - button [ref=e232]
+            - image
+        - cell
+          - button [ref=e233]
+            - image
+      - row
+        - cell "- Status" [ref=e92]
+          - StaticText "- Status"
+        - cell
+          - button [ref=e234]
+            - image
+        - cell
+          - button [ref=e235]
+            - image
+        - cell
+          - button [ref=e236]
+            - image
+        - cell
+          - button [ref=e237]
+            - image
+      - row
+        - cell "- Horarios de Turno" [ref=e93]
+          - StaticText "- Horarios de Turno"
+        - cell
+          - button [ref=e238]
+            - image
+        - cell
+          - button [ref=e239]
+            - image
+        - cell
+          - button [ref=e240]
+            - image
+        - cell
+          - button [ref=e241]
+            - image
+      - row
+        - cell "- Opcoes de Dia" [ref=e94]
+          - StaticText "- Opcoes de Dia"
+        - cell
+          - button [ref=e242]
+            - image
+        - cell
+          - button [ref=e243]
+            - image
+        - cell
+          - button [ref=e244]
+            - image
+        - cell
+          - button [ref=e245]
+            - image
+      - row
+        - cell "- Categorias Produtividade" [ref=e95]
+          - StaticText "- Categorias Produtividade"
+        - cell
+          - button [ref=e246]
+            - image
+        - cell
+          - button [ref=e247]
+            - image
+        - cell
+          - button [ref=e248]
+            - image
+        - cell
+          - button [ref=e249]
+            - image
+      - row
+        - cell "- Metas Produtividade" [ref=e96]
+          - StaticText "- Metas Produtividade"
+        - cell
+          - button [ref=e250]
+            - image
+        - cell
+          - button [ref=e251]
+            - image
+        - cell
+          - button [ref=e252]
+            - image
+        - cell
+          - button [ref=e253]
+            - image
+      - row
+        - cell "- Logo da Empresa" [ref=e97]
+          - StaticText "- Logo da Empresa"
+        - cell
+          - button [ref=e254]
+            - image
+        - cell
+          - button [ref=e255]
+            - image
+        - cell
+          - button [ref=e256]
+            - image
+        - cell
+          - button [ref=e257]
+            - image
+      - row
+        - cell "- Manutencao Fabrica" [ref=e98]
+          - StaticText "- Manutencao Fabrica"
+        - cell
+          - button [ref=e258]
+            - image
+        - cell
+          - button [ref=e259]
+            - image
+        - cell
+          - button [ref=e260]
+            - image
+        - cell
+          - button [ref=e261]
+            - image
+      - row
+        - cell "- Performance Aderencia" [ref=e99]
+          - StaticText "- Performance Aderencia"
+        - cell
+          - button [ref=e262]
+            - image
+        - cell
+          - button [ref=e263]
+            - image
+        - cell
+          - button [ref=e264]
+            - image
+        - cell
+          - button [ref=e265]
+            - image
+      - row
+        - cell "- Fornecedores" [ref=e100]
+          - StaticText "- Fornecedores"
+        - cell
+          - button [ref=e266]
+            - image
+        - cell
+          - button [ref=e267]
+            - image
+        - cell
+          - button [ref=e268]
+            - image
+        - cell
+          - button [ref=e269]
+            - image
+      - row
+        - cell "- Dados de Refugo" [ref=e101]
+          - StaticText "- Dados de Refugo"
+        - cell
+          - button [ref=e270]
+            - image
+        - cell
+          - button [ref=e271]
+            - image
+        - cell
+          - button [ref=e272]
+            - image
+        - cell
+          - button [ref=e273]
+            - image
+      - row
+        - cell "- Motivos de Refugo" [ref=e102]
+          - StaticText "- Motivos de Refugo"
+        - cell
+          - button [ref=e274]
+            - image
+        - cell
+          - button [ref=e275]
+            - image
+        - cell
+          - button [ref=e276]
+            - image
+        - cell
+          - button [ref=e277]
+            - image
+      - row
+        - cell "- Codigos Ausencia" [ref=e103]
+          - StaticText "- Codigos Ausencia"
+        - cell
+          - button [ref=e278]
+            - image
+        - cell
+          - button [ref=e279]
+            - image
+        - cell
+          - button [ref=e280]
+            - image
+        - cell
+          - button [ref=e281]
+            - image
+      - row
+        - cell "- Kits" [ref=e104]
+          - StaticText "- Kits"
+        - cell
+          - button [ref=e282]
+            - image
+        - cell
+          - button [ref=e283]
+            - image
+        - cell
+          - button [ref=e284]
+            - image
+        - cell
+          - button [ref=e285]
+            - image
+      - row
+        - cell "- dm:refugo_defeitos" [ref=e105]
+          - StaticText "- dm:refugo_defeitos"
+        - cell
+          - button [ref=e286]
+            - image
+        - cell
+          - button [ref=e287]
+            - image
+        - cell
+          - button [ref=e288]
+            - image
+        - cell
+          - button [ref=e289]
+            - image
+      - row
+        - cell "Feriados" [ref=e106]
+        - cell
+          - button [ref=e290]
+            - image
+        - cell
+          - button [ref=e291]
+            - image
+        - cell
+          - button [ref=e292]
+            - image
+        - cell
+          - button [ref=e293]
+            - image
+      - row
+        - cell "Usuarios Online" [ref=e107]
+        - cell
+          - button [ref=e294]
+            - image
+        - cell
+          - button [ref=e295]
+            - image
+        - cell
+          - button [ref=e296]
+            - image
+        - cell
+          - button [ref=e297]
+            - image
+      - row
+        - cell "Permissoes" [ref=e108]
+        - cell
+          - button [ref=e298]
+            - image
+        - cell
+          - button [ref=e299]
+            - image
+        - cell
+          - button [ref=e300]
+            - image
+        - cell
+          - button [ref=e301]
+            - image
+    - image
+    - paragraph
+      - StaticText "Como funciona"
+    - list
+      - listitem [level=1]
+        - strong
+          - StaticText "Leitura"
+        - StaticText " - O usuario pode visualizar o modulo"
+      - listitem [level=1]
+        - strong
+          - StaticText "Editar"
+        - StaticText " - O usuario pode criar e modificar registros (inclui Leitura)"
+      - listitem [level=1]
+        - strong
+          - StaticText "Deletar"
+        - StaticText " - O usuario pode excluir registros (inclui Leitura e Editar)"
+      - listitem [level=1]
+        - strong
+          - StaticText "Ocultar"
+        - StaticText " - O modulo nao aparece no menu para este tipo de usuario"

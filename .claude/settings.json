@@ -1,0 +1,116 @@
+{
+  "env": {
+    "ANTHROPIC_BASE_URL": "http://192.168.18.209:20128/v1",
+    "ANTHROPIC_AUTH_TOKEN": "d88a9d1f84d8be874f41f0ade0b56a3041d3027d25ccd43f",
+    "CLAUDE_CODE_ENABLE_GATEWAY_MODEL_DISCOVERY": "1",
+    "CLAUDE_CODE_EXPERIMENTAL_AGENT_TEAMS": "1",
+    "ANTHROPIC_MODEL": "auto",
+    "ANTHROPIC_DEFAULT_FABLE_MODEL": "auto/claude",
+    "ANTHROPIC_DEFAULT_OPUS_MODEL": "static-claude-opus",
+    "ANTHROPIC_DEFAULT_SONNET_MODEL": "static-claude-sonnet",
+    "ANTHROPIC_DEFAULT_HAIKU_MODEL": "static-best-free",
+    "CLAUDE_CODE_MAX_CONTEXT_TOKENS": "200000"
+  },
+  "permissions": {
+    "defaultMode": "auto"
+  },
+  "model": "fable",
+  "enabledPlugins": {
+    "ecc@ecc": true,
+    "slack@claude-plugins-official": true,
+    "monday-crm@claude-plugins-official": true,
+    "commit-commands@claude-plugins-official": true,
+    "andrej-karpathy-skills@karpathy-skills": true,
+    "context7@claude-plugins-official": true,
+    "postgres@claude-plugins-official": true,
+    "playwright@claude-plugins-official": true,
+    "docker@claude-plugins-official": true,
+    "vercel@claude-plugins-official": true,
+    "brave-search@claude-plugins-official": true,
+    "typescript-lsp@claude-plugins-official": true,
+    "frontend-design@claude-plugins-official": true,
+    "feature-dev@claude-plugins-official": true,
+    "security-guidance@claude-plugins-official": true,
+    "plugin-dev@claude-plugins-official": true,
+    "github@claude-plugins-official": true
+  },
+  "extraKnownMarketplaces": {
+    "karpathy-skills": {
+      "source": {
+        "source": "github",
+        "repo": "forrestchang/andrej-karpathy-skills"
+      }
+    },
+    "ecc": {
+      "source": {
+        "source": "git",
+        "url": "https://github.com"
+      }
+    },
+    "ruflo": {
+      "source": {
+        "source": "github",
+        "repo": "ruvnet/ruflo"
+      }
+    }
+  },
+  "language": "Português-BR",
+  "sandbox": {
+    "network": {
+      "allowedDomains": [
+        "192.168.18.209",
+        "localhost",
+        "127.0.0.1",
+        "github.com",
+        "*.github.com",
+        "*.githubusercontent.com",
+        "*.npmjs.org",
+        "registry.npmjs.org",
+        "*.supabase.co",
+        "*.vercel.com",
+        "*.cloudflare.com",
+        "*.docker.com",
+        "api.search.brave.com",
+        "api.stripe.com"
+      ],
+      "deniedDomains": []
+    }
+  },
+  "autoCompactWindow": 200000,
+  "skipDangerousModePermissionPrompt": true,
+  "skipWorkflowUsageWarning": true,
+  "theme": "auto",
+  "teammateMode": "tmux",
+  "mcpServers": {
+    "scrapling": {
+      "command": "python",
+      "args": [
+        "-m",
+        "scrapling.mcp_server"
+      ]
+    },
+    "langflow": {
+      "command": "python",
+      "args": [
+        "-m",
+        "langflow",
+        "run",
+        "--mcp"
+      ]
+    },
+    "ollama": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "ollama-mcp-server"
+      ]
+    },
+    "open-design": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@nexu-io/open-design-mcp"
+      ]
+    }
+  }
+}

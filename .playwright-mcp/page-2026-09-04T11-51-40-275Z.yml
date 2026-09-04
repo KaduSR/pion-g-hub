@@ -1,0 +1,337 @@
+- generic [ref=e7]:
+  - navigation [ref=e8]:
+    - generic [ref=e10]:
+      - generic [ref=e11]:
+        - heading "Pion G Plus" [level=1] [ref=e12]
+        - button "Matriz" [ref=e13] [cursor=pointer]
+      - generic [ref=e18]:
+        - button "9+" [ref=e19] [cursor=pointer]
+        - generic [ref=e25]:
+          - generic [ref=e26]: NICOLAS SANTOS
+          - generic [ref=e27]: Assistente de Front-End Júnior
+        - button "Trocar Senha" [ref=e28] [cursor=pointer]
+        - button "Sair" [ref=e32] [cursor=pointer]
+  - complementary [ref=e36]:
+    - button "Recolher menu" [ref=e38] [cursor=pointer]
+    - navigation [ref=e41]:
+      - button "Dashboard" [ref=e43] [cursor=pointer]
+      - button "Colaboradores" [ref=e50] [cursor=pointer]
+      - button "Escala do Mês" [ref=e58] [cursor=pointer]
+      - button "Controle de Ponto" [ref=e63] [cursor=pointer]
+      - button "Produtividade Setor" [ref=e69] [cursor=pointer]
+      - button "Absenteísmo" [ref=e77] [cursor=pointer]
+      - button "Controle Portaria" [ref=e85] [cursor=pointer]
+      - button "Validação" [ref=e90] [cursor=pointer]
+      - button "Quadro de Avisos" [ref=e96] [cursor=pointer]
+      - button "OS Manutencao" [ref=e102] [cursor=pointer]
+      - button "Logistica" [ref=e109] [cursor=pointer]
+      - button "Cadastros" [ref=e119] [cursor=pointer]
+      - button "Feriados" [ref=e128] [cursor=pointer]
+      - button "Permissoes" [ref=e134] [cursor=pointer]
+      - button "Usuarios Online" [ref=e140] [cursor=pointer]
+  - main [ref=e144]:
+    - generic [ref=e145]:
+      - generic [ref=e147]:
+        - heading "Dashboard Gerencial" [level=2] [ref=e148]
+        - paragraph [ref=e149]: Visao geral do sistema
+      - generic [ref=e150]:
+        - generic [ref=e151]:
+          - generic:
+            - generic:
+              - button "Mover para cima" [disabled]
+              - generic "Arrastar para reordenar"
+              - button "Mover para baixo"
+          - generic [ref=e152]:
+            - generic [ref=e153]:
+              - paragraph [ref=e159]: "0"
+              - paragraph [ref=e160]: Total Planejado
+            - generic [ref=e161]:
+              - paragraph [ref=e165]: "0"
+              - paragraph [ref=e166]: Total Realizado
+            - generic [ref=e167]:
+              - generic [ref=e168]: RED
+              - paragraph [ref=e173]: 0%
+              - paragraph [ref=e174]: Produtividade Geral
+            - generic [ref=e175]:
+              - paragraph [ref=e180]: "0"
+              - paragraph [ref=e181]: Gap Geral
+            - generic [ref=e182]:
+              - paragraph [ref=e186]: "0"
+              - paragraph [ref=e187]: Dias Criticos
+            - generic [ref=e188]:
+              - paragraph [ref=e193]: "-"
+              - paragraph [ref=e194]: Top Colaborador
+        - generic [ref=e195]:
+          - generic:
+            - generic:
+              - button "Mover para cima"
+              - generic "Arrastar para reordenar"
+              - button "Mover para baixo"
+          - generic [ref=e196]:
+            - heading "Status dos Colaboradores" [level=3] [ref=e204]
+            - generic [ref=e205]:
+              - generic [ref=e206]:
+                - generic [ref=e207]: Ativos
+                - paragraph [ref=e213]: "475"
+              - generic [ref=e214]:
+                - generic [ref=e215]: Em Ferias
+                - paragraph [ref=e219]: "1"
+              - generic [ref=e220]:
+                - generic [ref=e221]: Afastados
+                - paragraph [ref=e227]: "0"
+              - generic [ref=e228]:
+                - generic [ref=e229]: Suspensos
+                - paragraph [ref=e233]: "0"
+              - generic [ref=e234]:
+                - generic [ref=e235]: Desligados
+                - paragraph [ref=e239]: "17"
+        - generic [ref=e240]:
+          - generic:
+            - generic:
+              - button "Mover para cima"
+              - generic "Arrastar para reordenar"
+              - button "Mover para baixo"
+          - generic [ref=e241]:
+            - generic [ref=e242]:
+              - generic [ref=e247]:
+                - heading "Manutencao Fabrica" [level=3] [ref=e248]
+                - paragraph [ref=e249]: Chamados de manutencao
+              - button "Ver todos" [ref=e250] [cursor=pointer]
+            - generic [ref=e251]:
+              - generic [ref=e254]:
+                - generic [ref=e255]: Em Aberto
+                - paragraph [ref=e260]: "28"
+                - paragraph [ref=e261]: Aguardando resolucao
+              - generic [ref=e264]:
+                - generic [ref=e265]: Total
+                - paragraph [ref=e270]: "218"
+                - paragraph [ref=e271]: Chamados registrados
+              - generic [ref=e274]:
+                - generic [ref=e275]: Concluidos
+                - paragraph [ref=e280]: "184"
+                - paragraph [ref=e281]: 84% resolvidos
+        - generic [ref=e282]:
+          - generic:
+            - generic:
+              - button "Mover para cima"
+              - generic "Arrastar para reordenar"
+              - button "Mover para baixo"
+          - generic [ref=e283]:
+            - generic [ref=e284]:
+              - heading "Aniversariantes" [level=3] [ref=e290]
+              - generic [ref=e291]:
+                - button [ref=e292] [cursor=pointer]
+                - generic [ref=e295]: Setembro
+                - button [ref=e296] [cursor=pointer]
+            - generic [ref=e299]:
+              - generic [ref=e300]:
+                - img "MADALENA DE SOUZA LOURENCO ALVES" [ref=e302]
+                - generic [ref=e303]:
+                  - paragraph [ref=e304]: MADALENA DE SOUZA LOURENCO ALVES
+                  - paragraph [ref=e305]: 01 de setembro
+              - generic [ref=e309]:
+                - img "ALISSON FERREIRA RAYMUNDO" [ref=e311]
+                - generic [ref=e312]:
+                  - paragraph [ref=e313]: ALISSON FERREIRA RAYMUNDO
+                  - paragraph [ref=e314]: 01 de setembro
+              - generic [ref=e318]:
+                - generic [ref=e319]: A
+                - generic [ref=e321]:
+                  - paragraph [ref=e322]: ANA PAULA DE SOUZA SANTOS
+                  - paragraph [ref=e323]: 03 de setembro
+              - generic [ref=e327]:
+                - generic [ref=e328]: J
+                - generic [ref=e330]:
+                  - paragraph [ref=e331]: JOSE RICARDO GARCIA DA SILVA
+                  - paragraph [ref=e332]: 03 de setembro
+              - generic [ref=e336]:
+                - generic [ref=e337]: L
+                - generic [ref=e339]:
+                  - paragraph [ref=e340]: LUAN MIGUEL DE PAULA VICENTE
+                  - paragraph [ref=e341]: 03 de setembro
+              - generic [ref=e345]:
+                - generic [ref=e346]: I
+                - generic [ref=e348]:
+                  - paragraph [ref=e349]: ISAAC DA SILVA NICODEMO
+                  - paragraph [ref=e350]: 04 de setembro
+              - generic [ref=e354]:
+                - generic [ref=e355]: P
+                - generic [ref=e357]:
+                  - paragraph [ref=e358]: PEDRO HENRIQUE BARBOSA VARGAS
+                  - paragraph [ref=e359]: 04 de setembro
+              - generic [ref=e363]:
+                - generic [ref=e364]: P
+                - generic [ref=e366]:
+                  - paragraph [ref=e367]: PEDRO HENRIQUE REZENDE DE SOUZA
+                  - paragraph [ref=e368]: 06 de setembro
+              - generic [ref=e372]:
+                - generic [ref=e373]: W
+                - generic [ref=e375]:
+                  - paragraph [ref=e376]: WENDER RELYSON DE SOUZA MARCIANO
+                  - paragraph [ref=e377]: 06 de setembro
+              - generic [ref=e381]:
+                - generic [ref=e382]: D
+                - generic [ref=e384]:
+                  - paragraph [ref=e385]: DOUGLAS RABELLO DA SILVA
+                  - paragraph [ref=e386]: 07 de setembro
+              - generic [ref=e390]:
+                - generic [ref=e391]: R
+                - generic [ref=e393]:
+                  - paragraph [ref=e394]: REGINALDO DOS SANTOS SILVA
+                  - paragraph [ref=e395]: 07 de setembro
+              - generic [ref=e399]:
+                - generic [ref=e400]: R
+                - generic [ref=e402]:
+                  - paragraph [ref=e403]: RODRIGO AMANCIO DOS SANTOS
+                  - paragraph [ref=e404]: 09 de setembro
+              - generic [ref=e408]:
+                - generic [ref=e409]: G
+                - generic [ref=e411]:
+                  - paragraph [ref=e412]: GUILHERME SILVA SANTOS
+                  - paragraph [ref=e413]: 10 de setembro
+              - generic [ref=e417]:
+                - generic [ref=e418]: A
+                - generic [ref=e420]:
+                  - paragraph [ref=e421]: ANA CLARA SOUZA DE CARVALHO
+                  - paragraph [ref=e422]: 12 de setembro
+              - generic [ref=e426]:
+                - img "JOSIANE RODRIGUES DE ALMEIDA" [ref=e428]
+                - generic [ref=e429]:
+                  - paragraph [ref=e430]: JOSIANE RODRIGUES DE ALMEIDA
+                  - paragraph [ref=e431]: 13 de setembro
+              - generic [ref=e435]:
+                - img "ROBSON CARDOZO DA SILVA" [ref=e437]
+                - generic [ref=e438]:
+                  - paragraph [ref=e439]: ROBSON CARDOZO DA SILVA
+                  - paragraph [ref=e440]: 14 de setembro
+              - generic [ref=e444]:
+                - img "JOSEANE TORRES DA SILVA" [ref=e446]
+                - generic [ref=e447]:
+                  - paragraph [ref=e448]: JOSEANE TORRES DA SILVA
+                  - paragraph [ref=e449]: 14 de setembro
+              - generic [ref=e453]:
+                - generic [ref=e454]: M
+                - generic [ref=e456]:
+                  - paragraph [ref=e457]: MATHEUS DA SILVA GORITO TEIXEIRA
+                  - paragraph [ref=e458]: 14 de setembro
+              - generic [ref=e462]:
+                - img "ROBERTA ESTEVES RODRIGHERI" [ref=e464]
+                - generic [ref=e465]:
+                  - paragraph [ref=e466]: ROBERTA ESTEVES RODRIGHERI
+                  - paragraph [ref=e467]: 14 de setembro
+              - generic [ref=e471]:
+                - generic [ref=e472]: P
+                - generic [ref=e474]:
+                  - paragraph [ref=e475]: PEDRO HENRIQUE VIEIRA FERNANDES DA CRUZ
+                  - paragraph [ref=e476]: 15 de setembro
+              - generic [ref=e480]:
+                - generic [ref=e481]: W
+                - generic [ref=e483]:
+                  - paragraph [ref=e484]: WESLEY BRUNO MARIANO MURAT
+                  - paragraph [ref=e485]: 16 de setembro
+              - generic [ref=e489]:
+                - generic [ref=e490]: R
+                - generic [ref=e492]:
+                  - paragraph [ref=e493]: RICARDO JOSE FAGUNDES DE SOUZA CARVALHO
+                  - paragraph [ref=e494]: 18 de setembro
+              - generic [ref=e498]:
+                - generic [ref=e499]: A
+                - generic [ref=e501]:
+                  - paragraph [ref=e502]: ADRIANO VENTURA DE SOUZA
+                  - paragraph [ref=e503]: 19 de setembro
+              - generic [ref=e507]:
+                - generic [ref=e508]: L
+                - generic [ref=e510]:
+                  - paragraph [ref=e511]: LUIZ FELIPE FRAGA DOS SANTOS
+                  - paragraph [ref=e512]: 19 de setembro
+              - generic [ref=e516]:
+                - generic [ref=e517]: L
+                - generic [ref=e519]:
+                  - paragraph [ref=e520]: LUIZ CARLOS DA SILVA SANTOS
+                  - paragraph [ref=e521]: 19 de setembro
+              - generic [ref=e525]:
+                - generic [ref=e526]: M
+                - generic [ref=e528]:
+                  - paragraph [ref=e529]: MARCO AURELIO BAKER
+                  - paragraph [ref=e530]: 20 de setembro
+              - generic [ref=e534]:
+                - img "CARLA DA SILVA MARTINS" [ref=e536]
+                - generic [ref=e537]:
+                  - paragraph [ref=e538]: CARLA DA SILVA MARTINS
+                  - paragraph [ref=e539]: 21 de setembro
+              - generic [ref=e543]:
+                - img "DENISE APARECIDA DA COSTA" [ref=e545]
+                - generic [ref=e546]:
+                  - paragraph [ref=e547]: DENISE APARECIDA DA COSTA
+                  - paragraph [ref=e548]: 21 de setembro
+              - generic [ref=e552]:
+                - generic [ref=e553]: M
+                - generic [ref=e555]:
+                  - paragraph [ref=e556]: MARIA TERESA SANTOS DA SILVA
+                  - paragraph [ref=e557]: 22 de setembro
+              - generic [ref=e561]:
+                - generic [ref=e562]: R
+                - generic [ref=e564]:
+                  - paragraph [ref=e565]: RICARDO DE OLIVEIRA NOGUEIRA JUNIOR
+                  - paragraph [ref=e566]: 22 de setembro
+              - generic [ref=e570]:
+                - generic [ref=e571]: "N"
+                - generic [ref=e573]:
+                  - paragraph [ref=e574]: NICOLAS DE CARVALHO SILVA PEREIRA
+                  - paragraph [ref=e575]: 23 de setembro
+              - generic [ref=e579]:
+                - generic [ref=e580]: L
+                - generic [ref=e582]:
+                  - paragraph [ref=e583]: LEILIANE MACHADO RABELLO CADIZ
+                  - paragraph [ref=e584]: 25 de setembro
+              - generic [ref=e588]:
+                - img "RENILDA MILITAO DE OLIVEIRA" [ref=e590]
+                - generic [ref=e591]:
+                  - paragraph [ref=e592]: RENILDA MILITAO DE OLIVEIRA
+                  - paragraph [ref=e593]: 25 de setembro
+              - generic [ref=e597]:
+                - generic [ref=e598]: S
+                - generic [ref=e600]:
+                  - paragraph [ref=e601]: SAMARA DA SILVA LOPES
+                  - paragraph [ref=e602]: 26 de setembro
+              - generic [ref=e606]:
+                - generic [ref=e607]: C
+                - generic [ref=e609]:
+                  - paragraph [ref=e610]: CAMILLA DAMIANA DE PAULA MARCOLINO
+                  - paragraph [ref=e611]: 27 de setembro
+              - generic [ref=e615]:
+                - generic [ref=e616]: O
+                - generic [ref=e618]:
+                  - paragraph [ref=e619]: OTAVIO COUTINHO DE ALMEIDA SOARES
+                  - paragraph [ref=e620]: 27 de setembro
+              - generic [ref=e624]:
+                - generic [ref=e625]: A
+                - generic [ref=e627]:
+                  - paragraph [ref=e628]: ANA LUIZA MACHADO VASCONCELLOS
+                  - paragraph [ref=e629]: 28 de setembro
+              - generic [ref=e633]:
+                - img "JENYFER PAIVA DA SILVA" [ref=e635]
+                - generic [ref=e636]:
+                  - paragraph [ref=e637]: JENYFER PAIVA DA SILVA
+                  - paragraph [ref=e638]: 28 de setembro
+              - generic [ref=e642]:
+                - generic [ref=e643]: C
+                - generic [ref=e645]:
+                  - paragraph [ref=e646]: CINTIA MATOS DOS SANTOS
+                  - paragraph [ref=e647]: 30 de setembro
+        - generic [ref=e651]:
+          - generic:
+            - generic:
+              - button "Mover para cima"
+              - generic "Arrastar para reordenar"
+              - button "Mover para baixo" [disabled]
+          - generic [ref=e655]:
+            - generic [ref=e656]:
+              - generic [ref=e664]:
+                - heading "Ferias" [level=3] [ref=e665]
+                - paragraph [ref=e666]: 0 colaboradores em ferias
+              - generic [ref=e667]:
+                - button [ref=e668] [cursor=pointer]
+                - generic [ref=e671]: Setembro
+                - button [ref=e672] [cursor=pointer]
+            - paragraph [ref=e681]: Nenhum colaborador em ferias em Setembro

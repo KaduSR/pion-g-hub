@@ -1,0 +1,194 @@
+- generic [ref=e1] clickable [onclick]
+  - navigation
+    - heading "Pion G Plus" [level=1, ref=e2]
+    - button "Matriz" [ref=e3]
+      - image
+      - StaticText "Matriz"
+    - button "9+" [ref=e4]
+      - image
+      - StaticText "9+"
+    - StaticText "NICOLAS SANTOS"
+    - StaticText "Assistente de Front-End Júnior"
+    - button "Trocar Senha" [ref=e5]
+      - image
+    - button "Sair" [ref=e6]
+      - image
+      - StaticText "Sair"
+  - complementary
+    - button "Recolher menu" [ref=e7]
+      - image
+    - navigation
+      - button "Dashboard" [ref=e10]
+        - image
+        - StaticText "Dashboard"
+      - button "Colaboradores" [ref=e11]
+        - image
+        - StaticText "Colaboradores"
+      - button "Escala do Mês" [ref=e12]
+        - image
+        - StaticText "Escala do Mês"
+      - button "Controle de Ponto" [ref=e13]
+        - image
+        - StaticText "Controle de Ponto"
+      - button "Produtividade Setor" [ref=e14]
+        - image
+        - StaticText "Produtividade Setor"
+      - button "Absenteísmo" [ref=e15]
+        - image
+        - StaticText "Absenteísmo"
+      - button "Controle Portaria" [ref=e16]
+        - image
+        - StaticText "Controle Portaria"
+      - button "Validação" [ref=e17]
+        - image
+        - StaticText "Validação"
+      - button "Quadro de Avisos" [ref=e18]
+        - image
+        - StaticText "Quadro de Avisos"
+      - button "OS Manutencao" [ref=e19]
+        - image
+        - StaticText "OS Manutencao"
+        - image
+      - button "Logistica" [ref=e20]
+        - image
+        - StaticText "Logistica"
+        - image
+      - button "Expedicao" [ref=e21]
+        - image
+        - StaticText "Expedicao"
+      - button "Gestao de Frete" [ref=e22]
+        - image
+        - StaticText "Gestao de Frete"
+      - button "Cadastros" [ref=e21]
+        - image
+        - StaticText "Cadastros"
+        - image
+      - button "Filiais" [ref=e22]
+        - image
+        - StaticText "Filiais"
+      - button "Locais" [ref=e23]
+        - image
+        - StaticText "Locais"
+      - button "Divisões" [ref=e24]
+        - image
+        - StaticText "Divisões"
+      - button "Funções" [ref=e25]
+        - image
+        - StaticText "Funções"
+      - button "Equipes" [ref=e26]
+        - image
+        - StaticText "Equipes"
+      - button "Status" [ref=e27]
+        - image
+        - StaticText "Status"
+      - button "Horarios de Turno" [ref=e28]
+        - image
+        - StaticText "Horarios de Turno"
+      - button "Opcoes de Dia" [ref=e29]
+        - image
+        - StaticText "Opcoes de Dia"
+      - button "Categorias Produtividade" [ref=e30]
+        - image
+        - StaticText "Categorias Produtividade"
+      - button "Metas Produtividade" [ref=e31]
+        - image
+        - StaticText "Metas Produtividade"
+      - button "Logo da Empresa" [ref=e32]
+        - image
+        - StaticText "Logo da Empresa"
+      - button "Manutencao Fabrica" [ref=e33]
+        - image
+        - StaticText "Manutencao Fabrica"
+      - button "Performance Aderencia" [ref=e34]
+        - image
+        - StaticText "Performance Aderencia"
+      - button "Fornecedores" [ref=e35]
+        - image
+        - StaticText "Fornecedores"
+      - button "Dados de Refugo" [ref=e36]
+        - image
+        - StaticText "Dados de Refugo"
+      - button "Motivos de Refugo" [ref=e37]
+        - image
+        - StaticText "Motivos de Refugo"
+      - button "Codigos Ausencia" [ref=e38]
+        - image
+        - StaticText "Codigos Ausencia"
+      - button "Kits" [ref=e39]
+        - image
+        - StaticText "Kits"
+      - button "Defeito Refugo" [ref=e40]
+        - image
+        - StaticText "Defeito Refugo"
+      - button "Feriados" [ref=e41]
+        - image
+        - StaticText "Feriados"
+      - button "Permissoes" [ref=e42]
+        - image
+        - StaticText "Permissoes"
+      - button "Usuarios Online" [ref=e43]
+        - image
+        - StaticText "Usuarios Online"
+  - main
+    - navigation
+      - button "Áreas" [ref=e44]
+      - button "Departamentos" [ref=e45]
+      - button "Setores" [ref=e46]
+      - button "Cargos" [ref=e47]
+    - heading "Áreas" [level=3, ref=e8]
+    - button "Adicionar Área" [ref=e9]
+      - image
+      - StaticText "Adicionar Área"
+    - table
+      - rowgroup
+        - row
+          - columnheader "DESCRICAO" [ref=e64]
+          - columnheader "DESCRICAO CURTA" [ref=e65]
+          - columnheader "STATUS" [ref=e66]
+          - columnheader "ACOES" [ref=e67]
+      - row
+        - cell "Administrativo" [ref=e48]
+        - cell "Responsável pelo suporte à gestão da empresa, incluindo finanças, recursos humanos, compras, marketing e rotinas administrativas." [ref=e49]
+        - cell "Ativo" [ref=e50]
+          - button "Ativo" [ref=e68]
+        - cell "Editar Excluir" [ref=e51]
+          - button "Editar" [ref=e69]
+            - image
+          - button "Excluir" [ref=e70]
+            - image
+      - row
+        - cell "Logística" [ref=e52]
+        - cell "Responsável pelo recebimento, armazenamento, movimentação e expedição de materiais e produtos." [ref=e53]
+        - cell "Ativo" [ref=e54]
+          - button "Ativo" [ref=e71]
+        - cell "Editar Excluir" [ref=e55]
+          - button "Editar" [ref=e72]
+            - image
+          - button "Excluir" [ref=e73]
+            - image
+      - row
+        - cell "Obra" [ref=e56]
+        - cell "Responsável pela execução de serviços de construção, manutenção e infra-estrutura relacionados aos projetos da empresa." [ref=e57]
+        - cell "Ativo" [ref=e58]
+          - button "Ativo" [ref=e74]
+        - cell "Editar Excluir" [ref=e59]
+          - button "Editar" [ref=e75]
+            - image
+          - button "Excluir" [ref=e76]
+            - image
+      - row
+        - cell "Produção" [ref=e60]
+        - cell "Responsável pela fabricação, montagem, acabamento, embalagem e controle operacional dos produtos." [ref=e61]
+        - cell "Ativo" [ref=e62]
+          - button "Ativo" [ref=e77]
+        - cell "Editar Excluir" [ref=e63]
+          - button "Editar" [ref=e78]
+            - image
+          - button "Excluir" [ref=e79]
+            - image
+    - StaticText "Total: "
+    - StaticText "4"
+    - StaticText " "
+    - StaticText "itens"
+    - StaticText " cadastrado"
+    - StaticText "s"

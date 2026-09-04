@@ -1,0 +1,10 @@
+{
+  "version": "1.3.1",
+  "project": "PionG Browser Mapper",
+  "language": "pt-BR",
+  "status": "installed",
+  "phase": "exploration",
+  "checkpoint": null,
+  "installedAt": "2026-09-01",
+  "engines": ["claude-code"]
+}
