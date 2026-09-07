@@ -118,6 +118,7 @@ export interface AuthUser {
     email: string;
     colaborador_id: string | null;
     perfil_id: string;
+    perfil_nome: string;
     nivel_hierarquico: number;
     filial_id: string | null;
 }

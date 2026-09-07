@@ -1,8 +1,7 @@
 import { Request, Response } from 'express';
-import { PerfisService } from '../../services/perfis.service';
 export declare class PerfisController {
-    private service;
-    constructor(service: PerfisService);
+    private service?;
+    constructor(service?: any | undefined);
     listar(req: Request, res: Response): Promise<void>;
     buscarPorId(req: Request, res: Response): Promise<void>;
     criar(req: Request, res: Response): Promise<void>;

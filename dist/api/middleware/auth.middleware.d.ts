@@ -1,6 +1,11 @@
-export declare function authMiddleware(req: any, res: any, next: any): void;
-export declare function requirePermission(modulo: string, acao: string): (req: any, res: any, next: any) => void;
-export declare function requireNivelMinimo(nivel: number): (req: any, res: any, next: any) => void;
-export declare function generateToken(user: any, expiresIn?: string | number): string;
-export declare function verifyToken(token: string): any | null;
+import { RequestHandler } from 'express';
+import type { JwtPayload } from '../../shared/types/entities';
+export declare const authMiddleware: RequestHandler;
+declare module 'express-serve-static-core' {
+    interface Request {
+        user?: JwtPayload;
+    }
+}
+export declare function requireNivelMinimo(nivel: number): RequestHandler;
+export declare function requirePermission(modulo: string, acao: 'create' | 'read' | 'update' | 'delete'): RequestHandler;
 //# sourceMappingURL=auth.middleware.d.ts.map
