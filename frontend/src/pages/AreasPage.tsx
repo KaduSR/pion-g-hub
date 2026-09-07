@@ -16,26 +16,33 @@ export function AreasPage() {
   const [modalOpen, setModalOpen] = useState(false);
   const [editingId, setEditingId] = useState<string | null>(null);
   const [form, setForm] = useState(emptyForm());
+  const [saving, setSaving] = useState(false);
+  const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
     let cancelled = false;
     setLoading(true);
-    cadastrosService.getAreas().then((data) => {
-      if (!cancelled) {
-        setAreas(data);
-        setLoading(false);
-      }
-    }).catch(() => {
-      if (!cancelled) {
-        setLoading(false);
-      }
-    });
+    setError(null);
+    cadastrosService.getAreas()
+      .then((data) => {
+        if (!cancelled) {
+          setAreas(data);
+          setLoading(false);
+        }
+      })
+      .catch((err) => {
+        if (!cancelled) {
+          setError(err.message || 'Erro ao carregar areas');
+          setLoading(false);
+        }
+      });
     return () => { cancelled = true; };
   }, []);
 
   const openCreate = () => {
     setEditingId(null);
     setForm(emptyForm());
+    setError(null);
     setModalOpen(true);
   };
 
@@ -46,25 +53,46 @@ export function AreasPage() {
       descricao_curta: area.descricao_curta,
       status: area.status,
     });
+    setError(null);
     setModalOpen(true);
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (editingId) {
-      setAreas((prev) => prev.map((a) => (a.id === editingId ? { ...a, ...form } : a)));
-    } else {
-      const newArea: IArea = {
-        id: Date.now().toString(),
-        ...form,
-      };
-      setAreas((prev) => [...prev, newArea]);
+    setSaving(true);
+    setError(null);
+    try {
+      let saved: IArea;
+      if (editingId) {
+        saved = await cadastrosService.updateArea(editingId, form);
+      } else {
+        saved = await cadastrosService.createArea(form);
+      }
+      setAreas((prev) => {
+        if (editingId) {
+          return prev.map((a) => (a.id === editingId ? saved : a));
+        }
+        return [...prev, saved];
+      });
+      setModalOpen(false);
+    } catch (err: any) {
+      setError(err.message || 'Erro ao salvar area');
+    } finally {
+      setSaving(false);
     }
-    setModalOpen(false);
   };
 
-  const handleDelete = (id: string) => {
-    setAreas((prev) => prev.filter((a) => a.id !== id));
+  const handleDelete = async (id: string) => {
+    if (!confirm('Deseja realmente excluir esta area?')) {
+      return;
+    }
+    setError(null);
+    try {
+      await cadastrosService.deleteArea(id);
+      setAreas((prev) => prev.filter((a) => a.id !== id));
+    } catch (err: any) {
+      setError(err.message || 'Erro ao excluir area');
+    }
   };
 
   const columns: Column<IArea>[] = [
@@ -91,6 +119,11 @@ export function AreasPage() {
 
   return (
     <>
+      {error && (
+        <div style={{ padding: '1rem', background: '#ffebee', color: '#c62828', marginBottom: '1rem' }}>
+          {error}
+        </div>
+      )}
       <BaseTable
         title="Areas"
         columns={columns}
@@ -131,11 +164,11 @@ export function AreasPage() {
             </label>
           </div>
           <div style={{ display: 'flex', justifyContent: 'flex-end', gap: '0.5rem' }}>
-            <button type="button" onClick={() => setModalOpen(false)} style={{ padding: '0.5rem 1rem' }}>
+            <button type="button" onClick={() => setModalOpen(false)} style={{ padding: '0.5rem 1rem' }} disabled={saving}>
               Cancelar
             </button>
-            <button type="submit" style={{ padding: '0.5rem 1rem' }}>
-              Salvar
+            <button type="submit" style={{ padding: '0.5rem 1rem' }} disabled={saving}>
+              {saving ? 'Salvando...' : 'Salvar'}
             </button>
           </div>
         </form>
