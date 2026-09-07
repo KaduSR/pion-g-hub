@@ -7,6 +7,7 @@ import { MotivosRefugoPage } from './pages/MotivosRefugoPage';
 import { DefeitosRefugoPage } from './pages/DefeitosRefugoPage';
 import { ColaboradoresPage } from './pages/ColaboradoresPage';
 import { EscalasPage } from './pages/EscalasPage';
+import { PontosPage } from './pages/PontosPage';
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
         <Route path="/cadastros/defeitos-refugo" element={<DefeitosRefugoPage />} />
         <Route path="/rh/colaboradores" element={<ColaboradoresPage />} />
         <Route path="/rh/escalas" element={<EscalasPage />} />
+        <Route path="/rh/pontos" element={<PontosPage />} />
       </Routes>
     </BrowserRouter>
   );

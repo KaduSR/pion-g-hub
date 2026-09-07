@@ -208,6 +208,19 @@ export const motivosRefugoApi = {
   },
 };
 
+// API methods for Pontos (RH - Fase 2 - Controle de Ponto)
+export const pontosApi = {
+  async listar() { return fetchApi<any[]>('/pontos'); },
+  async buscarPorId(id: string) { return fetchApi<any>(`/pontos/${id}`); },
+  async criar(data: { colaborador_id: string; data_registro: string; hora_entrada?: string; hora_saida?: string; tipo_registro?: string; observacao?: string }) {
+    return fetchApi<any>('/pontos', { method: 'POST', body: JSON.stringify(data) });
+  },
+  async atualizar(id: string, data: Partial<{ colaborador_id?: string; data_registro?: string; hora_entrada?: string; hora_saida?: string; tipo_registro?: string; observacao?: string }>) {
+    return fetchApi<any>(`/pontos/${id}`, { method: 'PUT', body: JSON.stringify(data) });
+  },
+  async excluir(id: string) { return fetchApi<void>(`/pontos/${id}`, { method: 'DELETE' }); },
+};
+
 // API methods for Escalas (RH - Fase 2 - Escala do Mes)
 export const escalasApi = {
   async listar() {

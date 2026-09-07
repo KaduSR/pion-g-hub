@@ -45,6 +45,19 @@ export interface IDefeitoRefugo {
 // ============================================
 // RH — Colaboradores (Fase 2)
 // ============================================
+export interface IPonto {
+  id: string;
+  colaborador_id: string;
+  data_registro: string;
+  hora_entrada?: string;
+  hora_saida?: string;
+  tipo_registro: string;
+  observacao?: string;
+  colaborador_nome?: string;
+  created_at?: Date;
+  updated_at?: Date;
+}
+
 export interface IEscala {
   id: string;
   colaborador_id: string;
