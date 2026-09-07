@@ -6,6 +6,7 @@ import { CargosPage } from './pages/CargosPage';
 import { MotivosRefugoPage } from './pages/MotivosRefugoPage';
 import { DefeitosRefugoPage } from './pages/DefeitosRefugoPage';
 import { ColaboradoresPage } from './pages/ColaboradoresPage';
+import { EscalasPage } from './pages/EscalasPage';
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
         <Route path="/cadastros/motivos-refugo" element={<MotivosRefugoPage />} />
         <Route path="/cadastros/defeitos-refugo" element={<DefeitosRefugoPage />} />
         <Route path="/rh/colaboradores" element={<ColaboradoresPage />} />
+        <Route path="/rh/escalas" element={<EscalasPage />} />
       </Routes>
     </BrowserRouter>
   );

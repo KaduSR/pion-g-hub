@@ -208,6 +208,25 @@ export const motivosRefugoApi = {
   },
 };
 
+// API methods for Escalas (RH - Fase 2 - Escala do Mes)
+export const escalasApi = {
+  async listar() {
+    return fetchApi<any[]>('/escalas');
+  },
+  async buscarPorId(id: string) {
+    return fetchApi<any>(`/escalas/${id}`);
+  },
+  async criar(data: { colaborador_id: string; data_escala: string; turno: string; status?: string }) {
+    return fetchApi<any>('/escalas', { method: 'POST', body: JSON.stringify(data) });
+  },
+  async atualizar(id: string, data: Partial<{ colaborador_id?: string; data_escala?: string; turno?: string; status?: string }>) {
+    return fetchApi<any>(`/escalas/${id}`, { method: 'PUT', body: JSON.stringify(data) });
+  },
+  async excluir(id: string) {
+    return fetchApi<void>(`/escalas/${id}`, { method: 'DELETE' });
+  },
+};
+
 // API methods for Colaboradores (RH - Fase 2)
 export const colaboradoresApi = {
   async listar() {
