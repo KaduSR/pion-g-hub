@@ -8,6 +8,7 @@ import { DefeitosRefugoPage } from './pages/DefeitosRefugoPage';
 import { ColaboradoresPage } from './pages/ColaboradoresPage';
 import { EscalasPage } from './pages/EscalasPage';
 import { PontosPage } from './pages/PontosPage';
+import { LogisticaPage } from './pages/LogisticaPage';
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
         <Route path="/rh/colaboradores" element={<ColaboradoresPage />} />
         <Route path="/rh/escalas" element={<EscalasPage />} />
         <Route path="/rh/pontos" element={<PontosPage />} />
+        <Route path="/logistica" element={<LogisticaPage />} />
       </Routes>
     </BrowserRouter>
   );

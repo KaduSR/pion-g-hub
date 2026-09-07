@@ -307,3 +307,16 @@ export const defeitosRefugoApi = {
     });
   },
 };
+
+// Logistica (Dia 4 - Módulo Logística / Operações)
+export const logisticaApi = {
+  async listar() { return fetchApi<any[]>('/logistica'); },
+  async buscarPorId(id: string) { return fetchApi<any>(`/logistica/${id}`); },
+  async criar(data: { codigo_rastreio: string; colaborador_responsavel_id?: string; origem: string; destino: string; status_operacao?: string; data_prevista?: string }) {
+    return fetchApi<any>('/logistica', { method: 'POST', body: JSON.stringify(data) });
+  },
+  async atualizar(id: string, data: Partial<{ codigo_rastreio?: string; colaborador_responsavel_id?: string; origem?: string; destino?: string; status_operacao?: string; data_prevista?: string }>) {
+    return fetchApi<any>(`/logistica/${id}`, { method: 'PUT', body: JSON.stringify(data) });
+  },
+  async excluir(id: string) { return fetchApi<void>(`/logistica/${id}`, { method: 'DELETE' }); },
+};

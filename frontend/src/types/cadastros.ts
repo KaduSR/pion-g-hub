@@ -82,3 +82,15 @@ export interface IColaborador {
   created_at?: Date;
   updated_at?: Date;
 }
+
+export interface IOperacaoLogistica {
+  id: string;
+  codigo_rastreio: string;
+  colaborador_responsavel_id?: string;
+  colaborador_nome?: string;
+  origem: string;
+  destino: string;
+  status_operacao: string;
+  data_prevista?: string;
+  created_at?: string;
+}
