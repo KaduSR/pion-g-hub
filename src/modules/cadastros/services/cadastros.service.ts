@@ -2,8 +2,8 @@
 // Referencia: docs/piong-blueprint/03-mapa-funcional.md
 // Interfaces: src/shared/types/cadastros.ts
 
-import { supabase } from '../../shared/lib/supabase';
-import type { IArea, IDepartamento, ISetor, ICargo, IMotivoRefugo, IDefeitoRefugo } from '../../shared/types/cadastros';
+import { supabase } from '../../../shared/lib/supabase';
+import type { IArea, IDepartamento, ISetor, ICargo, IMotivoRefugo, IDefeitoRefugo } from '../../../shared/types/cadastros';
 
 export interface CadastrosFilters {
   busca?: string;
