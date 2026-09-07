@@ -94,3 +94,10 @@ export interface IOperacaoLogistica {
   data_prevista?: string;
   created_at?: string;
 }
+
+export interface IDashboardMetrics {
+  colaboradores: { status: string; total: number }[];
+  logistica: { status_operacao: string; total: number }[];
+  pontoHoje: number;
+  escalasMes: number;
+}

@@ -1,3 +1,4 @@
+import type { IDashboardMetrics } from '../types/cadastros';
 // Integracao real com API Express via HTTP
 // Endpoints: /api/v1/areas, /api/v1/departamentos, /api/v1/setores, /api/v1/cargos, /api/v1/motivos-refugo, /api/v1/defeitos-refugo
 // Autenticacao: JWT injetado automaticamente pelo cliente api.ts
@@ -319,4 +320,8 @@ export const logisticaApi = {
     return fetchApi<any>(`/logistica/${id}`, { method: 'PUT', body: JSON.stringify(data) });
   },
   async excluir(id: string) { return fetchApi<void>(`/logistica/${id}`, { method: 'DELETE' }); },
+};
+
+export const dashboardApi = {
+  async getMetrics() { return fetchApi<IDashboardMetrics>('/dashboard/metrics'); },
 };
