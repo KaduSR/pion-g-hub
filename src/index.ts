@@ -11,6 +11,7 @@ import cargosRoutes from './api/routes/cargos.routes';
 import motivosRefugoRoutes from './api/routes/motivos-refugo.routes';
 import defeitosRefugoRoutes from './api/routes/defeitos-refugo.routes';
 import colaboradoresRoutes from './api/routes/colaboradores.routes';
+import escalasRoutes from './api/routes/escalas.routes';
 
 const router = Router();
 
@@ -25,5 +26,6 @@ router.use('/cargos', authMiddleware, cargosRoutes);
 router.use('/motivos-refugo', authMiddleware, motivosRefugoRoutes);
 router.use('/defeitos-refugo', authMiddleware, defeitosRefugoRoutes);
 router.use('/colaboradores', authMiddleware, colaboradoresRoutes);
+router.use('/escalas', authMiddleware, escalasRoutes);
 
 export default router;
