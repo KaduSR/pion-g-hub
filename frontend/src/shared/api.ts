@@ -1,5 +1,5 @@
 // Integracao real com API Express via HTTP
-// Endpoints: /api/v1/areas e /api/v1/departamentos
+// Endpoints: /api/v1/areas, /api/v1/departamentos, /api/v1/setores, /api/v1/cargos, /api/v1/motivos-refugo, /api/v1/defeitos-refugo
 // Autenticacao: JWT injetado automaticamente pelo cliente api.ts
 
 const BASE_URL = '/api/v1';
@@ -110,6 +110,167 @@ export const departamentosApi = {
 
   async excluir(id: string) {
     return fetchApi<void>(`/departamentos/${id}`, {
+      method: 'DELETE',
+    });
+  },
+};
+
+// API methods for Setores
+export const setoresApi = {
+  async listar() {
+    return fetchApi<any[]>('/setores');
+  },
+
+  async buscarPorId(id: string) {
+    return fetchApi<any>(`/setores/${id}`);
+  },
+
+  async criar(data: { descricao: string; descricao_curta: string; status?: string }) {
+    return fetchApi<any>('/setores', {
+      method: 'POST',
+      body: JSON.stringify(data),
+    });
+  },
+
+  async atualizar(id: string, data: Partial<{ descricao: string; descricao_curta: string; status?: string }>) {
+    return fetchApi<any>(`/setores/${id}`, {
+      method: 'PUT',
+      body: JSON.stringify(data),
+    });
+  },
+
+  async excluir(id: string) {
+    return fetchApi<void>(`/setores/${id}`, {
+      method: 'DELETE',
+    });
+  },
+};
+
+// API methods for Cargos
+export const cargosApi = {
+  async listar() {
+    return fetchApi<any[]>('/cargos');
+  },
+
+  async buscarPorId(id: string) {
+    return fetchApi<any>(`/cargos/${id}`);
+  },
+
+  async criar(data: { descricao: string; descricao_curta: string; status?: string }) {
+    return fetchApi<any>('/cargos', {
+      method: 'POST',
+      body: JSON.stringify(data),
+    });
+  },
+
+  async atualizar(id: string, data: Partial<{ descricao: string; descricao_curta: string; status?: string }>) {
+    return fetchApi<any>(`/cargos/${id}`, {
+      method: 'PUT',
+      body: JSON.stringify(data),
+    });
+  },
+
+  async excluir(id: string) {
+    return fetchApi<void>(`/cargos/${id}`, {
+      method: 'DELETE',
+    });
+  },
+};
+
+// API methods for Motivos de Refugo
+export const motivosRefugoApi = {
+  async listar() {
+    return fetchApi<any[]>('/motivos-refugo');
+  },
+
+  async buscarPorId(codigo: string) {
+    return fetchApi<any>(`/motivos-refugo/${codigo}`);
+  },
+
+  async criar(data: { codigo: string; descricao: string; tipo: string; status?: string }) {
+    return fetchApi<any>('/motivos-refugo', {
+      method: 'POST',
+      body: JSON.stringify(data),
+    });
+  },
+
+  async atualizar(codigo: string, data: Partial<{ descricao: string; tipo: string; status?: string }>) {
+    return fetchApi<any>(`/motivos-refugo/${codigo}`, {
+      method: 'PUT',
+      body: JSON.stringify(data),
+    });
+  },
+
+  async excluir(codigo: string) {
+    return fetchApi<void>(`/motivos-refugo/${codigo}`, {
+      method: 'DELETE',
+    });
+  },
+};
+
+// API methods for Colaboradores (RH - Fase 2)
+export const colaboradoresApi = {
+  async listar() {
+    return fetchApi<any[]>('/colaboradores');
+  },
+
+  async buscarPorId(id: string) {
+    return fetchApi<any>(`/colaboradores/${id}`);
+  },
+
+  async criar(data: {
+    nome: string; matricula: string; cpf: string;
+    cargo_id: string; departamento_id: string; status?: string
+  }) {
+    return fetchApi<any>('/colaboradores', {
+      method: 'POST',
+      body: JSON.stringify(data),
+    });
+  },
+
+  async atualizar(id: string, data: Partial<{
+    nome?: string; matricula?: string; cpf?: string;
+    cargo_id?: string; departamento_id?: string; status?: string
+  }>) {
+    return fetchApi<any>(`/colaboradores/${id}`, {
+      method: 'PUT',
+      body: JSON.stringify(data),
+    });
+  },
+
+  async excluir(id: string) {
+    return fetchApi<void>(`/colaboradores/${id}`, {
+      method: 'DELETE',
+    });
+  },
+};
+
+// API methods for Defeitos de Refugo
+export const defeitosRefugoApi = {
+  async listar() {
+    return fetchApi<any[]>('/defeitos-refugo');
+  },
+
+  async buscarPorId(codigo: string) {
+    return fetchApi<any>(`/defeitos-refugo/${codigo}`);
+  },
+
+  async criar(data: { codigo: string; descricao: string; setores_precos?: string; custo_base?: number; status?: string }) {
+    return fetchApi<any>('/defeitos-refugo', {
+      method: 'POST',
+      body: JSON.stringify(data),
+    });
+  },
+
+  async atualizar(codigo: string, data: Partial<{ descricao: string; setores_precos?: string; custo_base?: number; status?: string }>) {
+    return fetchApi<any>(`/defeitos-refugo/${codigo}`, {
+      method: 'PUT',
+      body: JSON.stringify(data),
+    });
+  },
+
+  async excluir(codigo: string) {
+    return fetchApi<void>(`/defeitos-refugo/${codigo}`, {
       method: 'DELETE',
     });
   },

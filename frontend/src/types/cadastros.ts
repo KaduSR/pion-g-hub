@@ -1,4 +1,4 @@
-// Cadastros Types - Baseado no RELATORIO_MAPEAMENTO_COMPLETO.md (secoes 9.1 e 9.2)
+// Cadastros Types - Baseado no RELATORIO_MAPEAMENTO_COMPLETO.md (secoes 9.1 a 9.6)
 export interface IArea {
   id: string;
   descricao: string;
@@ -11,4 +11,50 @@ export interface IDepartamento {
   descricao: string;
   descricao_curta: string;
   status: string;
+}
+
+export interface ISetor {
+  id: string;
+  descricao: string;
+  descricao_curta: string;
+  status: string;
+}
+
+export interface ICargo {
+  id: string;
+  descricao: string;
+  descricao_curta: string;
+  status: string;
+}
+
+export interface IMotivoRefugo {
+  codigo: string;
+  descricao: string;
+  tipo: string;
+  status: string;
+}
+
+export interface IDefeitoRefugo {
+  codigo: string;
+  descricao: string;
+  setores_precos: string;
+  custo_base: number;
+  status: string;
+}
+
+// ============================================
+// RH — Colaboradores (Fase 2)
+// ============================================
+export interface IColaborador {
+  id: string;
+  nome: string;
+  matricula: string;
+  cpf: string;
+  cargo_id: string;
+  departamento_id: string;
+  status: string;
+  cargo_nome?: string;
+  departamento_nome?: string;
+  created_at?: Date;
+  updated_at?: Date;
 }
