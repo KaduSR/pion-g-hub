@@ -3,11 +3,14 @@
 
 import { Router } from 'express';
 import { authMiddleware } from './modules/auth/middleware/auth.middleware';
-import perfisRoutes from './api/routes/perfis.routes';
-import sessoesRoutes from './api/routes/sessoes.routes';
 import authRoutes from './api/routes/auth.routes';
 import areasRoutes from './api/routes/areas.routes';
 import departamentosRoutes from './api/routes/departamentos.routes';
+import setoresRoutes from './api/routes/setores.routes';
+import cargosRoutes from './api/routes/cargos.routes';
+import motivosRefugoRoutes from './api/routes/motivos-refugo.routes';
+import defeitosRefugoRoutes from './api/routes/defeitos-refugo.routes';
+import colaboradoresRoutes from './api/routes/colaboradores.routes';
 
 const router = Router();
 
@@ -15,9 +18,12 @@ const router = Router();
 router.use('/auth', authRoutes);
 
 // Modulos protegidos por JWT
-router.use('/perfis', authMiddleware, perfisRoutes);
-router.use('/sessoes', authMiddleware, sessoesRoutes);
 router.use('/areas', authMiddleware, areasRoutes);
 router.use('/departamentos', authMiddleware, departamentosRoutes);
+router.use('/setores', authMiddleware, setoresRoutes);
+router.use('/cargos', authMiddleware, cargosRoutes);
+router.use('/motivos-refugo', authMiddleware, motivosRefugoRoutes);
+router.use('/defeitos-refugo', authMiddleware, defeitosRefugoRoutes);
+router.use('/colaboradores', authMiddleware, colaboradoresRoutes);
 
 export default router;
