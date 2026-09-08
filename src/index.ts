@@ -15,6 +15,8 @@ import escalasRoutes from './api/routes/escalas.routes';
 import pontosRoutes from './api/routes/pontos.routes';
 import logisticaRoutes from './api/routes/logistica.routes';
 import dashboardRoutes from './api/routes/dashboard.routes';
+import relatoriosRoutes from './api/routes/relatorios.routes';
+import auditoriaRoutes from './api/routes/auditoria.routes';
 
 const router = Router();
 
@@ -33,5 +35,7 @@ router.use('/escalas', authMiddleware, escalasRoutes);
 router.use('/pontos', authMiddleware, pontosRoutes);
 router.use('/logistica', authMiddleware, logisticaRoutes);
 router.use('/dashboard', authMiddleware, dashboardRoutes);
+router.use('/relatorios', authMiddleware, relatoriosRoutes);
+router.use('/auditoria', authMiddleware, auditoriaRoutes);
 
 export default router;
