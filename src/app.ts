@@ -5,6 +5,7 @@ import express from 'express';
 import cors from 'cors';
 import helmet from 'helmet';
 import routes from './index';
+import { errorHandler } from './api/middlewares/errorHandler';
 
 const app = express();
 
@@ -32,11 +33,8 @@ app.use((req, res) => {
   res.status(404).json({ success: false, error: 'Rota nao encontrada' });
 });
 
-// Error handler
-app.use((err: Error, req: express.Request, res: express.Response, next: express.NextFunction) => {
-  console.error('Error:', err);
-  res.status(500).json({ success: false, error: 'Erro interno do servidor' });
-});
+// Error handler global (obrigatoriamente o ultimo middleware)
+app.use(errorHandler);
 
 const PORT = process.env.PORT || 3000;
 
