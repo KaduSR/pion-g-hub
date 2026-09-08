@@ -325,3 +325,48 @@ export const logisticaApi = {
 export const dashboardApi = {
   async getMetrics() { return fetchApi<IDashboardMetrics>('/dashboard/metrics'); },
 };
+
+// Relatorios (Dia 5 - Central de Relatorios e Exportacao)
+async function fetchCsvBlob(endpoint: string): Promise<Blob> {
+  const url = `${BASE_URL}${endpoint}`;
+  const token = getToken();
+  const headers: Record<string, string> = {};
+
+  if (token) {
+    headers['Authorization'] = `Bearer ${token}`;
+  }
+
+  const response = await fetch(url, {
+    method: 'GET',
+    headers,
+    credentials: 'same-origin',
+  });
+
+  if (!response.ok) {
+    const data = await response.json().catch(() => null);
+    const message = typeof data === 'object' && data !== null && 'error' in data
+      ? (data as { error?: string }).error || `HTTP error! status: ${response.status}`
+      : `HTTP error! status: ${response.status}`;
+
+    const error = new Error(message) as Error & { status: number };
+    error.status = response.status;
+    throw error;
+  }
+
+  const blob = await response.blob();
+  if (!blob.size) {
+    throw new Error('Arquivo vazio recebido do servidor.');
+  }
+
+  return blob;
+}
+
+export const relatoriosApi = {
+  async baixarColaboradoresCSV(): Promise<Blob> {
+    return fetchCsvBlob('/relatorios/colaboradores-csv');
+  },
+
+  async baixarLogisticaCSV(): Promise<Blob> {
+    return fetchCsvBlob('/relatorios/logistica-csv');
+  },
+};
