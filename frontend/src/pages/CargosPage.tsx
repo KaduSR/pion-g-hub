@@ -3,6 +3,7 @@ import { BaseTable, type Column } from '../components/BaseTable';
 import { BaseModal } from '../shared/components/BaseModal';
 import { cadastrosService } from '../services/cadastrosService';
 import type { ICargo } from '../types/cadastros';
+import { useNotify } from '../contexts/NotificationContext';
 
 const emptyForm = (): Omit<ICargo, 'id'> => ({
   descricao: '',
@@ -16,6 +17,7 @@ export function CargosPage() {
   const [modalOpen, setModalOpen] = useState(false);
   const [editingId, setEditingId] = useState<string | null>(null);
   const [form, setForm] = useState(emptyForm());
+  const notify = useNotify();
 
   useEffect(() => {
     let cancelled = false;
@@ -54,19 +56,19 @@ export function CargosPage() {
     if (editingId) {
       const updated = await cadastrosService.updateCargo(editingId, form);
       setCargos((prev) => prev.map((c) => (c.id === editingId ? updated : c)));
+      notify.success('Cargo atualizado com sucesso!');
     } else {
       const created = await cadastrosService.createCargo(form);
       setCargos((prev) => [...prev, created]);
+      notify.success('Cargo criado com sucesso!');
     }
     setModalOpen(false);
   };
 
   const handleDelete = async (id: string) => {
-    if (!confirm('Deseja realmente excluir este cargo?')) {
-      return;
-    }
     await cadastrosService.deleteCargo(id);
     setCargos((prev) => prev.filter((c) => c.id !== id));
+    notify.success('Cargo excluido com sucesso!');
   };
 
   const columns: Column<ICargo>[] = [
@@ -99,6 +101,8 @@ export function CargosPage() {
         data={cargos}
         addLabel="Adicionar Cargo"
         onAdd={openCreate}
+        searchPlaceholder="Pesquisar cargos..."
+        searchKeys={['descricao', 'descricao_curta']}
       />
       <BaseModal isOpen={modalOpen} onClose={() => setModalOpen(false)} title={editingId ? 'Editar Cargo' : 'Novo Cargo'}>
         <form onSubmit={handleSubmit}>

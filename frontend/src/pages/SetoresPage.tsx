@@ -3,6 +3,7 @@ import { BaseTable, type Column } from '../components/BaseTable';
 import { BaseModal } from '../shared/components/BaseModal';
 import { cadastrosService } from '../services/cadastrosService';
 import type { ISetor } from '../types/cadastros';
+import { useNotify } from '../contexts/NotificationContext';
 
 const emptyForm = (): Omit<ISetor, 'id'> => ({
   descricao: '',
@@ -16,6 +17,7 @@ export function SetoresPage() {
   const [modalOpen, setModalOpen] = useState(false);
   const [editingId, setEditingId] = useState<string | null>(null);
   const [form, setForm] = useState(emptyForm());
+  const notify = useNotify();
 
   useEffect(() => {
     let cancelled = false;
@@ -54,19 +56,19 @@ export function SetoresPage() {
     if (editingId) {
       const updated = await cadastrosService.updateSetor(editingId, form);
       setSetores((prev) => prev.map((s) => (s.id === editingId ? updated : s)));
+      notify.success('Setor atualizado com sucesso!');
     } else {
       const created = await cadastrosService.createSetor(form);
       setSetores((prev) => [...prev, created]);
+      notify.success('Setor criado com sucesso!');
     }
     setModalOpen(false);
   };
 
   const handleDelete = async (id: string) => {
-    if (!confirm('Deseja realmente excluir este setor?')) {
-      return;
-    }
     await cadastrosService.deleteSetor(id);
     setSetores((prev) => prev.filter((s) => s.id !== id));
+    notify.success('Setor excluido com sucesso!');
   };
 
   const columns: Column<ISetor>[] = [
@@ -99,6 +101,8 @@ export function SetoresPage() {
         data={setores}
         addLabel="Adicionar Setor"
         onAdd={openCreate}
+        searchPlaceholder="Pesquisar setores..."
+        searchKeys={['descricao', 'descricao_curta']}
       />
       <BaseModal isOpen={modalOpen} onClose={() => setModalOpen(false)} title={editingId ? 'Editar Setor' : 'Novo Setor'}>
         <form onSubmit={handleSubmit}>

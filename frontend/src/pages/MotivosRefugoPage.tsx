@@ -3,6 +3,7 @@ import { BaseTable, type Column } from '../components/BaseTable';
 import { BaseModal } from '../shared/components/BaseModal';
 import { cadastrosService } from '../services/cadastrosService';
 import type { IMotivoRefugo } from '../types/cadastros';
+import { useNotify } from '../contexts/NotificationContext';
 
 const emptyForm = (): Omit<IMotivoRefugo, 'status'> => ({
   codigo: '',
@@ -16,6 +17,7 @@ export function MotivosRefugoPage() {
   const [modalOpen, setModalOpen] = useState(false);
   const [editingCodigo, setEditingCodigo] = useState<string | null>(null);
   const [form, setForm] = useState(emptyForm());
+  const notify = useNotify();
 
   useEffect(() => {
     let cancelled = false;
@@ -54,19 +56,19 @@ export function MotivosRefugoPage() {
     if (editingCodigo) {
       const updated = await cadastrosService.updateMotivoRefugo(editingCodigo, form);
       setMotivos((prev) => prev.map((m) => (m.codigo === editingCodigo ? updated : m)));
+      notify.success('Motivo atualizado com sucesso!');
     } else {
       const created = await cadastrosService.createMotivoRefugo(form);
       setMotivos((prev) => [...prev, created]);
+      notify.success('Motivo criado com sucesso!');
     }
     setModalOpen(false);
   };
 
   const handleDelete = async (codigo: string) => {
-    if (!confirm('Deseja realmente excluir este motivo?')) {
-      return;
-    }
     await cadastrosService.deleteMotivoRefugo(codigo);
     setMotivos((prev) => prev.filter((m) => m.codigo !== codigo));
+    notify.success('Motivo excluido com sucesso!');
   };
 
   const columns: Column<IMotivoRefugo>[] = [
@@ -100,6 +102,8 @@ export function MotivosRefugoPage() {
         data={motivos}
         addLabel="Novo Motivo"
         onAdd={openCreate}
+        searchPlaceholder="Pesquisar motivos..."
+        searchKeys={['codigo', 'descricao', 'tipo']}
       />
       <BaseModal isOpen={modalOpen} onClose={() => setModalOpen(false)} title={editingCodigo ? 'Editar Motivo' : 'Novo Motivo'}>
         <form onSubmit={handleSubmit}>

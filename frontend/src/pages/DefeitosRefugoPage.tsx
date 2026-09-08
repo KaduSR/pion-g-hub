@@ -3,6 +3,7 @@ import { BaseTable, type Column } from '../components/BaseTable';
 import { BaseModal } from '../shared/components/BaseModal';
 import { cadastrosService } from '../services/cadastrosService';
 import type { IDefeitoRefugo } from '../types/cadastros';
+import { useNotify } from '../contexts/NotificationContext';
 
 const emptyForm = (): Omit<IDefeitoRefugo, 'status'> => ({
   codigo: '',
@@ -17,6 +18,7 @@ export function DefeitosRefugoPage() {
   const [modalOpen, setModalOpen] = useState(false);
   const [editingCodigo, setEditingCodigo] = useState<string | null>(null);
   const [form, setForm] = useState(emptyForm());
+  const notify = useNotify();
 
   useEffect(() => {
     let cancelled = false;
@@ -57,19 +59,19 @@ export function DefeitosRefugoPage() {
     if (editingCodigo) {
       const updated = await cadastrosService.updateDefeitoRefugo(editingCodigo, payload);
       setDefeitos((prev) => prev.map((d) => (d.codigo === editingCodigo ? updated : d)));
+      notify.success('Defeito atualizado com sucesso!');
     } else {
       const created = await cadastrosService.createDefeitoRefugo(payload);
       setDefeitos((prev) => [...prev, created]);
+      notify.success('Defeito criado com sucesso!');
     }
     setModalOpen(false);
   };
 
   const handleDelete = async (codigo: string) => {
-    if (!confirm('Deseja realmente excluir este defeito?')) {
-      return;
-    }
     await cadastrosService.deleteDefeitoRefugo(codigo);
     setDefeitos((prev) => prev.filter((d) => d.codigo !== codigo));
+    notify.success('Defeito excluido com sucesso!');
   };
 
   const columns: Column<IDefeitoRefugo>[] = [
@@ -104,6 +106,8 @@ export function DefeitosRefugoPage() {
         data={defeitos}
         addLabel="Novo Defeito"
         onAdd={openCreate}
+        searchPlaceholder="Pesquisar defeitos..."
+        searchKeys={['codigo', 'descricao', 'setores_precos']}
       />
       <BaseModal isOpen={modalOpen} onClose={() => setModalOpen(false)} title={editingCodigo ? 'Editar Defeito' : 'Novo Defeito'}>
         <form onSubmit={handleSubmit}>

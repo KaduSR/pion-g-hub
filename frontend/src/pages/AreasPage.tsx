@@ -3,6 +3,7 @@ import { BaseTable, type Column } from '../components/BaseTable';
 import { BaseModal } from '../shared/components/BaseModal';
 import { cadastrosService } from '../services/cadastrosService';
 import type { IArea } from '../types/cadastros';
+import { useNotify } from '../contexts/NotificationContext';
 
 const emptyForm = (): Omit<IArea, 'id'> => ({
   descricao: '',
@@ -18,6 +19,7 @@ export function AreasPage() {
   const [form, setForm] = useState(emptyForm());
   const [saving, setSaving] = useState(false);
   const [error, setError] = useState<string | null>(null);
+  const notify = useNotify();
 
   useEffect(() => {
     let cancelled = false;
@@ -74,6 +76,7 @@ export function AreasPage() {
         }
         return [...prev, saved];
       });
+      notify.success(editingId ? 'Area atualizada com sucesso!' : 'Area criada com sucesso!');
       setModalOpen(false);
     } catch (err: any) {
       setError(err.message || 'Erro ao salvar area');
@@ -83,13 +86,11 @@ export function AreasPage() {
   };
 
   const handleDelete = async (id: string) => {
-    if (!confirm('Deseja realmente excluir esta area?')) {
-      return;
-    }
     setError(null);
     try {
       await cadastrosService.deleteArea(id);
       setAreas((prev) => prev.filter((a) => a.id !== id));
+      notify.success('Area excluida com sucesso!');
     } catch (err: any) {
       setError(err.message || 'Erro ao excluir area');
     }
@@ -130,6 +131,8 @@ export function AreasPage() {
         data={areas}
         addLabel="Adicionar Area"
         onAdd={openCreate}
+        searchPlaceholder="Pesquisar areas..."
+        searchKeys={['descricao', 'descricao_curta']}
       />
       <BaseModal isOpen={modalOpen} onClose={() => setModalOpen(false)} title={editingId ? 'Editar Area' : 'Nova Area'}>
         <form onSubmit={handleSubmit}>

@@ -3,6 +3,7 @@ import { BaseTable, type Column } from '../components/BaseTable';
 import { BaseModal } from '../shared/components/BaseModal';
 import { cadastrosService } from '../services/cadastrosService';
 import type { IDepartamento } from '../types/cadastros';
+import { useNotify } from '../contexts/NotificationContext';
 
 const emptyForm = (): Omit<IDepartamento, 'id'> => ({
   descricao: '',
@@ -16,6 +17,7 @@ export function DepartamentosPage() {
   const [modalOpen, setModalOpen] = useState(false);
   const [editingId, setEditingId] = useState<string | null>(null);
   const [form, setForm] = useState(emptyForm());
+  const notify = useNotify();
 
   useEffect(() => {
     let cancelled = false;
@@ -53,18 +55,21 @@ export function DepartamentosPage() {
     e.preventDefault();
     if (editingId) {
       setDepartamentos((prev) => prev.map((d) => (d.id === editingId ? { ...d, ...form } : d)));
+      notify.success('Departamento atualizado com sucesso!');
     } else {
       const newDept: IDepartamento = {
         id: Date.now().toString(),
         ...form,
       };
       setDepartamentos((prev) => [...prev, newDept]);
+      notify.success('Departamento criado com sucesso!');
     }
     setModalOpen(false);
   };
 
-  const handleDelete = (id: string) => {
+  const handleDelete = async (id: string) => {
     setDepartamentos((prev) => prev.filter((d) => d.id !== id));
+    notify.success('Departamento excluido com sucesso!');
   };
 
   const columns: Column<IDepartamento>[] = [
@@ -97,6 +102,8 @@ export function DepartamentosPage() {
         data={departamentos}
         addLabel="Adicionar Departamento"
         onAdd={openCreate}
+        searchPlaceholder="Pesquisar departamentos..."
+        searchKeys={['descricao', 'descricao_curta']}
       />
       <BaseModal isOpen={modalOpen} onClose={() => setModalOpen(false)} title={editingId ? 'Editar Departamento' : 'Novo Departamento'}>
         <form onSubmit={handleSubmit}>
