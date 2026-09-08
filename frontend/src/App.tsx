@@ -13,28 +13,31 @@ import { DashboardPage } from './pages/DashboardPage';
 import { RelatoriosPage } from './pages/RelatoriosPage';
 import { AuditoriaPage } from './pages/AuditoriaPage';
 import { WebhooksPage } from './pages/WebhooksPage';
+import { NotificationProvider } from './contexts/NotificationContext';
 
 function App() {
   return (
-    <BrowserRouter>
-      <Routes>
-        <Route path="/cadastros/areas" element={<AreasPage />} />
-        <Route path="/cadastros/departamentos" element={<DepartamentosPage />} />
-        <Route path="/cadastros/setores" element={<SetoresPage />} />
-        <Route path="/cadastros/cargos" element={<CargosPage />} />
-        <Route path="/cadastros/motivos-refugo" element={<MotivosRefugoPage />} />
-        <Route path="/cadastros/defeitos-refugo" element={<DefeitosRefugoPage />} />
-        <Route path="/rh/colaboradores" element={<ColaboradoresPage />} />
-        <Route path="/rh/escalas" element={<EscalasPage />} />
-        <Route path="/rh/pontos" element={<PontosPage />} />
-        <Route path="/logistica" element={<LogisticaPage />} />
-        <Route path="/relatorios" element={<RelatoriosPage />} />
-        <Route path="/auditoria" element={<AuditoriaPage />} />
-        <Route path="/configuracoes/webhooks" element={<WebhooksPage />} />
-        <Route path="/" element={<DashboardPage />} />
-        <Route path="/dashboard" element={<DashboardPage />} />
-      </Routes>
-    </BrowserRouter>
+    <NotificationProvider>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/cadastros/areas" element={<AreasPage />} />
+          <Route path="/cadastros/departamentos" element={<DepartamentosPage />} />
+          <Route path="/cadastros/setores" element={<SetoresPage />} />
+          <Route path="/cadastros/cargos" element={<CargosPage />} />
+          <Route path="/cadastros/motivos-refugo" element={<MotivosRefugoPage />} />
+          <Route path="/cadastros/defeitos-refugo" element={<DefeitosRefugoPage />} />
+          <Route path="/rh/colaboradores" element={<ColaboradoresPage />} />
+          <Route path="/rh/escalas" element={<EscalasPage />} />
+          <Route path="/rh/pontos" element={<PontosPage />} />
+          <Route path="/logistica" element={<LogisticaPage />} />
+          <Route path="/relatorios" element={<RelatoriosPage />} />
+          <Route path="/auditoria" element={<AuditoriaPage />} />
+          <Route path="/configuracoes/webhooks" element={<WebhooksPage />} />
+          <Route path="/" element={<DashboardPage />} />
+          <Route path="/dashboard" element={<DashboardPage />} />
+        </Routes>
+      </BrowserRouter>
+    </NotificationProvider>
   );
 }
 
