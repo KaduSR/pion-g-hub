@@ -116,3 +116,14 @@ export interface IDashboardMetrics {
   pontoHoje: number;
   escalasMes: number;
 }
+
+// ============================================
+// Integrações — Webhooks (Fase 6)
+// ============================================
+export interface IWebhookConfig {
+  id: string;
+  evento: string;
+  url_destino: string;
+  ativo: boolean;
+  criado_em: string;
+}

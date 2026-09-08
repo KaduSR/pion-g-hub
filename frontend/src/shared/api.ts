@@ -1,4 +1,4 @@
-import type { IDashboardMetrics } from '../types/cadastros';
+import type { IDashboardMetrics, IWebhookConfig } from '../types/cadastros';
 // Integracao real com API Express via HTTP
 // Endpoints: /api/v1/areas, /api/v1/departamentos, /api/v1/setores, /api/v1/cargos, /api/v1/motivos-refugo, /api/v1/defeitos-refugo
 // Autenticacao: JWT injetado automaticamente pelo cliente api.ts
@@ -376,5 +376,32 @@ export const relatoriosApi = {
 
   async baixarLogisticaCSV(): Promise<Blob> {
     return fetchCsvBlob('/relatorios/logistica-csv');
+  },
+};
+
+// Webhooks (Hora 2 - Fase 6 - Automação e Integrações)
+export const webhooksApi = {
+  async listar() {
+    return fetchApi<IWebhookConfig[]>('/webhooks');
+  },
+
+  async criar(data: { evento: string; url_destino: string; ativo?: boolean }) {
+    return fetchApi<IWebhookConfig>('/webhooks', {
+      method: 'POST',
+      body: JSON.stringify(data),
+    });
+  },
+
+  async atualizar(id: string, data: { evento?: string; url_destino?: string; ativo?: boolean }) {
+    return fetchApi<IWebhookConfig>(`/webhooks/${id}`, {
+      method: 'PUT',
+      body: JSON.stringify(data),
+    });
+  },
+
+  async excluir(id: string) {
+    return fetchApi<void>(`/webhooks/${id}`, {
+      method: 'DELETE',
+    });
   },
 };

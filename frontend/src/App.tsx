@@ -12,6 +12,7 @@ import { LogisticaPage } from './pages/LogisticaPage';
 import { DashboardPage } from './pages/DashboardPage';
 import { RelatoriosPage } from './pages/RelatoriosPage';
 import { AuditoriaPage } from './pages/AuditoriaPage';
+import { WebhooksPage } from './pages/WebhooksPage';
 
 function App() {
   return (
@@ -29,6 +30,7 @@ function App() {
         <Route path="/logistica" element={<LogisticaPage />} />
         <Route path="/relatorios" element={<RelatoriosPage />} />
         <Route path="/auditoria" element={<AuditoriaPage />} />
+        <Route path="/configuracoes/webhooks" element={<WebhooksPage />} />
         <Route path="/" element={<DashboardPage />} />
         <Route path="/dashboard" element={<DashboardPage />} />
       </Routes>
