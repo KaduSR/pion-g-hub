@@ -4,6 +4,7 @@
 import { Router } from 'express';
 import { ColaboradoresController } from '../controllers/colaboradores.controller';
 import { authMiddleware } from '../middleware/auth.middleware';
+import { validateColaboradorCreate, validateColaboradorUpdate } from '../validators/colaborador.validator';
 
 const router = Router();
 const controller = new ColaboradoresController();
@@ -15,10 +16,10 @@ router.get('/', authMiddleware, controller.listar.bind(controller));
 router.get('/:id', authMiddleware, controller.buscarPorId.bind(controller));
 
 // POST   /api/v1/colaboradores - Criar novo colaborador
-router.post('/', authMiddleware, controller.criar.bind(controller));
+router.post('/', authMiddleware, validateColaboradorCreate, controller.criar.bind(controller));
 
 // PUT    /api/v1/colaboradores/:id - Atualizar colaborador
-router.put('/:id', authMiddleware, controller.atualizar.bind(controller));
+router.put('/:id', authMiddleware, validateColaboradorUpdate, controller.atualizar.bind(controller));
 
 // DELETE /api/v1/colaboradores/:id - Excluir colaborador
 router.delete('/:id', authMiddleware, controller.excluir.bind(controller));
