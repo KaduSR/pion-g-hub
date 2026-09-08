@@ -41,6 +41,25 @@ export function DashboardPage() {
       >
         Central de Relatórios
       </Link>
+      <Link
+        to="/auditoria"
+        style={{
+          display: 'inline-flex',
+          alignItems: 'center',
+          gap: '0.5rem',
+          padding: '0.5rem 1rem',
+          backgroundColor: '#111827',
+          color: '#ffffff',
+          borderRadius: '6px',
+          textDecoration: 'none',
+          fontSize: '0.875rem',
+          fontWeight: 500,
+          marginLeft: '0.5rem',
+          marginBottom: '1rem'
+        }}
+      >
+        Auditoria
+      </Link>
       <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(220px, 1fr))', gap: '1rem', marginTop: '1rem' }}>
         <div style={{ background: '#f9fafb', border: '1px solid #e5e7eb', borderRadius: '12px', padding: '1rem', boxShadow: '0 1px 3px rgba(0,0,0,0.1)' }}>
           <div style={{ fontSize: '0.75rem', color: '#6b7280', textTransform: 'uppercase' }}>Colaboradores Ativos</div>

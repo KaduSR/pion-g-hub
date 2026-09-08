@@ -326,6 +326,14 @@ export const dashboardApi = {
   async getMetrics() { return fetchApi<IDashboardMetrics>('/dashboard/metrics'); },
 };
 
+// Auditoria (Hora 4 - Governança & Auditoria UI)
+// API para listagem de logs de auditoria - restrita a administradores
+export const auditoriaApi = {
+  async listar() {
+    return fetchApi<{ success: boolean; data: any[] }>('/auditoria');
+  },
+};
+
 // Relatorios (Dia 5 - Central de Relatorios e Exportacao)
 async function fetchCsvBlob(endpoint: string): Promise<Blob> {
   const url = `${BASE_URL}${endpoint}`;

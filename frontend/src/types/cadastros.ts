@@ -43,6 +43,21 @@ export interface IDefeitoRefugo {
 }
 
 // ============================================
+// Governança — Auditoria
+// ============================================
+export interface ILogAuditoria {
+  id: string;
+  usuario_id: string;
+  ator_identificacao: string;
+  acao: string;
+  tabela_afetada: string;
+  registro_id: string;
+  detalhes: string;
+  ip_address?: string;
+  criado_em: string;
+}
+
+// ============================================
 // RH — Colaboradores (Fase 2)
 // ============================================
 export interface IPonto {
