@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 export interface Column<T> {
   key: keyof T | string;
@@ -12,9 +12,27 @@ interface BaseTableProps<T> {
   title?: string;
   onAdd?: () => void;
   addLabel?: string;
+  searchPlaceholder?: string;
+  searchKeys?: (keyof T)[];
 }
 
-export function BaseTable<T>({ columns, data, title, onAdd, addLabel }: BaseTableProps<T>) {
+export function BaseTable<T>({ columns, data, title, onAdd, addLabel, searchPlaceholder, searchKeys }: BaseTableProps<T>) {
+  const [searchText, setSearchText] = useState('');
+
+  const filteredData = searchText && searchKeys && searchKeys.length > 0
+    ? data.filter((item) =>
+        searchKeys.some((key) => {
+          const value = (item as any)[key];
+          if (value == null) return false;
+          return String(value).toLowerCase().includes(searchText.toLowerCase());
+        })
+      )
+    : data;
+
+  const hasSearch = Boolean(searchPlaceholder && searchKeys && searchKeys.length > 0);
+  const isSearching = hasSearch && searchText.trim().length > 0;
+  const isEmpty = filteredData.length === 0;
+
   return (
     <div style={{ padding: '2rem' }}>
       {title && (
@@ -25,6 +43,17 @@ export function BaseTable<T>({ columns, data, title, onAdd, addLabel }: BaseTabl
               {addLabel}
             </button>
           )}
+        </div>
+      )}
+      {hasSearch && (
+        <div style={{ marginBottom: '1rem' }}>
+          <input
+            type="text"
+            placeholder={searchPlaceholder}
+            value={searchText}
+            onChange={(e) => setSearchText(e.target.value)}
+            style={{ width: '100%', maxWidth: '400px', padding: '0.5rem', boxSizing: 'border-box' }}
+          />
         </div>
       )}
       <table style={{ width: '100%', borderCollapse: 'collapse' }}>
@@ -38,14 +67,14 @@ export function BaseTable<T>({ columns, data, title, onAdd, addLabel }: BaseTabl
           </tr>
         </thead>
         <tbody>
-          {data.length === 0 ? (
+          {isEmpty ? (
             <tr>
               <td colSpan={columns.length} style={{ padding: '1rem', textAlign: 'center' }}>
-                Nenhum registro encontrado
+                {isSearching ? `Nenhum registro encontrado para "${searchText}"` : 'Nenhum registro cadastrado'}
               </td>
             </tr>
           ) : (
-            data.map((item, idx) => (
+            filteredData.map((item, idx) => (
               <tr key={idx}>
                 {columns.map((col) => (
                   <td key={String(col.key)} style={{ padding: '0.5rem', border: '1px solid #ddd' }}>

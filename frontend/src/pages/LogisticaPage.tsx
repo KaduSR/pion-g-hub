@@ -20,6 +20,7 @@ export function LogisticaPage() {
   const [modalOpen, setModalOpen] = useState(false);
   const [editingId, setEditingId] = useState<string | null>(null);
   const [form, setForm] = useState(emptyForm());
+  const [searchText, setSearchText] = useState('');
 
   useEffect(() => {
     let cancelled = false;
@@ -90,9 +91,35 @@ export function LogisticaPage() {
 
   if (loading) return <div style={{ padding: '2rem' }}>Carregando operações de logística...</div>;
 
+  const term = searchText.trim().toLowerCase();
+  const filtered = list.filter((item) => {
+    if (!term) return true;
+    return (
+      (item.codigo_rastreio || '').toLowerCase().includes(term) ||
+      (item.colaborador_nome || '').toLowerCase().includes(term) ||
+      (item.origem || '').toLowerCase().includes(term) ||
+      (item.destino || '').toLowerCase().includes(term)
+    );
+  });
+
   return (
     <>
-      <BaseTable title="Logística — Operações" columns={columns} data={list} addLabel="Nova Operação" onAdd={openCreate} />
+      <div style={{ marginBottom: '1rem' }}>
+        <input
+          type="text"
+          placeholder="Pesquisar por código, responsável, origem ou destino..."
+          value={searchText}
+          onChange={(e) => setSearchText(e.target.value)}
+          style={{ width: '100%', maxWidth: '400px', padding: '0.5rem', boxSizing: 'border-box' }}
+        />
+      </div>
+      <BaseTable
+        title="Logística — Operações"
+        columns={columns}
+        data={filtered}
+        addLabel="Nova Operação"
+        onAdd={openCreate}
+      />
       <BaseModal isOpen={modalOpen} onClose={() => setModalOpen(false)} title={editingId ? 'Editar Operação' : 'Nova Operação'}>
         <form onSubmit={handleSubmit}>
           <div style={{ marginBottom: '1rem' }}><label>Código de Rastreio</label><input value={form.codigo_rastreio} onChange={e => setForm({ ...form, codigo_rastreio: e.target.value })} required style={{ width: '100%', padding: '0.5rem' }} /></div>

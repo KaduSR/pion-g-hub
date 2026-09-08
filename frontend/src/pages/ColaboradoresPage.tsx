@@ -20,6 +20,8 @@ export function ColaboradoresPage() {
   const [modalOpen, setModalOpen] = useState(false);
   const [editingId, setEditingId] = useState<string | null>(null);
   const [form, setForm] = useState(emptyForm());
+  const [searchText, setSearchText] = useState('');
+  const [statusFilter, setStatusFilter] = useState<string>('Todos');
 
   // Buscar colaboradores, cargos e departamentos
   useEffect(() => {
@@ -116,13 +118,49 @@ export function ColaboradoresPage() {
 
   return (
     <>
-      <BaseTable
-        title="Colaboradores (RH)"
-        columns={columns}
-        data={colaboradores}
-        addLabel="Novo Colaborador"
-        onAdd={openCreate}
-      />
+      <div style={{ display: 'flex', gap: '0.75rem', marginBottom: '1rem', flexWrap: 'wrap' }}>
+        <input
+          type="text"
+          placeholder="Pesquisar por nome, matrícula, cargo ou departamento..."
+          value={searchText}
+          onChange={(e) => setSearchText(e.target.value)}
+          style={{ flex: '1 1 280px', padding: '0.5rem', boxSizing: 'border-box' }}
+        />
+        <select
+          value={statusFilter}
+          onChange={(e) => setStatusFilter(e.target.value)}
+          style={{ padding: '0.5rem', boxSizing: 'border-box' }}
+        >
+          <option value="Todos">Todos os status</option>
+          <option value="Ativo">Ativo</option>
+          <option value="Inativo">Inativo</option>
+          <option value="Afastado">Afastado</option>
+          <option value="Ferias">Férias</option>
+        </select>
+      </div>
+      {(() => {
+        const term = searchText.trim().toLowerCase();
+        const filtered = colaboradores.filter((c) => {
+          const matchesText =
+            !term ||
+            c.nome.toLowerCase().includes(term) ||
+            c.matricula.toLowerCase().includes(term) ||
+            (c.cargo_nome || '').toLowerCase().includes(term) ||
+            (c.departamento_nome || '').toLowerCase().includes(term);
+          const matchesStatus = statusFilter === 'Todos' || c.status === statusFilter;
+          return matchesText && matchesStatus;
+        });
+
+        return (
+          <BaseTable
+            title="Colaboradores (RH)"
+            columns={columns}
+            data={filtered}
+            addLabel="Novo Colaborador"
+            onAdd={openCreate}
+          />
+        );
+      })()}
       <BaseModal isOpen={modalOpen} onClose={() => setModalOpen(false)} title={editingId ? 'Editar Colaborador' : 'Novo Colaborador'}>
         <form onSubmit={handleSubmit}>
           <div style={{ marginBottom: '1rem' }}>
