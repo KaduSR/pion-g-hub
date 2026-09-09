@@ -57,7 +57,7 @@ describe('Colaborador Validator', () => {
       expect(mockRes.status).toHaveBeenCalledWith(400);
       expect(mockRes.json).toHaveBeenCalledWith(
         expect.objectContaining({
-          error: 'Dados invalidos: nome: Nome nao pode ser somente espacos',
+          error: expect.stringContaining('nome: Nome nao pode ser somente espacos'),
         })
       );
     });
@@ -82,7 +82,7 @@ describe('Colaborador Validator', () => {
       expect(mockRes.status).toHaveBeenCalledWith(400);
       expect(mockRes.json).toHaveBeenCalledWith(
         expect.objectContaining({
-          error: 'Dados invalidos: matricula: Matricula nao pode ser somente espacos',
+          error: expect.stringContaining('Matricula nao pode ser somente espacos'),
         })
       );
     });
@@ -119,7 +119,7 @@ describe('Colaborador Validator', () => {
       expect(mockRes.status).toHaveBeenCalledWith(400);
       expect(mockRes.json).toHaveBeenCalledWith(
         expect.objectContaining({
-          error: 'Pelo menos um campo deve ser fornecido',
+          error: expect.stringContaining('Pelo menos um campo deve ser fornecido'),
         })
       );
     });

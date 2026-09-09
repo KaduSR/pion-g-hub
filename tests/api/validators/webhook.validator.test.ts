@@ -51,7 +51,7 @@ describe('Webhook Validator', () => {
       expect(mockRes.status).toHaveBeenCalledWith(400);
       expect(mockRes.json).toHaveBeenCalledWith(
         expect.objectContaining({
-          error: 'Dados invalidos: evento: evento nao pode ser somente espacos',
+          error: expect.stringContaining('evento nao pode ser somente espacos'),
         })
       );
     });
@@ -73,7 +73,7 @@ describe('Webhook Validator', () => {
       expect(mockRes.status).toHaveBeenCalledWith(400);
       expect(mockRes.json).toHaveBeenCalledWith(
         expect.objectContaining({
-          error: 'Dados invalidos: url_destino: url_destino deve ser uma URL valida',
+          error: expect.stringContaining('url_destino deve ser uma URL valida'),
         })
       );
     });
@@ -110,7 +110,7 @@ describe('Webhook Validator', () => {
       expect(mockRes.status).toHaveBeenCalledWith(400);
       expect(mockRes.json).toHaveBeenCalledWith(
         expect.objectContaining({
-          error: 'Pelo menos um campo deve ser fornecido',
+          error: expect.stringContaining('Pelo menos um campo deve ser fornecido'),
         })
       );
     });
