@@ -131,3 +131,4 @@ export function RelatoriosPage() {
     </div>
   );
 }
+export default RelatoriosPage;

@@ -150,3 +150,5 @@ export function DepartamentosPage() {
     </>
   );
 }
+
+export default DepartamentosPage;

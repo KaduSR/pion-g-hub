@@ -164,3 +164,5 @@ export function DefeitosRefugoPage() {
     </>
   );
 }
+
+export default DefeitosRefugoPage;

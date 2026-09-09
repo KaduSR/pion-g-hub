@@ -149,3 +149,5 @@ export function EscalasPage() {
     </>
   );
 }
+
+export default EscalasPage;

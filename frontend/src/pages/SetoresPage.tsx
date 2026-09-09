@@ -149,3 +149,5 @@ export function SetoresPage() {
     </>
   );
 }
+
+export default SetoresPage;

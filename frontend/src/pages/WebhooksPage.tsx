@@ -194,3 +194,5 @@ export function WebhooksPage() {
     </>
   );
 }
+
+export default WebhooksPage;

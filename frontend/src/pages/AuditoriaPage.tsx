@@ -98,3 +98,4 @@ export function AuditoriaPage() {
     </>
   );
 }
+export default AuditoriaPage;

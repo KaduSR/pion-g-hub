@@ -154,3 +154,5 @@ export function PontosPage() {
     </>
   );
 }
+
+export default PontosPage;

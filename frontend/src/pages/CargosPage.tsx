@@ -149,3 +149,5 @@ export function CargosPage() {
     </>
   );
 }
+
+export default CargosPage;

@@ -179,3 +179,5 @@ export function AreasPage() {
     </>
   );
 }
+
+export default AreasPage;

@@ -234,3 +234,5 @@ export function ColaboradoresPage() {
     </>
   );
 }
+
+export default ColaboradoresPage;
