@@ -1,0 +1,189 @@
+name: CI/CD — Deploy Pion-G-Hub (GHCR + Hostinger)
+
+on:
+  push:
+    branches:
+      - master
+    paths-ignore:
+      - '**.md'
+      - '!docs/**'
+  workflow_dispatch:
+
+concurrency:
+  group: deploy-piong-hub
+  cancel-in-progress: true
+
+jobs:
+  build-and-push:
+    name: Build & Push (GHCR)
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      packages: write
+    outputs:
+      backend_tag: ${{ steps.meta.outputs.backend_tag }}
+      frontend_tag: ${{ steps.meta.outputs.frontend_tag }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Login GHCR
+        uses: docker/login-action@v3
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
+
+      - name: Generate image tags
+        id: meta
+        run: |
+          COMMIT_SHA=$(git rev-parse --short HEAD)
+          echo "backend_tag=ghcr.io/${{ github.repository }}-backend:latest" >> $GITHUB_OUTPUT
+          echo "frontend_tag=ghcr.io/${{ github.repository }}-frontend:latest" >> $GITHUB_OUTPUT
+          echo "backend_sha=ghcr.io/${{ github.repository }}-backend:${COMMIT_SHA}" >> $GITHUB_OUTPUT
+          echo "frontend_sha=ghcr.io/${{ github.repository }}-frontend:${COMMIT_SHA}" >> $GITHUB_OUTPUT
+
+      - name: Build & Push Backend
+        uses: docker/build-push-action@v6
+        with:
+          context: .
+          file: ./Dockerfile
+          push: true
+          tags: |
+            ${{ steps.meta.outputs.backend_tag }}
+            ${{ steps.meta.outputs.backend_sha }}
+          cache-from: type=registry,ref=${{ steps.meta.outputs.backend_tag }}:buildcache
+          cache-to: type=registry,ref=${{ steps.meta.outputs.backend_tag }}:buildcache,mode=max
+
+      - name: Build & Push Frontend
+        uses: docker/build-push-action@v6
+        with:
+          context: ./frontend
+          file: ./frontend/Dockerfile
+          push: true
+          tags: |
+            ${{ steps.meta.outputs.frontend_tag }}
+            ${{ steps.meta.outputs.frontend_sha }}
+          cache-from: type=registry,ref=${{ steps.meta.outputs.frontend_tag }}:buildcache
+          cache-to: type=registry,ref=${{ steps.meta.outputs.frontend_tag }}:buildcache,mode=max
+
+  deploy-hostinger:
+    name: Deploy na Hostinger VPS
+    runs-on: ubuntu-latest
+    needs: build-and-push
+    environment: production
+    env:
+      BACKEND_TAG: ${{ needs.build-and-push.outputs.backend_tag }}
+      FRONTEND_TAG: ${{ needs.build-and-push.outputs.frontend_tag }}
+      HOSTINGER_VM_ID: 1767777
+      HOSTINGER_PROJECT_NAME: piong-hub
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Wait for images availability
+        run: |
+          echo "Aguardando imagens GHCR propagarem..."
+          sleep 20
+
+      - name: Delete existing project
+        id: delete_project
+        run: |
+          curl -s -X DELETE \
+            "https://api.hostinger.com/api/vps/v1/docker-projects/${HOSTINGER_PROJECT_NAME}?vm_id=${HOSTINGER_VM_ID}" \
+            -H 'Authorization: Bearer ${{ secrets.HOSTINGER_API_KEY }}' \
+            -H 'Accept: application/json' \
+            -o /tmp/delete-project.json || true
+          echo '::notice::Existing project deletion requested'
+
+      - name: Generate compose
+        id: compose
+        run: |
+          python3 - <<'PYEOF'
+          import os, textwrap
+          backend_tag = os.environ['BACKEND_TAG']
+          frontend_tag = os.environ['FRONTEND_TAG']
+          compose = textwrap.dedent(f"""\
+          services:
+            backend:
+              image: {backend_tag}
+              container_name: piong-hub-backend
+              restart: unless-stopped
+              ports:
+                - "3000:3000"
+              environment:
+                - NODE_ENV=production
+                - PORT=3000
+              env_file:
+                - .env
+              healthcheck:
+                test: ["CMD", "node", "-e", "require('http').get('http://localhost:3000/health', (r) => { process.exit(r.statusCode === 200 ? 0 : 1) })"]
+                interval: 30s
+                timeout: 3s
+                retries: 3
+                start_period: 10s
+              networks:
+                - piong-hub-network
+              labels:
+                com.hostinger.description: "Pion-G-Hub Backend API"
+            frontend:
+              image: {frontend_tag}
+              container_name: piong-hub-frontend
+              restart: unless-stopped
+              ports:
+                - "8080:80"
+              depends_on:
+                backend:
+                  condition: service_healthy
+              healthcheck:
+                test: ["CMD", "wget", "--no-verbose", "--tries=1", "--spider", "http://localhost:80/health"]
+                interval: 30s
+                timeout: 3s
+                retries: 3
+                start_period: 5s
+              networks:
+                - piong-hub-network
+              labels:
+                com.hostinger.description: "Pion-G-Hub Frontend (Nginx)"
+          networks:
+            piong-hub-network:
+              driver: bridge
+              name: piong-hub-network
+          """)
+          with open('/tmp/piong-hub-compose.yml', 'w') as f:
+            f.write(compose)
+          print(compose)
+          PYEOF
+
+      - name: Create new project
+        id: create_project
+        run: |
+          COMPOSE_B64=$(base64 -w 0 /tmp/piong-hub-compose.yml)
+          RESULT=$(curl -s -X POST \
+            "https://api.hostinger.com/api/vps/v1/docker-projects?vm_id=${HOSTINGER_VM_ID}&project_name=${HOSTINGER_PROJECT_NAME}&compose_data=${COMPOSE_B64}" \
+            -H 'Authorization: Bearer ${{ secrets.HOSTINGER_API_KEY }}' \
+            -H 'Accept: application/json' \
+            -H 'Content-Type: application/json')
+          echo "$RESULT"
+          echo "$RESULT" > /tmp/create-project.json
+
+      - name: Verify deployment
+        run: |
+          sleep 30
+          curl -s \
+            "https://api.hostinger.com/api/vps/v1/docker-projects/${HOSTINGER_PROJECT_NAME}/containers?vm_id=${HOSTINGER_VM_ID}" \
+            -H 'Authorization: Bearer ${{ secrets.HOSTINGER_API_KEY }}' \
+            -H 'Accept: application/json'
+
+      - name: Deploy summary
+        if: always()
+        run: |
+          echo "=== HOSTINGER CREATE RESULT ==="
+          cat /tmp/create-project.json 2>/dev/null || echo 'no create output'
+          echo '=== DELETE RESULT ==='
+          cat /tmp/delete-project.json 2>/dev/null || echo 'no delete output'

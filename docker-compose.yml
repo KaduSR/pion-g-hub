@@ -1,14 +1,13 @@
-# Docker Compose — Pion-G-Hub (Staging / Produção)
-# Orquestra backend (Node.js) e frontend (Nginx)
+# Docker Compose — Pion-G-Hub (Produção / Hostinger VPS)
+# Imagens pré-construídas no GHCR — não requer código-fonte na VPS.
+# Frontend exposto na porta 8080 para evitar conflito com Traefik (porta 80).
 
 services:
   # ============================================================
   # Backend — API Node.js + Express
   # ============================================================
   backend:
-    build:
-      context: .
-      dockerfile: Dockerfile
+    image: ghcr.io/kadusr/pion-g-hub-backend:latest
     container_name: piong-hub-backend
     restart: unless-stopped
     ports:
@@ -33,13 +32,11 @@ services:
   # Frontend — Nginx servindo React build
   # ============================================================
   frontend:
-    build:
-      context: ./frontend
-      dockerfile: Dockerfile
+    image: ghcr.io/kadusr/pion-g-hub-frontend:latest
     container_name: piong-hub-frontend
     restart: unless-stopped
     ports:
-      - "80:80"
+      - "8080:80"
     depends_on:
       backend:
         condition: service_healthy
