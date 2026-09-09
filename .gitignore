@@ -1,0 +1,29 @@
+# Dependências
+node_modules/
+frontend/node_modules/
+
+# Build
+dist/
+frontend/dist/
+
+# Variáveis de ambiente
+.env
+.env.*
+.env.local
+
+# Logs
+*.log
+npm-debug.log*
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Sistema
+.DS_Store
+Thumbs.db
+
+# Claude Code
+.claude/scheduled_tasks.lock
