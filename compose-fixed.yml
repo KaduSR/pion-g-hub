@@ -1,0 +1,41 @@
+services:
+  backend:
+    image: ghcr.io/kadusr/pion-g-hub-backend:latest
+    container_name: piong-hub-backend
+    restart: unless-stopped
+    ports:
+      - "3000:3000"
+    environment:
+      - NODE_ENV=production
+      - PORT=3000
+    env_file:
+      - .env
+    healthcheck:
+      test: ["CMD", "wget", "--quiet", "--tries=1", "--spider", "http://localhost:3000/health"]
+      interval: 30s
+      timeout: 3s
+      retries: 3
+      start_period: 10s
+    networks:
+      - piong-hub-network
+  frontend:
+    image: ghcr.io/kadusr/pion-g-hub-frontend:latest
+    container_name: piong-hub-frontend
+    restart: unless-stopped
+    ports:
+      - "8080:80"
+    depends_on:
+      backend:
+        condition: service_healthy
+    healthcheck:
+      test: ["CMD", "wget", "--no-verbose", "--tries=1", "--spider", "http://localhost:80/health"]
+      interval: 30s
+      timeout: 3s
+      retries: 3
+      start_period: 5s
+    networks:
+      - piong-hub-network
+networks:
+  piong-hub-network:
+    driver: bridge
+    name: piong-hub-network
