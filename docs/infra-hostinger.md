@@ -194,20 +194,160 @@ piong-hub/
 
 ---
 
-## 7. Próximos Passos
+## 7. Orquestração com Docker Compose
+
+### 7.1 Arquivo: `docker-compose.yml`
+
+O arquivo unifica os dois serviços:
+
+| Serviço | Imagem | Porta | Finalidade |
+|---------|--------|-------|------------|
+| `backend` | Build local (Dockerfile multi-stage) | 3000 | API Node.js + Express |
+| `frontend` | Build local (Vite + Nginx Alpine) | 80 | React SPA servida por Nginx |
+
+### 7.2 Network
+
+Ambos os serviços compartilham a rede `piong-hub-network` (driver `bridge`), permitindo comunicação interna por nome de serviço (ex: `backend:3000`).
+
+### 7.3 Variáveis de Ambiente
+
+O backend carrega variáveis via `env_file: .env`. O frontend não requer variáveis adicionais pois o build do Vite já gera os assets estáticos.
+
+### 7.4 Health Checks
+
+| Serviço | Método | Intervalo | Finalidade |
+|---------|--------|-----------|------------|
+| `backend` | `GET /health` via Node.js | 30s | Garante API respondendo |
+| `frontend` | `wget /health` | 30s | Garante Nginx respondendo |
+
+O `frontend` depende de `backend` estar `healthy` antes de iniciar (`depends_on` com condição).
+
+### 7.5 Comandos
+
+```bash
+# Subir ambos os serviços
+docker compose up -d
+
+# Ver status
+docker compose ps
+
+# Ver logs
+docker compose logs -f
+
+# Parar serviços
+docker compose down
+
+# Rebuild e restart
+docker compose up -d --build
+```
+
+---
+
+## 8. Deploy na Hostinger
+
+### 8.1 Passo a Passo
+
+```bash
+# 1. Clonar repositório na VPS
+git clone https://github.com/seu-usuario/piong-hub.git
+cd piong-hub
+
+# 2. Criar arquivo .env
+cp .env.example .env
+# Editar .env com valores de produção
+
+# 3. Subir containers
+docker compose up -d --build
+
+# 4. Verificar health
+curl http://localhost/health    # Frontend
+curl http://localhost:3000/health # Backend
+
+# 5. Ver logs
+docker compose logs -f
+```
+
+### 8.2 Configurar Proxy Reverso (Nginx Hostinger)
+
+Se a Hostinger já possui Nginx como proxy reverso na porta 80:
+
+```nginx
+server {
+    listen 80;
+    server_name seudominio.com.br;
+
+    location / {
+        proxy_pass http://localhost:80;
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+    }
+
+    location /api/ {
+        proxy_pass http://localhost:3000/;
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+    }
+}
+```
+
+### 8.3 SSL com Let's Encrypt (opcional)
+
+```bash
+# Instalar Certbot
+apt install certbot python3-certbot-nginx -y
+
+# Gerar certificado
+certbot --nginx -d seudominio.com.br
+
+# Renovação automática (já configurada pelo Certbot)
+```
+
+---
+
+## 9. Estrutura Completa de Arquivos
+
+```
+piong-hub/
+├── Dockerfile                  # Backend (Node.js multi-stage)
+├── .dockerignore               # Exclusões globais
+├── docker-compose.yml          # Orquestração unificada
+├── .env                        # Variáveis de ambiente (NÃO versionar)
+├── src/                        # Código fonte backend
+├── frontend/
+│   ├── Dockerfile              # Frontend (Vite + Nginx)
+│   ├── nginx.conf              # Configuração do Nginx
+│   └── dist/                   # Build do frontend (gerado)
+└── docs/
+    └── infra-hostinger.md      # Este documento
+```
+
+---
+
+## 10. Próximos Passos
 
 | Arquivo | Descrição | Status |
 |---------|-----------|--------|
 | `Dockerfile` | Backend multi-stage | Criado |
 | `frontend/Dockerfile` | Frontend com Nginx | Criado |
 | `frontend/nginx.conf` | Configuração Nginx | Criado |
+| `docker-compose.yml` | Orquestração unificada | Criado |
 | `docs/infra-hostinger.md` | Documentação de infraestrutura | Este documento |
-| `docker-compose.yml` | Orquestração unificada | Pendente (Dia 10 / Hora 3) |
+| `docs/guia-deploy-hostinger.md` | Guia de deploy passo a passo | Pendente (Dia 10 / Hora 4) |
+
+---
+
+## 11. Referências
+
+- Docker multi-stage builds: https://docs.docker.com/build/building/multi-stage/
+- Docker Compose documentation: https://docs.docker.com/compose/
+- Nginx SPA configuration: https://www.nginx.com/resources/wiki/start/topics/tutorials/config_pitfalls/
+- Hostinger VPS Docker docs: https://www.hostinger.com/tutorials/how-to-use-docker-on-vps
 
 ---
 
 ## 8. Referências
 
 - Docker multi-stage builds: https://docs.docker.com/build/building/multi-stage/
+- Docker Compose documentation: https://docs.docker.com/compose/
 - Nginx SPA configuration: https://www.nginx.com/resources/wiki/start/topics/tutorials/config_pitfalls/
 - Hostinger VPS Docker docs: https://www.hostinger.com/tutorials/how-to-use-docker-on-vps
