@@ -56,8 +56,8 @@ jobs:
           tags: |
             ${{ steps.meta.outputs.backend_tag }}
             ${{ steps.meta.outputs.backend_sha }}
-          cache-from: type=registry,ref=${{ steps.meta.outputs.backend_tag }}:buildcache
-          cache-to: type=registry,ref=${{ steps.meta.outputs.backend_tag }}:buildcache,mode=max
+          cache-from: type=registry,ref=${{ steps.meta.outputs.backend_tag }}
+          cache-to: type=registry,ref=${{ steps.meta.outputs.backend_tag }},mode=max
 
       - name: Build & Push Frontend
         uses: docker/build-push-action@v6
@@ -68,8 +68,8 @@ jobs:
           tags: |
             ${{ steps.meta.outputs.frontend_tag }}
             ${{ steps.meta.outputs.frontend_sha }}
-          cache-from: type=registry,ref=${{ steps.meta.outputs.frontend_tag }}:buildcache
-          cache-to: type=registry,ref=${{ steps.meta.outputs.frontend_tag }}:buildcache,mode=max
+          cache-from: type=registry,ref=${{ steps.meta.outputs.frontend_tag }}
+          cache-to: type=registry,ref=${{ steps.meta.outputs.frontend_tag }},mode=max
 
   deploy-hostinger:
     name: Deploy na Hostinger VPS
