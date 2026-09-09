@@ -4,17 +4,24 @@
 import express from 'express';
 import cors from 'cors';
 import helmet from 'helmet';
+import { authRateLimiter, apiRateLimiter, writeRateLimiter } from './api/middlewares/rateLimit.middleware';
 import routes from './index';
 import { errorHandler } from './api/middlewares/errorHandler';
 
 const app = express();
 
-// Middleware de seguranca
+// Segurança
 app.use(helmet());
 app.use(cors({
   origin: process.env.CORS_ORIGIN || '*',
   credentials: true
 }));
+
+// Rotas públicas: limite rigoroso para auth
+app.use('/api/v1/auth', authRateLimiter);
+
+// Rotas protegidas: limite geral
+app.use('/api/v1', apiRateLimiter);
 
 // Parsers
 app.use(express.json());
@@ -38,9 +45,12 @@ app.use(errorHandler);
 
 const PORT = process.env.PORT || 3000;
 
-app.listen(PORT, () => {
-  console.log(`PionG API rodando na porta ${PORT}`);
-  console.log(`Documentacao: http://localhost:${PORT}/api/v1`);
-});
+// Only listen in production, not during tests
+if (process.env.NODE_ENV !== 'test') {
+  app.listen(PORT, () => {
+    console.log(`PionG API rodando na porta ${PORT}`);
+    console.log(`Documentacao: http://localhost:${PORT}/api/v1`);
+  });
+}
 
 export default app;
