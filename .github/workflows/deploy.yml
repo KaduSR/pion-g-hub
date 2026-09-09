@@ -41,10 +41,11 @@ jobs:
         id: meta
         run: |
           COMMIT_SHA=$(git rev-parse --short HEAD)
-          echo "backend_tag=ghcr.io/${{ github.repository }}-backend:latest" >> $GITHUB_OUTPUT
-          echo "frontend_tag=ghcr.io/${{ github.repository }}-frontend:latest" >> $GITHUB_OUTPUT
-          echo "backend_sha=ghcr.io/${{ github.repository }}-backend:${COMMIT_SHA}" >> $GITHUB_OUTPUT
-          echo "frontend_sha=ghcr.io/${{ github.repository }}-frontend:${COMMIT_SHA}" >> $GITHUB_OUTPUT
+          REPO_LC="${GITHUB_REPOSITORY,,}"
+          echo "backend_tag=ghcr.io/${REPO_LC}-backend:latest" >> $GITHUB_OUTPUT
+          echo "frontend_tag=ghcr.io/${REPO_LC}-frontend:latest" >> $GITHUB_OUTPUT
+          echo "backend_sha=ghcr.io/${REPO_LC}-backend:${COMMIT_SHA}" >> $GITHUB_OUTPUT
+          echo "frontend_sha=ghcr.io/${REPO_LC}-frontend:${COMMIT_SHA}" >> $GITHUB_OUTPUT
 
       - name: Build & Push Backend
         uses: docker/build-push-action@v6
