@@ -133,19 +133,81 @@ LOG_LEVEL=info
 
 ---
 
-## 5. Próximos Passos
+## 5. Frontend — Dockerfile + Nginx
+
+### 5.1 Multi-Stage Build
+
+O Dockerfile do frontend utiliza **2 estágios**:
+
+| Stage | Base Image | Finalidade |
+|-------|------------|------------|
+| `builder` | `node:20-alpine` | Compilar React/Vite (tsc + vite build) |
+| `runner` | `nginx:1.27-alpine` | Servir assets estáticos com Nginx |
+
+### 5.2 Configuração Nginx (`nginx.conf`)
+
+| Diretiva | Valor | Finalidade |
+|----------|-------|------------|
+| `gzip on` | Tipos: JS, CSS, JSON, SVG, fonts | Reduz tamanho de transferência |
+| Cache assets com hash | `expires 1y` + `immutable` | Cache agressivo para chunks versionados |
+| SPA fallback | `try_files $uri /index.html` | React Router funciona em refresh |
+| `server_tokens off` | — | Oculta versão do Nginx |
+
+### 5.3 Health Check
+
+```bash
+# Container retorna HTTP 200 para /health
+curl http://localhost/health
+```
+
+### 5.4 Comandos Principais
+
+```bash
+# Build da imagem
+docker build -t piong-hub-frontend:latest -f frontend/Dockerfile frontend/
+
+# Executar container
+docker run -p 80:80 piong-hub-frontend:latest
+
+# Ou via Docker Compose (recomendado)
+docker compose up frontend -d
+```
+
+---
+
+## 6. Estrutura Completa de Arquivos
+
+```
+piong-hub/
+├── Dockerfile                  # Backend (Node.js multi-stage)
+├── .dockerignore               # Exclusões globais
+├── docker-compose.yml          # Orquestração unificada
+├── .env                        # Variáveis de ambiente
+├── src/                        # Código fonte backend
+├── frontend/
+│   ├── Dockerfile              # Frontend (Vite + Nginx)
+│   ├── nginx.conf              # Configuração do Nginx
+│   └── dist/                   # Build do frontend (gerado)
+└── docs/
+    └── infra-hostinger.md      # Este documento
+```
+
+---
+
+## 7. Próximos Passos
 
 | Arquivo | Descrição | Status |
 |---------|-----------|--------|
 | `Dockerfile` | Backend multi-stage | Criado |
+| `frontend/Dockerfile` | Frontend com Nginx | Criado |
+| `frontend/nginx.conf` | Configuração Nginx | Criado |
 | `docs/infra-hostinger.md` | Documentação de infraestrutura | Este documento |
-| `frontend/Dockerfile` | Frontend com Nginx | Pendente (Dia 10 / Hora 2) |
 | `docker-compose.yml` | Orquestração unificada | Pendente (Dia 10 / Hora 3) |
 
 ---
 
-## 6. Referências
+## 8. Referências
 
 - Docker multi-stage builds: https://docs.docker.com/build/building/multi-stage/
-- Docker security best practices: https://docs.docker.com/engine/security/
+- Nginx SPA configuration: https://www.nginx.com/resources/wiki/start/topics/tutorials/config_pitfalls/
 - Hostinger VPS Docker docs: https://www.hostinger.com/tutorials/how-to-use-docker-on-vps
