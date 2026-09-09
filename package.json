@@ -7,7 +7,9 @@
     "dev": "ts-node-dev --respawn --transpile-only src/app.ts",
     "build": "tsc",
     "start": "node dist/app.js",
-    "test": "jest",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "test:coverage": "vitest run --coverage",
     "lint": "eslint src/**/*.ts",
     "migrate": "node supabase/scripts/migrate.js"
   },
@@ -31,6 +33,7 @@
     "@types/pg": "^8.10.9",
     "@types/react": "^19.2.18",
     "ts-node-dev": "^2.0.0",
-    "typescript": "^5.3.2"
+    "typescript": "^5.3.2",
+    "vitest": "^2.1.9"
   }
 }
