@@ -1,0 +1,9 @@
+# Ignorar node_modules e artefatos de build locais
+node_modules/
+dist/
+*.log
+.env
+.env.*
+.vscode/
+.idea/
+*.md
