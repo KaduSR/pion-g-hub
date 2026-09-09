@@ -7,9 +7,9 @@ const database_1 = require("../../shared/database");
 const bcryptjs_1 = require("bcryptjs");
 const jsonwebtoken_1 = require("jsonwebtoken");
 const router = (0, express_1.Router)();
-const db = (0, database_1.getDatabase)();
 // Login endpoint
 router.post('/login', async (req, res) => {
+    const db = (0, database_1.getDatabase)();
     const { email, password } = req.body;
     if (!email || !password) {
         return res.status(400).json({
@@ -74,6 +74,7 @@ router.post('/login', async (req, res) => {
 });
 // Logout endpoint
 router.post('/logout', async (req, res) => {
+    const db = (0, database_1.getDatabase)();
     try {
         const authHeader = req.headers.authorization;
         if (!authHeader?.startsWith('Bearer ')) {
@@ -100,6 +101,7 @@ router.post('/logout', async (req, res) => {
 });
 // Get current user info
 router.get('/me', async (req, res) => {
+    const db = (0, database_1.getDatabase)();
     try {
         const authHeader = req.headers.authorization;
         if (!authHeader?.startsWith('Bearer ')) {

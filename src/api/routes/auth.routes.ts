@@ -8,7 +8,6 @@ import { compare, hash } from 'bcryptjs';
 import { sign, verify } from 'jsonwebtoken';
 
 const router = Router();
-const db = getDatabase();
 
 interface AuthUserRow {
   id: string;
@@ -36,6 +35,7 @@ interface AuthMeRow {
 
 // Login endpoint
 router.post('/login', async (req: Request, res: Response) => {
+  const db = getDatabase();
   const { email, password } = req.body;
 
   if (!email || !password) {
@@ -119,6 +119,7 @@ router.post('/login', async (req: Request, res: Response) => {
 
 // Logout endpoint
 router.post('/logout', async (req: Request, res: Response) => {
+  const db = getDatabase();
   try {
     const authHeader = req.headers.authorization;
     if (!authHeader?.startsWith('Bearer ')) {
@@ -151,6 +152,7 @@ router.post('/logout', async (req: Request, res: Response) => {
 
 // Get current user info
 router.get('/me', async (req: Request, res: Response) => {
+  const db = getDatabase();
   try {
     const authHeader = req.headers.authorization;
     if (!authHeader?.startsWith('Bearer ')) {

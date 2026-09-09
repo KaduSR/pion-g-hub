@@ -17,6 +17,11 @@ const defeitos_refugo_routes_1 = __importDefault(require("./api/routes/defeitos-
 const colaboradores_routes_1 = __importDefault(require("./api/routes/colaboradores.routes"));
 const escalas_routes_1 = __importDefault(require("./api/routes/escalas.routes"));
 const pontos_routes_1 = __importDefault(require("./api/routes/pontos.routes"));
+const logistica_routes_1 = __importDefault(require("./api/routes/logistica.routes"));
+const dashboard_routes_1 = __importDefault(require("./api/routes/dashboard.routes"));
+const relatorios_routes_1 = __importDefault(require("./api/routes/relatorios.routes"));
+const auditoria_routes_1 = __importDefault(require("./api/routes/auditoria.routes"));
+const webhooks_routes_1 = __importDefault(require("./api/routes/webhooks.routes"));
 const router = (0, express_1.Router)();
 // Autenticacao (publico)
 router.use('/auth', auth_routes_1.default);
@@ -30,5 +35,10 @@ router.use('/defeitos-refugo', auth_middleware_1.authMiddleware, defeitos_refugo
 router.use('/colaboradores', auth_middleware_1.authMiddleware, colaboradores_routes_1.default);
 router.use('/escalas', auth_middleware_1.authMiddleware, escalas_routes_1.default);
 router.use('/pontos', auth_middleware_1.authMiddleware, pontos_routes_1.default);
+router.use('/logistica', auth_middleware_1.authMiddleware, logistica_routes_1.default);
+router.use('/dashboard', auth_middleware_1.authMiddleware, dashboard_routes_1.default);
+router.use('/relatorios', auth_middleware_1.authMiddleware, relatorios_routes_1.default);
+router.use('/auditoria', auth_middleware_1.authMiddleware, auditoria_routes_1.default);
+router.use('/webhooks', auth_middleware_1.authMiddleware, webhooks_routes_1.default);
 exports.default = router;
 //# sourceMappingURL=index.js.map
