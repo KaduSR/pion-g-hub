@@ -75,7 +75,6 @@ jobs:
     name: Deploy na Hostinger VPS
     runs-on: ubuntu-latest
     needs: build-and-push
-    environment: production
     env:
       BACKEND_TAG: ${{ needs.build-and-push.outputs.backend_tag }}
       FRONTEND_TAG: ${{ needs.build-and-push.outputs.frontend_tag }}
