@@ -248,19 +248,25 @@ apt install fail2ban -y
 
 ## 13. Domínio e DNS
 
-- [ ] Domínio apontando para o IP da VPS (registro A)
-- [ ] Propagação DNS verificada (`dig seudominio.com.br`)
+- [ ] Domínio `pionghub.kadudev.com` apontando para o IP da VPS (`187.77.230.183`) via registro A
+- [ ] Propagação DNS verificada (`dig pionghub.kadudev.com +short`)
 - [ ] `www` configurado como alias (CNAME ou A record)
 - [ ] SSL válido para domínio principal e `www`
+
+### Registro DNS Necessário
+
+| Tipo | Host | Valor |
+|------|------|-------|
+| A | `pionghub.kadudev.com` | `187.77.230.183` |
 
 ### Verificar DNS
 
 ```bash
-dig seudominio.com.br +short
-# Esperado: IP da VPS
+dig pionghub.kadudev.com +short
+# Esperado: 187.77.230.183
 
-dig www.seudominio.com.br +short
-# Esperado: IP da VPS
+dig www.pionghub.kadudev.com +short
+# Esperado: 187.77.230.183
 ```
 
 ---

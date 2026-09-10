@@ -14,9 +14,9 @@ COPY package.json package-lock.json ./
 RUN npm ci --include=dev
 
 # Copia código fonte e compila
-COPY tsconfig.json tsconfig.app.json tsconfig.node.json vite.config.ts ./
-COPY src/ ./src/
+COPY vite.config.js ./
 COPY index.html ./
+COPY src/ ./src/
 
 # Build do Vite (gera dist/)
 RUN npm run build
