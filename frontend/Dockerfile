@@ -35,13 +35,6 @@ COPY nginx.conf /etc/nginx/conf.d/piong-hub.conf
 # Copia artefatos de build do stage anterior
 COPY --from=builder /app/dist/ /usr/share/nginx/html/
 
-# Instala curl para healthcheck
-RUN apk add --no-cache curl
-
-# Health check
-HEALTHCHECK --interval=30s --timeout=3s --start-period=5s --retries=3 \
-  CMD curl -sf http://localhost:80/ > /dev/null || exit 1
-
 # Expõe porta 80
 EXPOSE 80
 
