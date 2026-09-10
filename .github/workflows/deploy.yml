@@ -141,7 +141,7 @@ jobs:
                 backend:
                   condition: service_healthy
               healthcheck:
-                test: ["CMD", "wget", "--no-verbose", "--tries=1", "--spider", "http://localhost:80/health"]
+                test: ["CMD", "curl", "-sf", "http://localhost:80/"]
                 interval: 30s
                 timeout: 3s
                 retries: 3
